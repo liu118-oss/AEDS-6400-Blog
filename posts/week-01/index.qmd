@@ -1,0 +1,167 @@
+---
+title: "Eigenvalues and Eigenvectors: The Directions That Stay on Track"
+author: "Jin Liu"
+description: "A matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple."
+date: "2026-09-14"
+categories: [mathematics, linear-algebra, economics]
+jupyter: python3
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  echo: true
+  warning: false
+---
+
+## A complicated name for a visual idea
+
+Imagine drawing arrows on a stretchy sheet. You pull the sheet so that the arrows change length and tilt. Most arrows now point along different lines. But a few special arrows may stay on their original lines, even as they stretch.
+
+Those special arrows capture the idea of **eigenvectors**. Their **eigenvalues** tell us how much they are scaled.
+
+The names sound abstract because we often meet them through an equation before seeing the question they answer: **Are there directions in which a complicated transformation acts like simple multiplication?**
+
+## Think of a matrix as a rule for moving arrows
+
+A vector is an arrow described by its coordinates. For example, $(1,0)$ points one unit right, while $(1,1)$ points one unit right and one unit up.
+
+A matrix can describe a **linear transformation**: a rule that preserves vector addition and multiplication by numbers. It can stretch, rotate, reflect, or shear arrows while keeping the origin fixed.
+
+Consider this particular rule:
+
+$$
+A=\begin{pmatrix}2&1\\1&2\end{pmatrix},
+\qquad
+A\begin{pmatrix}x\\y\end{pmatrix}
+=\begin{pmatrix}2x+y\\x+2y\end{pmatrix}.
+$$
+
+The entries are instructions: double the first coordinate and add the second; then add the first coordinate to twice the second.
+
+An arrow pointing right, $(1,0)$, becomes $(2,1)$. It now tilts upward. The transformation changed both its length and its direction.
+
+But try an arrow pointing diagonally northeast:
+
+$$
+A\begin{pmatrix}1\\1\end{pmatrix}
+=\begin{pmatrix}3\\3\end{pmatrix}
+=3\begin{pmatrix}1\\1\end{pmatrix}.
+$$
+
+This arrow gets three times as long but stays on the same line. Therefore, $(1,1)$ is an eigenvector, with eigenvalue **3**.
+
+Now try the other diagonal:
+
+$$
+A\begin{pmatrix}1\\-1\end{pmatrix}
+=\begin{pmatrix}1\\-1\end{pmatrix}.
+$$
+
+This arrow stays exactly where it was. It is also an eigenvector, with eigenvalue **1**.
+
+## See the difference
+
+The figure applies the same matrix to three arrows. Dashed arrows show the starting vectors; solid arrows show their transformed versions. Only the last two remain on their original lines.
+
+```{python}
+#| label: fig-eigenvectors
+#| fig-cap: "One transformation, three starting arrows. The horizontal arrow changes direction; the two diagonal eigenvectors stay on their original lines. In the right panel, the unchanged solid arrow overlaps the dashed original."
+#| fig-alt: "Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)."
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+
+A = np.array([[2, 1], [1, 2]])
+vectors = [np.array([1, 0]), np.array([1, 1]), np.array([1, -1])]
+titles = ["Ordinary direction", "Eigenvector: eigenvalue 3", "Eigenvector: eigenvalue 1"]
+fig, axes = plt.subplots(1, 3, figsize=(12, 4.6))
+
+for ax, v, title in zip(axes, vectors, titles):
+    result = A @ v
+    t = np.linspace(-1.5, 3.5, 100)
+    ax.plot(t * v[0], t * v[1], color="#dddddd", linewidth=1.5)
+    ax.annotate("", xy=result, xytext=(0, 0),
+                arrowprops=dict(arrowstyle="->", color="#C65319", lw=3))
+    ax.annotate("", xy=v, xytext=(0, 0),
+                arrowprops=dict(arrowstyle="->", color="#245A81", lw=2,
+                                linestyle="--"))
+    ax.axhline(0, color="#999999", lw=0.7)
+    ax.axvline(0, color="#999999", lw=0.7)
+    ax.set(xlim=(-1.5, 3.5), ylim=(-1.5, 3.5),
+           xlabel="First coordinate", ylabel="Second coordinate", title=title)
+    ax.set_aspect("equal")
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.grid(alpha=0.15)
+
+fig.legend(handles=[Line2D([0], [0], color="#245A81", lw=2,
+                          linestyle="--", label="Original vector"),
+                    Line2D([0], [0], color="#C65319", lw=3,
+                          label="Transformed vector")],
+           loc="lower center", ncol=2, frameon=False)
+fig.tight_layout(rect=[0, 0.09, 1, 1])
+plt.show()
+```
+
+## The equation is just a comparison
+
+The formal definition is short:
+
+$$
+A\mathbf{v}=\lambda\mathbf{v}, \qquad \mathbf{v}\ne\mathbf{0}.
+$$
+
+The left side says “apply the matrix.” The right side says “multiply the original vector by a single number.” An eigenvector is a nonzero vector for which those two operations give the same result. That number, $\lambda$ (the Greek letter lambda), is the eigenvalue. [MIT's introduction to eigenvalues and eigenvectors](https://math.mit.edu/~gs/linearalgebra/ila5/linearalgebra5_6-1.pdf)
+
+The sign and size matter:
+
+| Eigenvalue | What happens to the eigenvector? |
+|---|---|
+| $3$ | Its length triples. |
+| $1$ | It stays unchanged. |
+| $0.5$ | Its length halves. |
+| $-2$ | Its length doubles and it points the opposite way. |
+| $0$ | It collapses to the zero vector. |
+
+So “never changes direction” needs a qualification: a negative eigenvalue reverses the arrow, and zero removes its direction entirely. **The transformed vector remains on the original line.** Also, an eigenvector is not unique in length: $(2,2)$ works just as well as $(1,1)$ in our example.
+
+## Why this initially feels unintuitive
+
+We usually describe this matrix using horizontal and vertical coordinates. From that viewpoint, it mixes the coordinates together. It seems natural to assume that mixing is unavoidable.
+
+But our example becomes simpler when we use the two diagonal directions instead. Along one diagonal, the rule is “multiply by three.” Along the other, it is “multiply by one.”
+
+Even the ordinary arrow can be broken into those two pieces:
+
+$$
+\begin{pmatrix}1\\0\end{pmatrix}
+=\frac12\begin{pmatrix}1\\1\end{pmatrix}
++\frac12\begin{pmatrix}1\\-1\end{pmatrix}.
+$$
+
+Apply the transformation repeatedly. After $n$ applications, the first piece has been multiplied by $3^n$, while the second is unchanged:
+
+$$
+A^n\begin{pmatrix}1\\0\end{pmatrix}
+=\frac{3^n}{2}\begin{pmatrix}1\\1\end{pmatrix}
++\frac12\begin{pmatrix}1\\-1\end{pmatrix}.
+$$
+
+The first piece eventually dwarfs the second, so the resulting arrow points increasingly close to the northeast diagonal. The eigenvectors explain the patterns; the eigenvalues explain how those patterns evolve.
+
+This convenient decomposition works here because the two eigenvectors span the plane. Not every matrix has enough independent eigenvectors for this approach. A 90-degree rotation in the real plane, for example, leaves no nonzero arrow on its original line, so it has no real eigenvectors. [MIT lecture notes](https://math.mit.edu/~roed/courses/211/lectures/Nov-8.pdf)
+
+## An economic interpretation
+
+As a deliberately simplified model, imagine that the two coordinates represent deviations in activity in two sectors. Let our matrix describe how those deviations propagate in one period. These numbers are illustrative assumptions, not estimates from economic data.
+
+The vector $(1,1)$ represents both sectors moving together. Under this rule, that common movement triples each period. The vector $(1,-1)$ represents one sector rising while the other falls by the same amount. That difference remains unchanged.
+
+Instead of tracking two interacting coordinates, we can track **a common movement and an opposing movement**. In this toy model, common shocks amplify, while opposing shocks persist. Actual economic conclusions would depend on whether the chosen rule fits the economy, but the mathematical benefit is already visible.
+
+## The takeaway
+
+Eigenvectors identify directions where a linear transformation reduces to scaling. Eigenvalues tell us the scale factor, including whether the arrow reverses or disappears.
+
+The surprising part is that a rule that mixes coordinates can become simple when viewed along the right directions. The next time you see $A\mathbf{v}=\lambda\mathbf{v}$, picture an arrow staying on its line—and ask how much it stretches.

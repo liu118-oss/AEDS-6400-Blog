@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "AEDS 6400 Blog"
+  site-url: "https://liu118-oss.github.io"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: "https://github.com/liu118-oss"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

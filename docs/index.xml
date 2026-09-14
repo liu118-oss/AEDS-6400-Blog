@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>AEDS 6400 Blog</title>
+<link>https://liu118-oss.github.io/</link>
+<atom:link href="https://liu118-oss.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Mon, 14 Sep 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Eigenvalues and Eigenvectors: The Directions That Stay on Track</title>
+  <dc:creator>Jin Liu</dc:creator>
+  <link>https://liu118-oss.github.io/posts/week-01/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="a-complicated-name-for-a-visual-idea" class="level2">
+<h2 class="anchored" data-anchor-id="a-complicated-name-for-a-visual-idea">A complicated name for a visual idea</h2>
+<p>Imagine drawing arrows on a stretchy sheet. You pull the sheet so that the arrows change length and tilt. Most arrows now point along different lines. But a few special arrows may stay on their original lines, even as they stretch.</p>
+<p>Those special arrows capture the idea of <strong>eigenvectors</strong>. Their <strong>eigenvalues</strong> tell us how much they are scaled.</p>
+<p>The names sound abstract because we often meet them through an equation before seeing the question they answer: <strong>Are there directions in which a complicated transformation acts like simple multiplication?</strong></p>
+</section>
+<section id="think-of-a-matrix-as-a-rule-for-moving-arrows" class="level2">
+<h2 class="anchored" data-anchor-id="think-of-a-matrix-as-a-rule-for-moving-arrows">Think of a matrix as a rule for moving arrows</h2>
+<p>A vector is an arrow described by its coordinates. For example, <img src="https://latex.codecogs.com/png.latex?(1,0)"> points one unit right, while <img src="https://latex.codecogs.com/png.latex?(1,1)"> points one unit right and one unit up.</p>
+<p>A matrix can describe a <strong>linear transformation</strong>: a rule that preserves vector addition and multiplication by numbers. It can stretch, rotate, reflect, or shear arrows while keeping the origin fixed.</p>
+<p>Consider this particular rule:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Cbegin%7Bpmatrix%7D2&amp;1%5C%5C1&amp;2%5Cend%7Bpmatrix%7D,%0A%5Cqquad%0AA%5Cbegin%7Bpmatrix%7Dx%5C%5Cy%5Cend%7Bpmatrix%7D%0A=%5Cbegin%7Bpmatrix%7D2x+y%5C%5Cx+2y%5Cend%7Bpmatrix%7D.%0A"></p>
+<p>The entries are instructions: double the first coordinate and add the second; then add the first coordinate to twice the second.</p>
+<p>An arrow pointing right, <img src="https://latex.codecogs.com/png.latex?(1,0)">, becomes <img src="https://latex.codecogs.com/png.latex?(2,1)">. It now tilts upward. The transformation changed both its length and its direction.</p>
+<p>But try an arrow pointing diagonally northeast:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D%0A=%5Cbegin%7Bpmatrix%7D3%5C%5C3%5Cend%7Bpmatrix%7D%0A=3%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D.%0A"></p>
+<p>This arrow gets three times as long but stays on the same line. Therefore, <img src="https://latex.codecogs.com/png.latex?(1,1)"> is an eigenvector, with eigenvalue <strong>3</strong>.</p>
+<p>Now try the other diagonal:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5Cbegin%7Bpmatrix%7D1%5C%5C-1%5Cend%7Bpmatrix%7D%0A=%5Cbegin%7Bpmatrix%7D1%5C%5C-1%5Cend%7Bpmatrix%7D.%0A"></p>
+<p>This arrow stays exactly where it was. It is also an eigenvector, with eigenvalue <strong>1</strong>.</p>
+</section>
+<section id="see-the-difference" class="level2">
+<h2 class="anchored" data-anchor-id="see-the-difference">See the difference</h2>
+<p>The figure applies the same matrix to three arrows. Dashed arrows show the starting vectors; solid arrows show their transformed versions. Only the last two remain on their original lines.</p>
+<div id="cell-fig-eigenvectors" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> matplotlib.lines <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Line2D</span>
+<span id="cb1-4"></span>
+<span id="cb1-5">A <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.array([[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]])</span>
+<span id="cb1-6">vectors <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]), np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]), np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])]</span>
+<span id="cb1-7">titles <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ordinary direction"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Eigenvector: eigenvalue 3"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Eigenvector: eigenvalue 1"</span>]</span>
+<span id="cb1-8">fig, axes <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4.6</span>))</span>
+<span id="cb1-9"></span>
+<span id="cb1-10"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> ax, v, title <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">zip</span>(axes, vectors, titles):</span>
+<span id="cb1-11">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> A <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">@</span> v</span>
+<span id="cb1-12">    t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.linspace(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb1-13">    ax.plot(t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> v[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> v[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#dddddd"</span>, linewidth<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.5</span>)</span>
+<span id="cb1-14">    ax.annotate(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>, xy<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>result, xytext<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb1-15">                arrowprops<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">dict</span>(arrowstyle<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-&gt;"</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#C65319"</span>, lw<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>))</span>
+<span id="cb1-16">    ax.annotate(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>, xy<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>v, xytext<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>),</span>
+<span id="cb1-17">                arrowprops<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">dict</span>(arrowstyle<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-&gt;"</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#245A81"</span>, lw<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,</span>
+<span id="cb1-18">                                linestyle<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"--"</span>))</span>
+<span id="cb1-19">    ax.axhline(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#999999"</span>, lw<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.7</span>)</span>
+<span id="cb1-20">    ax.axvline(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#999999"</span>, lw<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.7</span>)</span>
+<span id="cb1-21">    ax.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>(xlim<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.5</span>), ylim<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.5</span>),</span>
+<span id="cb1-22">           xlabel<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"First coordinate"</span>, ylabel<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Second coordinate"</span>, title<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>title)</span>
+<span id="cb1-23">    ax.set_aspect(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"equal"</span>)</span>
+<span id="cb1-24">    ax.spines[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"top"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"right"</span>]].set_visible(<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb1-25">    ax.grid(alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.15</span>)</span>
+<span id="cb1-26"></span>
+<span id="cb1-27">fig.legend(handles<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[Line2D([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#245A81"</span>, lw<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,</span>
+<span id="cb1-28">                          linestyle<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"--"</span>, label<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Original vector"</span>),</span>
+<span id="cb1-29">                    Line2D([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#C65319"</span>, lw<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,</span>
+<span id="cb1-30">                          label<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Transformed vector"</span>)],</span>
+<span id="cb1-31">           loc<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lower center"</span>, ncol<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, frameon<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb1-32">fig.tight_layout(rect<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.09</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span>
+<span id="cb1-33">plt.show()</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-eigenvectors" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1).">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eigenvectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://liu118-oss.github.io/posts/week-01/index_files/figure-html/fig-eigenvectors-output-1.png" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)." width="1143" height="434" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eigenvectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow changes direction; the two diagonal eigenvectors stay on their original lines. In the right panel, the unchanged solid arrow overlaps the dashed original.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-equation-is-just-a-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="the-equation-is-just-a-comparison">The equation is just a comparison</h2>
+<p>The formal definition is short:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5Cmathbf%7Bv%7D=%5Clambda%5Cmathbf%7Bv%7D,%20%5Cqquad%20%5Cmathbf%7Bv%7D%5Cne%5Cmathbf%7B0%7D.%0A"></p>
+<p>The left side says “apply the matrix.” The right side says “multiply the original vector by a single number.” An eigenvector is a nonzero vector for which those two operations give the same result. That number, <img src="https://latex.codecogs.com/png.latex?%5Clambda"> (the Greek letter lambda), is the eigenvalue. <a href="https://math.mit.edu/~gs/linearalgebra/ila5/linearalgebra5_6-1.pdf">MIT’s introduction to eigenvalues and eigenvectors</a></p>
+<p>The sign and size matter:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Eigenvalue</th>
+<th>What happens to the eigenvector?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?3"></td>
+<td>Its length triples.</td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?1"></td>
+<td>It stays unchanged.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?0.5"></td>
+<td>Its length halves.</td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?-2"></td>
+<td>Its length doubles and it points the opposite way.</td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?0"></td>
+<td>It collapses to the zero vector.</td>
+</tr>
+</tbody>
+</table>
+<p>So “never changes direction” needs a qualification: a negative eigenvalue reverses the arrow, and zero removes its direction entirely. <strong>The transformed vector remains on the original line.</strong> Also, an eigenvector is not unique in length: <img src="https://latex.codecogs.com/png.latex?(2,2)"> works just as well as <img src="https://latex.codecogs.com/png.latex?(1,1)"> in our example.</p>
+</section>
+<section id="why-this-initially-feels-unintuitive" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-initially-feels-unintuitive">Why this initially feels unintuitive</h2>
+<p>We usually describe this matrix using horizontal and vertical coordinates. From that viewpoint, it mixes the coordinates together. It seems natural to assume that mixing is unavoidable.</p>
+<p>But our example becomes simpler when we use the two diagonal directions instead. Along one diagonal, the rule is “multiply by three.” Along the other, it is “multiply by one.”</p>
+<p>Even the ordinary arrow can be broken into those two pieces:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Bpmatrix%7D1%5C%5C0%5Cend%7Bpmatrix%7D%0A=%5Cfrac12%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D%0A+%5Cfrac12%5Cbegin%7Bpmatrix%7D1%5C%5C-1%5Cend%7Bpmatrix%7D.%0A"></p>
+<p>Apply the transformation repeatedly. After <img src="https://latex.codecogs.com/png.latex?n"> applications, the first piece has been multiplied by <img src="https://latex.codecogs.com/png.latex?3%5En">, while the second is unchanged:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5En%5Cbegin%7Bpmatrix%7D1%5C%5C0%5Cend%7Bpmatrix%7D%0A=%5Cfrac%7B3%5En%7D%7B2%7D%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D%0A+%5Cfrac12%5Cbegin%7Bpmatrix%7D1%5C%5C-1%5Cend%7Bpmatrix%7D.%0A"></p>
+<p>The first piece eventually dwarfs the second, so the resulting arrow points increasingly close to the northeast diagonal. The eigenvectors explain the patterns; the eigenvalues explain how those patterns evolve.</p>
+<p>This convenient decomposition works here because the two eigenvectors span the plane. Not every matrix has enough independent eigenvectors for this approach. A 90-degree rotation in the real plane, for example, leaves no nonzero arrow on its original line, so it has no real eigenvectors. <a href="https://math.mit.edu/~roed/courses/211/lectures/Nov-8.pdf">MIT lecture notes</a></p>
+</section>
+<section id="an-economic-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="an-economic-interpretation">An economic interpretation</h2>
+<p>As a deliberately simplified model, imagine that the two coordinates represent deviations in activity in two sectors. Let our matrix describe how those deviations propagate in one period. These numbers are illustrative assumptions, not estimates from economic data.</p>
+<p>The vector <img src="https://latex.codecogs.com/png.latex?(1,1)"> represents both sectors moving together. Under this rule, that common movement triples each period. The vector <img src="https://latex.codecogs.com/png.latex?(1,-1)"> represents one sector rising while the other falls by the same amount. That difference remains unchanged.</p>
+<p>Instead of tracking two interacting coordinates, we can track <strong>a common movement and an opposing movement</strong>. In this toy model, common shocks amplify, while opposing shocks persist. Actual economic conclusions would depend on whether the chosen rule fits the economy, but the mathematical benefit is already visible.</p>
+</section>
+<section id="the-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="the-takeaway">The takeaway</h2>
+<p>Eigenvectors identify directions where a linear transformation reduces to scaling. Eigenvalues tell us the scale factor, including whether the arrow reverses or disappears.</p>
+<p>The surprising part is that a rule that mixes coordinates can become simple when viewed along the right directions. The next time you see <img src="https://latex.codecogs.com/png.latex?A%5Cmathbf%7Bv%7D=%5Clambda%5Cmathbf%7Bv%7D">, picture an arrow staying on its line—and ask how much it stretches.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>mathematics</category>
+  <category>linear-algebra</category>
+  <category>economics</category>
+  <guid>https://liu118-oss.github.io/posts/week-01/</guid>
+  <pubDate>Mon, 14 Sep 2026 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Post With Code</title>
+  <dc:creator>Harlow Malloc</dc:creator>
+  <link>https://liu118-oss.github.io/posts/post-with-code/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This is a post with executable code.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://liu118-oss.github.io/posts/post-with-code/</guid>
+  <pubDate>Mon, 14 Sep 2026 04:00:00 GMT</pubDate>
+  <media:content url="https://liu118-oss.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Welcome To My Blog</title>
+  <dc:creator>Tristan O&#39;Malley</dc:creator>
+  <link>https://liu118-oss.github.io/posts/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This is the first post in a Quarto blog. Welcome!</p>
+<p><img src="https://liu118-oss.github.io/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <guid>https://liu118-oss.github.io/posts/welcome/</guid>
+  <pubDate>Fri, 11 Sep 2026 04:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
