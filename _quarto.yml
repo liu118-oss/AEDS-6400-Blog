@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "AEDS 6400 Blog"
+  title: "Jin Liu"
   site-url: "https://liu118-oss.github.io"
   navbar:
     right:

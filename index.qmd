@@ -1,5 +1,5 @@
 ---
-title: "Blog_1"
+title: "AEDS 6400 Blog"
 listing:
   contents: posts
   feed: true
