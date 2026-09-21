@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jin Liu">
-<meta name="dcterms.date" content="2026-09-14">
-<meta name="description" content="A matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.">
+<meta name="dcterms.date" content="2026-09-21">
+<meta name="description" content="A reproducible R scrape turns German-focused job postings into role-specific study priorities.">
 
-<title>Eigenvalues and Eigenvectors: The Directions That Stay on Track – Jin Liu</title>
+<title>Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs – Jin Liu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -112,35 +111,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -182,16 +152,16 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Eigenvalues and Eigenvectors: The Directions That Stay on Track</h1>
+      <h1 class="title">Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</h1>
                   <div>
         <div class="description">
-          A matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.
+          A reproducible R scrape turns German-focused job postings into role-specific study priorities.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">mathematics</div>
-                <div class="quarto-category">linear-algebra</div>
-                <div class="quarto-category">economics</div>
+                <div class="quarto-category">web-scraping</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">labor-market</div>
               </div>
                   </div>
   </div>
@@ -199,17 +169,11 @@ window.Quarto = {
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Jin Liu </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 14, 2026</p>
+        <p class="date">September 21, 2026</p>
       </div>
     </div>
     
@@ -225,13 +189,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-complicated-name-for-a-visual-idea" id="toc-a-complicated-name-for-a-visual-idea" class="nav-link active" data-scroll-target="#a-complicated-name-for-a-visual-idea">A complicated name for a visual idea</a></li>
-  <li><a href="#think-of-a-matrix-as-a-rule-for-moving-arrows" id="toc-think-of-a-matrix-as-a-rule-for-moving-arrows" class="nav-link" data-scroll-target="#think-of-a-matrix-as-a-rule-for-moving-arrows">Think of a matrix as a rule for moving arrows</a></li>
-  <li><a href="#see-the-difference" id="toc-see-the-difference" class="nav-link" data-scroll-target="#see-the-difference">See the difference</a></li>
-  <li><a href="#the-equation-is-just-a-comparison" id="toc-the-equation-is-just-a-comparison" class="nav-link" data-scroll-target="#the-equation-is-just-a-comparison">The equation is just a comparison</a></li>
-  <li><a href="#why-this-initially-feels-unintuitive" id="toc-why-this-initially-feels-unintuitive" class="nav-link" data-scroll-target="#why-this-initially-feels-unintuitive">Why this initially feels unintuitive</a></li>
-  <li><a href="#an-economic-interpretation" id="toc-an-economic-interpretation" class="nav-link" data-scroll-target="#an-economic-interpretation">An economic interpretation</a></li>
-  <li><a href="#the-takeaway" id="toc-the-takeaway" class="nav-link" data-scroll-target="#the-takeaway">The takeaway</a></li>
+  <li><a href="#a-career-decision-not-just-a-word-count" id="toc-a-career-decision-not-just-a-word-count" class="nav-link active" data-scroll-target="#a-career-decision-not-just-a-word-count">A career decision, not just a word count</a></li>
+  <li><a href="#from-public-pages-to-clean-data" id="toc-from-public-pages-to-clean-data" class="nav-link" data-scroll-target="#from-public-pages-to-clean-data">From public pages to clean data</a></li>
+  <li><a href="#which-skills-appear-most-often" id="toc-which-skills-appear-most-often" class="nav-link" data-scroll-target="#which-skills-appear-most-often">Which skills appear most often?</a></li>
+  <li><a href="#work-arrangement-and-experience-level" id="toc-work-arrangement-and-experience-level" class="nav-link" data-scroll-target="#work-arrangement-and-experience-level">Work arrangement and experience level</a></li>
+  <li><a href="#what-should-a-job-seeker-do" id="toc-what-should-a-job-seeker-do" class="nav-link" data-scroll-target="#what-should-a-job-seeker-do">What should a job seeker do?</a></li>
+  <li><a href="#takeaway" id="toc-takeaway" class="nav-link" data-scroll-target="#takeaway">Takeaway</a></li>
   </ul>
 </nav>
     </div>
@@ -242,162 +205,175 @@ window.Quarto = {
 
 
 
-<section id="a-complicated-name-for-a-visual-idea" class="level2">
-<h2 class="anchored" data-anchor-id="a-complicated-name-for-a-visual-idea">A complicated name for a visual idea</h2>
-<p>Imagine drawing arrows on a stretchy sheet. You pull the sheet so that the arrows change length and tilt. Most arrows now point along different lines. But a few special arrows may stay on their original lines, even as they stretch.</p>
-<p>Those special arrows capture the idea of <strong>eigenvectors</strong>. Their <strong>eigenvalues</strong> tell us how much they are scaled.</p>
-<p>The names sound abstract because we often meet them through an equation before seeing the question they answer: <strong>Are there directions in which a complicated transformation acts like simple multiplication?</strong></p>
+<section id="a-career-decision-not-just-a-word-count" class="level2">
+<h2 class="anchored" data-anchor-id="a-career-decision-not-just-a-word-count">A career decision, not just a word count</h2>
+<p>Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used <a href="https://www.arbeitnow.com/">Arbeitnow</a>, a Germany-focused job board, to examine <strong>skills, role types, work arrangement, and experience level</strong>.</p>
 </section>
-<section id="think-of-a-matrix-as-a-rule-for-moving-arrows" class="level2">
-<h2 class="anchored" data-anchor-id="think-of-a-matrix-as-a-rule-for-moving-arrows">Think of a matrix as a rule for moving arrows</h2>
-<p>A vector is an arrow described by its coordinates. For example, <span class="math inline">\((1,0)\)</span> points one unit right, while <span class="math inline">\((1,1)\)</span> points one unit right and one unit up.</p>
-<p>A matrix can describe a <strong>linear transformation</strong>: a rule that preserves vector addition and multiplication by numbers. It can stretch, rotate, reflect, or shear arrows while keeping the origin fixed.</p>
-<p>Consider this particular rule:</p>
-<p><span class="math display">\[
-A=\begin{pmatrix}2&amp;1\\1&amp;2\end{pmatrix},
-\qquad
-A\begin{pmatrix}x\\y\end{pmatrix}
-=\begin{pmatrix}2x+y\\x+2y\end{pmatrix}.
-\]</span></p>
-<p>The entries are instructions: double the first coordinate and add the second; then add the first coordinate to twice the second.</p>
-<p>An arrow pointing right, <span class="math inline">\((1,0)\)</span>, becomes <span class="math inline">\((2,1)\)</span>. It now tilts upward. The transformation changed both its length and its direction.</p>
-<p>But try an arrow pointing diagonally northeast:</p>
-<p><span class="math display">\[
-A\begin{pmatrix}1\\1\end{pmatrix}
-=\begin{pmatrix}3\\3\end{pmatrix}
-=3\begin{pmatrix}1\\1\end{pmatrix}.
-\]</span></p>
-<p>This arrow gets three times as long but stays on the same line. Therefore, <span class="math inline">\((1,1)\)</span> is an eigenvector, with eigenvalue <strong>3</strong>.</p>
-<p>Now try the other diagonal:</p>
-<p><span class="math display">\[
-A\begin{pmatrix}1\\-1\end{pmatrix}
-=\begin{pmatrix}1\\-1\end{pmatrix}.
-\]</span></p>
-<p>This arrow stays exactly where it was. It is also an eigenvector, with eigenvalue <strong>1</strong>.</p>
-</section>
-<section id="see-the-difference" class="level2">
-<h2 class="anchored" data-anchor-id="see-the-difference">See the difference</h2>
-<p>The figure applies the same matrix to three arrows. Dashed arrows show the starting vectors; solid arrows show their transformed versions. Only the last two remain on their original lines.</p>
-<div id="cell-fig-eigenvectors" class="cell" data-execution_count="1">
+<section id="from-public-pages-to-clean-data" class="level2">
+<h2 class="anchored" data-anchor-id="from-public-pages-to-clean-data">From public pages to clean data</h2>
+<p>On September 21, 2026, my <a href="code/01_scrape_jobs.R">R collection script</a> used <code>rvest</code> to read 100 public listing pages. It saved their HTML and extracted 5000 unique job titles and URLs. Of those titles, 1019 matched a documented software, data, or IT role pattern. Arbeitnow also offers a <a href="https://www.arbeitnow.com/blog/job-board-api">public job-board API</a> with full descriptions; collecting its paginated feed avoided requesting thousands of individual job pages. The API ended after 29 pages of jobs and supplied 3153 unique descriptions, of which 543 matched the technology-role pattern. 1836 API jobs also appeared in the 100-page HTML snapshot. The two sources are snapshots of the same changing board, so their page lists do not line up exactly.</p>
+<div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.lines <span class="im">import</span> Line2D</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">2</span>]])</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>vectors <span class="op">=</span> [np.array([<span class="dv">1</span>, <span class="dv">0</span>]), np.array([<span class="dv">1</span>, <span class="dv">1</span>]), np.array([<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>])]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>titles <span class="op">=</span> [<span class="st">"Ordinary direction"</span>, <span class="st">"Eigenvector: eigenvalue 3"</span>, <span class="st">"Eigenvector: eigenvalue 1"</span>]</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">4.6</span>))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, v, title <span class="kw">in</span> <span class="bu">zip</span>(axes, vectors, titles):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> A <span class="op">@</span> v</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">3.5</span>, <span class="dv">100</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    ax.plot(t <span class="op">*</span> v[<span class="dv">0</span>], t <span class="op">*</span> v[<span class="dv">1</span>], color<span class="op">=</span><span class="st">"#dddddd"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    ax.annotate(<span class="st">""</span>, xy<span class="op">=</span>result, xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, color<span class="op">=</span><span class="st">"#C65319"</span>, lw<span class="op">=</span><span class="dv">3</span>))</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    ax.annotate(<span class="st">""</span>, xy<span class="op">=</span>v, xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">"-&gt;"</span>, color<span class="op">=</span><span class="st">"#245A81"</span>, lw<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                                linestyle<span class="op">=</span><span class="st">"--"</span>))</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"#999999"</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"#999999"</span>, lw<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">3.5</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">3.5</span>),</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>           xlabel<span class="op">=</span><span class="st">"First coordinate"</span>, ylabel<span class="op">=</span><span class="st">"Second coordinate"</span>, title<span class="op">=</span>title)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    ax.set_aspect(<span class="st">"equal"</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    ax.spines[[<span class="st">"top"</span>, <span class="st">"right"</span>]].set_visible(<span class="va">False</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.15</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>fig.legend(handles<span class="op">=</span>[Line2D([<span class="dv">0</span>], [<span class="dv">0</span>], color<span class="op">=</span><span class="st">"#245A81"</span>, lw<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                          linestyle<span class="op">=</span><span class="st">"--"</span>, label<span class="op">=</span><span class="st">"Original vector"</span>),</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                    Line2D([<span class="dv">0</span>], [<span class="dv">0</span>], color<span class="op">=</span><span class="st">"#C65319"</span>, lw<span class="op">=</span><span class="dv">3</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                          label<span class="op">=</span><span class="st">"Transformed vector"</span>)],</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>           loc<span class="op">=</span><span class="st">"lower center"</span>, ncol<span class="op">=</span><span class="dv">2</span>, frameon<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>fig.tight_layout(rect<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.09</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(<span class="st">"data/raw/html/page-001.html"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>links <span class="ot">&lt;-</span> <span class="fu">html_elements</span>(page, <span class="st">"a[data-job-item-link]"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>job_urls <span class="ot">&lt;-</span> <span class="fu">html_attr</span>(links, <span class="st">"href"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>job_titles <span class="ot">&lt;-</span> <span class="fu">html_text2</span>(links)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display">
-<div id="fig-eigenvectors" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1).">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-eigenvectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-eigenvectors-output-1.png" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)." width="1143" height="434" class="figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eigenvectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow changes direction; the two diagonal eigenvectors stay on their original lines. In the right panel, the unchanged solid arrow overlaps the dashed original.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>The <a href="code/extend_api_cache.R">API pagination helper</a> manages the paced feed requests. The separate <a href="code/02_analyze_jobs.R">analysis script</a> cleans description HTML, removes duplicate URLs, and searches for 20 named technologies. It counts a skill once per job even when the word appears repeatedly. <strong>Every skill percentage below divides by the 543 technology jobs with descriptions</strong>, not by all HTML listings. The scripts save the cleaned data, tables, and figures; the <a href="README.md">README</a> gives replication commands. The complete project is in the <a href="https://github.com/liu118-oss/AEDS-6400-Blog">GitHub repository</a>. Collection used sequential requests with pauses, followed the site’s <a href="https://www.arbeitnow.com/robots.txt">robots.txt</a>, and used no login or access workaround. Arbeitnow’s <a href="https://www.arbeitnow.com/terms">API terms</a> ask users to link back to the site.</p>
 </section>
-<section id="the-equation-is-just-a-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="the-equation-is-just-a-comparison">The equation is just a comparison</h2>
-<p>The formal definition is short:</p>
-<p><span class="math display">\[
-A\mathbf{v}=\lambda\mathbf{v}, \qquad \mathbf{v}\ne\mathbf{0}.
-\]</span></p>
-<p>The left side says “apply the matrix.” The right side says “multiply the original vector by a single number.” An eigenvector is a nonzero vector for which those two operations give the same result. That number, <span class="math inline">\(\lambda\)</span> (the Greek letter lambda), is the eigenvalue. <a href="https://math.mit.edu/~gs/linearalgebra/ila5/linearalgebra5_6-1.pdf">MIT’s introduction to eigenvalues and eigenvectors</a></p>
-<p>The sign and size matter:</p>
-<table class="caption-top table">
+<section id="which-skills-appear-most-often" class="level2">
+<h2 class="anchored" data-anchor-id="which-skills-appear-most-often">Which skills appear most often?</h2>
+<div class="cell">
+<div id="tbl-top-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Most frequently mentioned technologies among 543 technology job descriptions. Postings can mention more than one skill.
+</figcaption>
+<div aria-describedby="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th>Eigenvalue</th>
-<th>What happens to the eigenvector?</th>
+<th style="text-align: left;">Skill</th>
+<th style="text-align: right;">Postings</th>
+<th style="text-align: left;">Share of technology postings</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(3\)</span></td>
-<td>Its length triples.</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">187</td>
+<td style="text-align: left;">34.4%</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(1\)</span></td>
-<td>It stays unchanged.</td>
+<td style="text-align: left;">AWS</td>
+<td style="text-align: right;">114</td>
+<td style="text-align: left;">21%</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(0.5\)</span></td>
-<td>Its length halves.</td>
+<td style="text-align: left;">Git</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: left;">19.9%</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(-2\)</span></td>
-<td>Its length doubles and it points the opposite way.</td>
+<td style="text-align: left;">Kubernetes</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: left;">16.8%</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(0\)</span></td>
-<td>It collapses to the zero vector.</td>
+<td style="text-align: left;">TypeScript</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: left;">16.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Docker</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: left;">16.2%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SQL</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: left;">15.8%</td>
 </tr>
 </tbody>
 </table>
-<p>So “never changes direction” needs a qualification: a negative eigenvalue reverses the arrow, and zero removes its direction entirely. <strong>The transformed vector remains on the original line.</strong> Also, an eigenvector is not unique in length: <span class="math inline">\((2,2)\)</span> works just as well as <span class="math inline">\((1,1)\)</span> in our example.</p>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="results/skill_frequencies.png" class="img-fluid figure-img"></p>
+<figcaption>Bar chart ranking named technologies by the share of technology postings mentioning them.</figcaption>
+</figure>
+</div>
+<p>Python appears in 187 postings (34.4%), followed by AWS in 114 (21%) and Git in 108 (19.9%). Python and Git appear together in 64 postings. These are <strong>mentions</strong>, not proof that every employer requires the skill. Percentages do not sum to 100 because one posting can name several technologies.</p>
+<p>The overall ranking hides important differences. My title-based groups contain 325 software development, 161 infrastructure or security, and 57 data or machine-learning postings. The two most frequently named skills in each group are:</p>
+<div class="cell">
+<div id="tbl-role-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-role-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Top two skill mentions within each role group. Percentages use the number of jobs in that group.
+</figcaption>
+<div aria-describedby="tbl-role-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Role group</th>
+<th style="text-align: left;">Skill</th>
+<th style="text-align: right;">Postings</th>
+<th style="text-align: left;">Within-group share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Data / ML</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: left;">86%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Data / ML</td>
+<td style="text-align: left;">SQL</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">56.1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Infrastructure / security</td>
+<td style="text-align: left;">Kubernetes</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: left;">26.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Infrastructure / security</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: left;">25.5%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Software development</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: left;">29.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Software development</td>
+<td style="text-align: left;">TypeScript</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: left;">24%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
 </section>
-<section id="why-this-initially-feels-unintuitive" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-initially-feels-unintuitive">Why this initially feels unintuitive</h2>
-<p>We usually describe this matrix using horizontal and vertical coordinates. From that viewpoint, it mixes the coordinates together. It seems natural to assume that mixing is unavoidable.</p>
-<p>But our example becomes simpler when we use the two diagonal directions instead. Along one diagonal, the rule is “multiply by three.” Along the other, it is “multiply by one.”</p>
-<p>Even the ordinary arrow can be broken into those two pieces:</p>
-<p><span class="math display">\[
-\begin{pmatrix}1\\0\end{pmatrix}
-=\frac12\begin{pmatrix}1\\1\end{pmatrix}
-+\frac12\begin{pmatrix}1\\-1\end{pmatrix}.
-\]</span></p>
-<p>Apply the transformation repeatedly. After <span class="math inline">\(n\)</span> applications, the first piece has been multiplied by <span class="math inline">\(3^n\)</span>, while the second is unchanged:</p>
-<p><span class="math display">\[
-A^n\begin{pmatrix}1\\0\end{pmatrix}
-=\frac{3^n}{2}\begin{pmatrix}1\\1\end{pmatrix}
-+\frac12\begin{pmatrix}1\\-1\end{pmatrix}.
-\]</span></p>
-<p>The first piece eventually dwarfs the second, so the resulting arrow points increasingly close to the northeast diagonal. The eigenvectors explain the patterns; the eigenvalues explain how those patterns evolve.</p>
-<p>This convenient decomposition works here because the two eigenvectors span the plane. Not every matrix has enough independent eigenvectors for this approach. A 90-degree rotation in the real plane, for example, leaves no nonzero arrow on its original line, so it has no real eigenvectors. <a href="https://math.mit.edu/~roed/courses/211/lectures/Nov-8.pdf">MIT lecture notes</a></p>
+<section id="work-arrangement-and-experience-level" class="level2">
+<h2 class="anchored" data-anchor-id="work-arrangement-and-experience-level">Work arrangement and experience level</h2>
+<p>Only 42 of the 543 technology jobs (7.7%) are <strong>marked remote</strong>. The other 501 have <code>remote = FALSE</code> in the source. That means <em>not marked remote</em>; it does not prove they require full-time office attendance. Remote shares are 9.9% for infrastructure and security, 7.4% for software development, and 3.5% for data and machine learning. The last figure comes from just 2 remote postings, so I would not infer a stable difference between fields.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="results/remote_by_role.png" class="img-fluid figure-img"></p>
+<figcaption>Bar chart of the percentage of each technology role group marked remote in the Arbeitnow API.</figcaption>
+</figure>
+</div>
+<p>Experience is another constraint: 198 postings (36.5%) include a senior or lead term in the title, while only 41 (7.6%) include an early-career term. The rest do not state a clear level in the title. An entry-level or remote job seeker should therefore filter listings by those needs <strong>before</strong> using the overall skill ranking to plan a project.</p>
 </section>
-<section id="an-economic-interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="an-economic-interpretation">An economic interpretation</h2>
-<p>As a deliberately simplified model, imagine that the two coordinates represent deviations in activity in two sectors. Let our matrix describe how those deviations propagate in one period. These numbers are illustrative assumptions, not estimates from economic data.</p>
-<p>The vector <span class="math inline">\((1,1)\)</span> represents both sectors moving together. Under this rule, that common movement triples each period. The vector <span class="math inline">\((1,-1)\)</span> represents one sector rising while the other falls by the same amount. That difference remains unchanged.</p>
-<p>Instead of tracking two interacting coordinates, we can track <strong>a common movement and an opposing movement</strong>. In this toy model, common shocks amplify, while opposing shocks persist. Actual economic conclusions would depend on whether the chosen rule fits the economy, but the mathematical benefit is already visible.</p>
+<section id="what-should-a-job-seeker-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-should-a-job-seeker-do">What should a job seeker do?</h2>
+<p>If I were targeting <strong>data or machine-learning roles</strong>, I would build a Python project that queries and analyzes data with SQL: those two skills appear in 49 of 57 data postings and 32 of them, respectively. For <strong>software development</strong>, I would show Python or TypeScript in a working application. For <strong>infrastructure</strong>, I would demonstrate deploying and monitoring an application with Kubernetes or a cloud service. These projects provide evidence of ability rather than a list of keywords on a résumé.</p>
+<p>The sample has limits. Arbeitnow is one board, many jobs are Germany-focused, and the title filter may miss relevant roles. A technology mentioned in company background or as a preference is still counted. Only 378 of the 543 technology postings mention one of my 20 chosen terms, so the dictionary is incomplete. This analysis measures current advertised language, not hiring outcomes or the return to learning a skill.</p>
 </section>
-<section id="the-takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="the-takeaway">The takeaway</h2>
-<p>Eigenvectors identify directions where a linear transformation reduces to scaling. Eigenvalues tell us the scale factor, including whether the arrow reverses or disappears.</p>
-<p>The surprising part is that a rule that mixes coordinates can become simple when viewed along the right directions. The next time you see <span class="math inline">\(A\mathbf{v}=\lambda\mathbf{v}\)</span>, picture an arrow staying on its line—and ask how much it stretches.</p>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p>The useful lesson is to choose a <strong>role and work arrangement first</strong>, then use job descriptions to prioritize a small, demonstrable set of skills. Python is the broadest starting point here, but SQL, TypeScript, and Kubernetes matter differently across roles. Remote and early-career openings are a small, specifically labeled part of this sample. Check target postings before investing in a course, and repeat the analysis as listings change.</p>
 
 
 </section>

@@ -6,15 +6,228 @@
       version="2.0">
 <channel>
 <title>Jin Liu</title>
-<link>https://liu118-oss.github.io/</link>
-<atom:link href="https://liu118-oss.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://liu118-oss.github.io/AEDS-6400-Blog/</link>
+<atom:link href="https://liu118-oss.github.io/AEDS-6400-Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Mon, 14 Sep 2026 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 21 Sep 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</title>
+  <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="a-career-decision-not-just-a-word-count" class="level2">
+<h2 class="anchored" data-anchor-id="a-career-decision-not-just-a-word-count">A career decision, not just a word count</h2>
+<p>Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used <a href="https://www.arbeitnow.com/">Arbeitnow</a>, a Germany-focused job board, to examine <strong>skills, role types, work arrangement, and experience level</strong>.</p>
+</section>
+<section id="from-public-pages-to-clean-data" class="level2">
+<h2 class="anchored" data-anchor-id="from-public-pages-to-clean-data">From public pages to clean data</h2>
+<p>On September 21, 2026, my <a href="code/01_scrape_jobs.R">R collection script</a> used <code>rvest</code> to read 100 public listing pages. It saved their HTML and extracted 5000 unique job titles and URLs. Of those titles, 1019 matched a documented software, data, or IT role pattern. Arbeitnow also offers a <a href="https://www.arbeitnow.com/blog/job-board-api">public job-board API</a> with full descriptions; collecting its paginated feed avoided requesting thousands of individual job pages. The API ended after 29 pages of jobs and supplied 3153 unique descriptions, of which 543 matched the technology-role pattern. 1836 API jobs also appeared in the 100-page HTML snapshot. The two sources are snapshots of the same changing board, so their page lists do not line up exactly.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(rvest)</span>
+<span id="cb1-2">page <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_html</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"data/raw/html/page-001.html"</span>)</span>
+<span id="cb1-3">links <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html_elements</span>(page, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"a[data-job-item-link]"</span>)</span>
+<span id="cb1-4">job_urls <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html_attr</span>(links, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"href"</span>)</span>
+<span id="cb1-5">job_titles <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">html_text2</span>(links)</span></code></pre></div></div>
+</details>
+</div>
+<p>The <a href="code/extend_api_cache.R">API pagination helper</a> manages the paced feed requests. The separate <a href="code/02_analyze_jobs.R">analysis script</a> cleans description HTML, removes duplicate URLs, and searches for 20 named technologies. It counts a skill once per job even when the word appears repeatedly. <strong>Every skill percentage below divides by the 543 technology jobs with descriptions</strong>, not by all HTML listings. The scripts save the cleaned data, tables, and figures; the <a href="README.md">README</a> gives replication commands. The complete project is in the <a href="https://github.com/liu118-oss/AEDS-6400-Blog">GitHub repository</a>. Collection used sequential requests with pauses, followed the site’s <a href="https://www.arbeitnow.com/robots.txt">robots.txt</a>, and used no login or access workaround. Arbeitnow’s <a href="https://www.arbeitnow.com/terms">API terms</a> ask users to link back to the site.</p>
+</section>
+<section id="which-skills-appear-most-often" class="level2">
+<h2 class="anchored" data-anchor-id="which-skills-appear-most-often">Which skills appear most often?</h2>
+<div class="cell">
+<div id="tbl-top-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Most frequently mentioned technologies among 543 technology job descriptions. Postings can mention more than one skill.
+</figcaption>
+<div aria-describedby="tbl-top-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Skill</th>
+<th style="text-align: right;">Postings</th>
+<th style="text-align: left;">Share of technology postings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">187</td>
+<td style="text-align: left;">34.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AWS</td>
+<td style="text-align: right;">114</td>
+<td style="text-align: left;">21%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Git</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: left;">19.9%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kubernetes</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: left;">16.8%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TypeScript</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: left;">16.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Docker</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: left;">16.2%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SQL</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: left;">15.8%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/results/skill_frequencies.png" class="img-fluid figure-img"></p>
+<figcaption>Bar chart ranking named technologies by the share of technology postings mentioning them.</figcaption>
+</figure>
+</div>
+<p>Python appears in 187 postings (34.4%), followed by AWS in 114 (21%) and Git in 108 (19.9%). Python and Git appear together in 64 postings. These are <strong>mentions</strong>, not proof that every employer requires the skill. Percentages do not sum to 100 because one posting can name several technologies.</p>
+<p>The overall ranking hides important differences. My title-based groups contain 325 software development, 161 infrastructure or security, and 57 data or machine-learning postings. The two most frequently named skills in each group are:</p>
+<div class="cell">
+<div id="tbl-role-skills" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-role-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Top two skill mentions within each role group. Percentages use the number of jobs in that group.
+</figcaption>
+<div aria-describedby="tbl-role-skills-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Role group</th>
+<th style="text-align: left;">Skill</th>
+<th style="text-align: right;">Postings</th>
+<th style="text-align: left;">Within-group share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Data / ML</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: left;">86%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Data / ML</td>
+<td style="text-align: left;">SQL</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">56.1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Infrastructure / security</td>
+<td style="text-align: left;">Kubernetes</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: left;">26.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Infrastructure / security</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: left;">25.5%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Software development</td>
+<td style="text-align: left;">Python</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: left;">29.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Software development</td>
+<td style="text-align: left;">TypeScript</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: left;">24%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="work-arrangement-and-experience-level" class="level2">
+<h2 class="anchored" data-anchor-id="work-arrangement-and-experience-level">Work arrangement and experience level</h2>
+<p>Only 42 of the 543 technology jobs (7.7%) are <strong>marked remote</strong>. The other 501 have <code>remote = FALSE</code> in the source. That means <em>not marked remote</em>; it does not prove they require full-time office attendance. Remote shares are 9.9% for infrastructure and security, 7.4% for software development, and 3.5% for data and machine learning. The last figure comes from just 2 remote postings, so I would not infer a stable difference between fields.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/results/remote_by_role.png" class="img-fluid figure-img"></p>
+<figcaption>Bar chart of the percentage of each technology role group marked remote in the Arbeitnow API.</figcaption>
+</figure>
+</div>
+<p>Experience is another constraint: 198 postings (36.5%) include a senior or lead term in the title, while only 41 (7.6%) include an early-career term. The rest do not state a clear level in the title. An entry-level or remote job seeker should therefore filter listings by those needs <strong>before</strong> using the overall skill ranking to plan a project.</p>
+</section>
+<section id="what-should-a-job-seeker-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-should-a-job-seeker-do">What should a job seeker do?</h2>
+<p>If I were targeting <strong>data or machine-learning roles</strong>, I would build a Python project that queries and analyzes data with SQL: those two skills appear in 49 of 57 data postings and 32 of them, respectively. For <strong>software development</strong>, I would show Python or TypeScript in a working application. For <strong>infrastructure</strong>, I would demonstrate deploying and monitoring an application with Kubernetes or a cloud service. These projects provide evidence of ability rather than a list of keywords on a résumé.</p>
+<p>The sample has limits. Arbeitnow is one board, many jobs are Germany-focused, and the title filter may miss relevant roles. A technology mentioned in company background or as a preference is still counted. Only 378 of the 543 technology postings mention one of my 20 chosen terms, so the dictionary is incomplete. This analysis measures current advertised language, not hiring outcomes or the return to learning a skill.</p>
+</section>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p>The useful lesson is to choose a <strong>role and work arrangement first</strong>, then use job descriptions to prioritize a small, demonstrable set of skills. Python is the broadest starting point here, but SQL, TypeScript, and Kubernetes matter differently across roles. Remote and early-career openings are a small, specifically labeled part of this sample. Check target postings before investing in a course, and repeat the analysis as listings change.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>web-scraping</category>
+  <category>R</category>
+  <category>labor-market</category>
+  <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/</guid>
+  <pubDate>Mon, 21 Sep 2026 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Eigenvalues and Eigenvectors: The Directions That Stay on Track</title>
   <dc:creator>Jin Liu</dc:creator>
-  <link>https://liu118-oss.github.io/posts/week-01/</link>
+  <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-01/</link>
   <description><![CDATA[ 
 
 
@@ -358,7 +571,7 @@ font-style: inherit;">1</span>])</span>
 <div id="fig-eigenvectors" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1).">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eigenvectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://liu118-oss.github.io/posts/week-01/index_files/figure-html/fig-eigenvectors-output-1.png" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)." width="1143" height="434" class="figure-img">
+<img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-01/index_files/figure-html/fig-eigenvectors-output-1.png" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)." width="1143" height="434" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eigenvectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow changes direction; the two diagonal eigenvectors stay on their original lines. In the right panel, the unchanged solid arrow overlaps the dashed original.
@@ -435,7 +648,7 @@ Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow c
   <category>mathematics</category>
   <category>linear-algebra</category>
   <category>economics</category>
-  <guid>https://liu118-oss.github.io/posts/week-01/</guid>
+  <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-01/</guid>
   <pubDate>Mon, 14 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 </channel>

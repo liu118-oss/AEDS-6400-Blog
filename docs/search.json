@@ -7,6 +7,55 @@
     "text": "Hi! I’m Jin Liu.\nThis blog shares my weekly work for AEDS 6400. Each post uses economic data to practice data acquisition, cleaning, analysis, and visualization."
   },
   {
+    "objectID": "posts/week-02/index.html",
+    "href": "posts/week-02/index.html",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "",
+    "text": "Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used Arbeitnow, a Germany-focused job board, to examine skills, role types, work arrangement, and experience level."
+  },
+  {
+    "objectID": "posts/week-02/index.html#a-career-decision-not-just-a-word-count",
+    "href": "posts/week-02/index.html#a-career-decision-not-just-a-word-count",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "",
+    "text": "Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used Arbeitnow, a Germany-focused job board, to examine skills, role types, work arrangement, and experience level."
+  },
+  {
+    "objectID": "posts/week-02/index.html#from-public-pages-to-clean-data",
+    "href": "posts/week-02/index.html#from-public-pages-to-clean-data",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "From public pages to clean data",
+    "text": "From public pages to clean data\nOn September 21, 2026, my R collection script used rvest to read 100 public listing pages. It saved their HTML and extracted 5000 unique job titles and URLs. Of those titles, 1019 matched a documented software, data, or IT role pattern. Arbeitnow also offers a public job-board API with full descriptions; collecting its paginated feed avoided requesting thousands of individual job pages. The API ended after 29 pages of jobs and supplied 3153 unique descriptions, of which 543 matched the technology-role pattern. 1836 API jobs also appeared in the 100-page HTML snapshot. The two sources are snapshots of the same changing board, so their page lists do not line up exactly.\n\n\nCode\nlibrary(rvest)\npage &lt;- read_html(\"data/raw/html/page-001.html\")\nlinks &lt;- html_elements(page, \"a[data-job-item-link]\")\njob_urls &lt;- html_attr(links, \"href\")\njob_titles &lt;- html_text2(links)\n\n\nThe API pagination helper manages the paced feed requests. The separate analysis script cleans description HTML, removes duplicate URLs, and searches for 20 named technologies. It counts a skill once per job even when the word appears repeatedly. Every skill percentage below divides by the 543 technology jobs with descriptions, not by all HTML listings. The scripts save the cleaned data, tables, and figures; the README gives replication commands. The complete project is in the GitHub repository. Collection used sequential requests with pauses, followed the site’s robots.txt, and used no login or access workaround. Arbeitnow’s API terms ask users to link back to the site."
+  },
+  {
+    "objectID": "posts/week-02/index.html#which-skills-appear-most-often",
+    "href": "posts/week-02/index.html#which-skills-appear-most-often",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "Which skills appear most often?",
+    "text": "Which skills appear most often?\n\n\n\n\nTable 1: Most frequently mentioned technologies among 543 technology job descriptions. Postings can mention more than one skill.\n\n\n\n\n\n\nSkill\nPostings\nShare of technology postings\n\n\n\n\nPython\n187\n34.4%\n\n\nAWS\n114\n21%\n\n\nGit\n108\n19.9%\n\n\nKubernetes\n91\n16.8%\n\n\nTypeScript\n91\n16.8%\n\n\nDocker\n88\n16.2%\n\n\nSQL\n86\n15.8%\n\n\n\n\n\n\n\n\n\n\n\nBar chart ranking named technologies by the share of technology postings mentioning them.\n\n\nPython appears in 187 postings (34.4%), followed by AWS in 114 (21%) and Git in 108 (19.9%). Python and Git appear together in 64 postings. These are mentions, not proof that every employer requires the skill. Percentages do not sum to 100 because one posting can name several technologies.\nThe overall ranking hides important differences. My title-based groups contain 325 software development, 161 infrastructure or security, and 57 data or machine-learning postings. The two most frequently named skills in each group are:\n\n\n\n\nTable 2: Top two skill mentions within each role group. Percentages use the number of jobs in that group.\n\n\n\n\n\n\nRole group\nSkill\nPostings\nWithin-group share\n\n\n\n\nData / ML\nPython\n49\n86%\n\n\nData / ML\nSQL\n32\n56.1%\n\n\nInfrastructure / security\nKubernetes\n42\n26.1%\n\n\nInfrastructure / security\nPython\n41\n25.5%\n\n\nSoftware development\nPython\n97\n29.8%\n\n\nSoftware development\nTypeScript\n78\n24%"
+  },
+  {
+    "objectID": "posts/week-02/index.html#work-arrangement-and-experience-level",
+    "href": "posts/week-02/index.html#work-arrangement-and-experience-level",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "Work arrangement and experience level",
+    "text": "Work arrangement and experience level\nOnly 42 of the 543 technology jobs (7.7%) are marked remote. The other 501 have remote = FALSE in the source. That means not marked remote; it does not prove they require full-time office attendance. Remote shares are 9.9% for infrastructure and security, 7.4% for software development, and 3.5% for data and machine learning. The last figure comes from just 2 remote postings, so I would not infer a stable difference between fields.\n\n\n\nBar chart of the percentage of each technology role group marked remote in the Arbeitnow API.\n\n\nExperience is another constraint: 198 postings (36.5%) include a senior or lead term in the title, while only 41 (7.6%) include an early-career term. The rest do not state a clear level in the title. An entry-level or remote job seeker should therefore filter listings by those needs before using the overall skill ranking to plan a project."
+  },
+  {
+    "objectID": "posts/week-02/index.html#what-should-a-job-seeker-do",
+    "href": "posts/week-02/index.html#what-should-a-job-seeker-do",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "What should a job seeker do?",
+    "text": "What should a job seeker do?\nIf I were targeting data or machine-learning roles, I would build a Python project that queries and analyzes data with SQL: those two skills appear in 49 of 57 data postings and 32 of them, respectively. For software development, I would show Python or TypeScript in a working application. For infrastructure, I would demonstrate deploying and monitoring an application with Kubernetes or a cloud service. These projects provide evidence of ability rather than a list of keywords on a résumé.\nThe sample has limits. Arbeitnow is one board, many jobs are Germany-focused, and the title filter may miss relevant roles. A technology mentioned in company background or as a preference is still counted. Only 378 of the 543 technology postings mention one of my 20 chosen terms, so the dictionary is incomplete. This analysis measures current advertised language, not hiring outcomes or the return to learning a skill."
+  },
+  {
+    "objectID": "posts/week-02/index.html#takeaway",
+    "href": "posts/week-02/index.html#takeaway",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "Takeaway",
+    "text": "Takeaway\nThe useful lesson is to choose a role and work arrangement first, then use job descriptions to prioritize a small, demonstrable set of skills. Python is the broadest starting point here, but SQL, TypeScript, and Kubernetes matter differently across roles. Remote and early-career openings are a small, specifically labeled part of this sample. Check target postings before investing in a course, and repeat the analysis as listings change."
+  },
+  {
     "objectID": "posts/week-01/index.html",
     "href": "posts/week-01/index.html",
     "title": "Eigenvalues and Eigenvectors: The Directions That Stay on Track",
@@ -67,6 +116,6 @@
     "href": "index.html",
     "title": "AEDS 6400 Blog",
     "section": "",
-    "text": "Eigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
+    "text": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
   }
 ]

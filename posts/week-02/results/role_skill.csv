@@ -1,0 +1,54 @@
+role_group,skill,postings,role_jobs,share_pct
+Data / ML,Python,49,57,86
+Data / ML,SQL,32,57,56.1
+Data / ML,AWS,17,57,29.8
+Data / ML,Azure,13,57,22.8
+Data / ML,Git,13,57,22.8
+Data / ML,Google Cloud,10,57,17.5
+Data / ML,Docker,8,57,14
+Data / ML,Kubernetes,8,57,14
+Data / ML,Java,5,57,8.8
+Data / ML,Power BI,4,57,7
+Data / ML,TypeScript,3,57,5.3
+Data / ML,PHP,1,57,1.8
+Data / ML,PostgreSQL,1,57,1.8
+Data / ML,SAP,1,57,1.8
+Infrastructure / security,Kubernetes,42,161,26.1
+Infrastructure / security,Python,41,161,25.5
+Infrastructure / security,AWS,35,161,21.7
+Infrastructure / security,Azure,32,161,19.9
+Infrastructure / security,Docker,27,161,16.8
+Infrastructure / security,Git,22,161,13.7
+Infrastructure / security,Google Cloud,21,161,13
+Infrastructure / security,SQL,10,161,6.2
+Infrastructure / security,TypeScript,10,161,6.2
+Infrastructure / security,PostgreSQL,9,161,5.6
+Infrastructure / security,Java,8,161,5
+Infrastructure / security,Node.js,5,161,3.1
+Infrastructure / security,React,4,161,2.5
+Infrastructure / security,Ruby,4,161,2.5
+Infrastructure / security,SAP,4,161,2.5
+Infrastructure / security,JavaScript,3,161,1.9
+Infrastructure / security,PHP,3,161,1.9
+Infrastructure / security,Power BI,3,161,1.9
+Infrastructure / security,Go,1,161,0.6
+Software development,Python,97,325,29.8
+Software development,TypeScript,78,325,24
+Software development,Git,73,325,22.5
+Software development,AWS,62,325,19.1
+Software development,React,58,325,17.8
+Software development,Docker,53,325,16.3
+Software development,PostgreSQL,52,325,16
+Software development,Java,49,325,15.1
+Software development,SQL,44,325,13.5
+Software development,Kubernetes,41,325,12.6
+Software development,JavaScript,36,325,11.1
+Software development,Azure,33,325,10.2
+Software development,Google Cloud,29,325,8.9
+Software development,Node.js,27,325,8.3
+Software development,C#,23,325,7.1
+Software development,SAP,16,325,4.9
+Software development,PHP,14,325,4.3
+Software development,Ruby,5,325,1.5
+Software development,Go,4,325,1.2
+Software development,Power BI,2,325,0.6

@@ -1,0 +1,1246 @@
+job_id,skill,remote,role_group,seniority
+2,Java,FALSE,Software development,No level stated
+2,PostgreSQL,FALSE,Software development,No level stated
+2,Python,FALSE,Software development,No level stated
+2,Ruby,FALSE,Software development,No level stated
+2,TypeScript,FALSE,Software development,No level stated
+4,C#,FALSE,Software development,Senior / lead
+4,Google Cloud,FALSE,Software development,Senior / lead
+4,Kubernetes,FALSE,Software development,Senior / lead
+4,PostgreSQL,FALSE,Software development,Senior / lead
+4,Python,FALSE,Software development,Senior / lead
+4,React,FALSE,Software development,Senior / lead
+5,Java,TRUE,Infrastructure / security,Senior / lead
+5,Kubernetes,TRUE,Infrastructure / security,Senior / lead
+5,Python,TRUE,Infrastructure / security,Senior / lead
+6,JavaScript,FALSE,Software development,Senior / lead
+6,PHP,FALSE,Software development,Senior / lead
+6,Python,FALSE,Software development,Senior / lead
+6,React,FALSE,Software development,Senior / lead
+6,Ruby,FALSE,Software development,Senior / lead
+6,TypeScript,FALSE,Software development,Senior / lead
+7,JavaScript,FALSE,Software development,No level stated
+7,PHP,FALSE,Software development,No level stated
+7,React,FALSE,Software development,No level stated
+8,AWS,FALSE,Software development,No level stated
+8,Java,FALSE,Software development,No level stated
+8,Kubernetes,FALSE,Software development,No level stated
+9,AWS,FALSE,Infrastructure / security,Senior / lead
+9,Azure,FALSE,Infrastructure / security,Senior / lead
+11,Python,FALSE,Data / ML,Senior / lead
+13,Python,FALSE,Data / ML,Senior / lead
+14,Google Cloud,FALSE,Data / ML,Senior / lead
+14,Kubernetes,FALSE,Data / ML,Senior / lead
+14,Python,FALSE,Data / ML,Senior / lead
+15,Google Cloud,TRUE,Infrastructure / security,No level stated
+16,Google Cloud,TRUE,Software development,Senior / lead
+16,Python,TRUE,Software development,Senior / lead
+17,Google Cloud,TRUE,Software development,Senior / lead
+17,Python,TRUE,Software development,Senior / lead
+17,React,TRUE,Software development,Senior / lead
+17,TypeScript,TRUE,Software development,Senior / lead
+18,AWS,FALSE,Infrastructure / security,Senior / lead
+19,Google Cloud,FALSE,Software development,No level stated
+19,Java,FALSE,Software development,No level stated
+19,Kubernetes,FALSE,Software development,No level stated
+19,React,FALSE,Software development,No level stated
+21,React,FALSE,Software development,No level stated
+21,TypeScript,FALSE,Software development,No level stated
+22,Power BI,FALSE,Data / ML,No level stated
+22,SQL,FALSE,Data / ML,No level stated
+23,Kubernetes,FALSE,Infrastructure / security,No level stated
+23,Python,FALSE,Infrastructure / security,No level stated
+24,Kubernetes,FALSE,Infrastructure / security,No level stated
+24,Python,FALSE,Infrastructure / security,No level stated
+26,Docker,FALSE,Software development,Senior / lead
+26,Node.js,FALSE,Software development,Senior / lead
+26,PostgreSQL,FALSE,Software development,Senior / lead
+26,Python,FALSE,Software development,Senior / lead
+26,TypeScript,FALSE,Software development,Senior / lead
+27,C#,FALSE,Software development,No level stated
+27,Java,FALSE,Software development,No level stated
+27,Node.js,FALSE,Software development,No level stated
+27,Python,FALSE,Software development,No level stated
+27,React,FALSE,Software development,No level stated
+27,TypeScript,FALSE,Software development,No level stated
+30,AWS,FALSE,Software development,No level stated
+31,Kubernetes,FALSE,Infrastructure / security,No level stated
+31,Python,FALSE,Infrastructure / security,No level stated
+32,Kubernetes,FALSE,Infrastructure / security,No level stated
+34,Git,FALSE,Infrastructure / security,No level stated
+36,AWS,FALSE,Infrastructure / security,Senior / lead
+36,Docker,FALSE,Infrastructure / security,Senior / lead
+36,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+36,PHP,FALSE,Infrastructure / security,Senior / lead
+36,Python,FALSE,Infrastructure / security,Senior / lead
+36,SQL,FALSE,Infrastructure / security,Senior / lead
+37,AWS,FALSE,Infrastructure / security,Senior / lead
+37,Go,FALSE,Infrastructure / security,Senior / lead
+38,Kubernetes,FALSE,Software development,Early career
+38,PostgreSQL,FALSE,Software development,Early career
+38,Python,FALSE,Software development,Early career
+38,React,FALSE,Software development,Early career
+38,TypeScript,FALSE,Software development,Early career
+39,AWS,FALSE,Software development,No level stated
+39,Git,FALSE,Software development,No level stated
+39,Python,FALSE,Software development,No level stated
+40,C#,FALSE,Software development,Senior / lead
+40,Git,FALSE,Software development,Senior / lead
+40,PostgreSQL,FALSE,Software development,Senior / lead
+41,Azure,FALSE,Data / ML,No level stated
+42,SQL,FALSE,Infrastructure / security,Senior / lead
+43,React,TRUE,Software development,No level stated
+43,TypeScript,TRUE,Software development,No level stated
+44,AWS,TRUE,Software development,No level stated
+44,Azure,TRUE,Software development,No level stated
+44,Docker,TRUE,Software development,No level stated
+44,Google Cloud,TRUE,Software development,No level stated
+44,Java,TRUE,Software development,No level stated
+44,Kubernetes,TRUE,Software development,No level stated
+45,Python,FALSE,Data / ML,Senior / lead
+46,SAP,FALSE,Infrastructure / security,Senior / lead
+47,AWS,FALSE,Infrastructure / security,Senior / lead
+48,Java,FALSE,Software development,Senior / lead
+48,Kubernetes,FALSE,Software development,Senior / lead
+48,PostgreSQL,FALSE,Software development,Senior / lead
+48,React,FALSE,Software development,Senior / lead
+48,TypeScript,FALSE,Software development,Senior / lead
+49,Git,FALSE,Software development,No level stated
+49,Java,FALSE,Software development,No level stated
+49,JavaScript,FALSE,Software development,No level stated
+49,React,FALSE,Software development,No level stated
+50,Azure,FALSE,Software development,No level stated
+50,Google Cloud,FALSE,Software development,No level stated
+50,Python,FALSE,Software development,No level stated
+50,React,FALSE,Software development,No level stated
+50,SQL,FALSE,Software development,No level stated
+50,TypeScript,FALSE,Software development,No level stated
+51,AWS,FALSE,Infrastructure / security,Senior / lead
+51,Azure,FALSE,Infrastructure / security,Senior / lead
+51,Docker,FALSE,Infrastructure / security,Senior / lead
+51,Git,FALSE,Infrastructure / security,Senior / lead
+51,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+51,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+51,PostgreSQL,FALSE,Infrastructure / security,Senior / lead
+51,Python,FALSE,Infrastructure / security,Senior / lead
+51,TypeScript,FALSE,Infrastructure / security,Senior / lead
+52,AWS,FALSE,Software development,No level stated
+52,Azure,FALSE,Software development,No level stated
+52,Docker,FALSE,Software development,No level stated
+52,Kubernetes,FALSE,Software development,No level stated
+52,Python,FALSE,Software development,No level stated
+53,AWS,FALSE,Software development,Senior / lead
+53,C#,FALSE,Software development,Senior / lead
+53,Git,FALSE,Software development,Senior / lead
+53,Java,FALSE,Software development,Senior / lead
+53,SQL,FALSE,Software development,Senior / lead
+54,AWS,FALSE,Infrastructure / security,Senior / lead
+54,Python,FALSE,Infrastructure / security,Senior / lead
+55,C#,FALSE,Software development,No level stated
+55,JavaScript,FALSE,Software development,No level stated
+55,PHP,FALSE,Software development,No level stated
+59,Docker,FALSE,Software development,No level stated
+59,Git,FALSE,Software development,No level stated
+59,JavaScript,FALSE,Software development,No level stated
+59,Kubernetes,FALSE,Software development,No level stated
+59,PostgreSQL,FALSE,Software development,No level stated
+59,Python,FALSE,Software development,No level stated
+59,SQL,FALSE,Software development,No level stated
+59,TypeScript,FALSE,Software development,No level stated
+60,SAP,FALSE,Software development,No level stated
+61,SAP,FALSE,Software development,No level stated
+62,AWS,FALSE,Software development,Senior / lead
+62,Docker,FALSE,Software development,Senior / lead
+62,Kubernetes,FALSE,Software development,Senior / lead
+62,SQL,FALSE,Software development,Senior / lead
+63,Kubernetes,FALSE,Infrastructure / security,No level stated
+64,AWS,FALSE,Software development,Senior / lead
+64,Java,FALSE,Software development,Senior / lead
+65,Docker,FALSE,Software development,No level stated
+65,Java,FALSE,Software development,No level stated
+65,TypeScript,FALSE,Software development,No level stated
+66,Docker,FALSE,Software development,No level stated
+66,Java,FALSE,Software development,No level stated
+66,Python,FALSE,Software development,No level stated
+69,Java,FALSE,Software development,No level stated
+69,Kubernetes,FALSE,Software development,No level stated
+70,C#,FALSE,Software development,Senior / lead
+70,Git,FALSE,Software development,Senior / lead
+70,Java,FALSE,Software development,Senior / lead
+70,Node.js,FALSE,Software development,Senior / lead
+70,Python,FALSE,Software development,Senior / lead
+70,TypeScript,FALSE,Software development,Senior / lead
+71,Git,TRUE,Software development,Senior / lead
+71,Google Cloud,TRUE,Software development,Senior / lead
+71,Java,TRUE,Software development,Senior / lead
+71,SQL,TRUE,Software development,Senior / lead
+72,SQL,TRUE,Infrastructure / security,No level stated
+73,AWS,FALSE,Software development,No level stated
+73,Git,FALSE,Software development,No level stated
+73,Java,FALSE,Software development,No level stated
+73,PostgreSQL,FALSE,Software development,No level stated
+73,Python,FALSE,Software development,No level stated
+73,TypeScript,FALSE,Software development,No level stated
+74,AWS,FALSE,Software development,No level stated
+74,Git,FALSE,Software development,No level stated
+74,Java,FALSE,Software development,No level stated
+74,Node.js,FALSE,Software development,No level stated
+74,PostgreSQL,FALSE,Software development,No level stated
+74,Python,FALSE,Software development,No level stated
+74,TypeScript,FALSE,Software development,No level stated
+75,AWS,FALSE,Software development,No level stated
+75,Git,FALSE,Software development,No level stated
+75,Java,FALSE,Software development,No level stated
+75,Node.js,FALSE,Software development,No level stated
+75,PostgreSQL,FALSE,Software development,No level stated
+75,Python,FALSE,Software development,No level stated
+75,React,FALSE,Software development,No level stated
+75,TypeScript,FALSE,Software development,No level stated
+76,AWS,FALSE,Data / ML,Senior / lead
+76,Azure,FALSE,Data / ML,Senior / lead
+76,Google Cloud,FALSE,Data / ML,Senior / lead
+76,Python,FALSE,Data / ML,Senior / lead
+76,SQL,FALSE,Data / ML,Senior / lead
+77,Python,FALSE,Infrastructure / security,No level stated
+78,Python,FALSE,Infrastructure / security,No level stated
+79,Azure,FALSE,Software development,No level stated
+79,PostgreSQL,FALSE,Software development,No level stated
+79,TypeScript,FALSE,Software development,No level stated
+80,Azure,FALSE,Software development,Senior / lead
+80,PostgreSQL,FALSE,Software development,Senior / lead
+80,TypeScript,FALSE,Software development,Senior / lead
+81,Google Cloud,FALSE,Infrastructure / security,No level stated
+81,Kubernetes,FALSE,Infrastructure / security,No level stated
+81,Python,FALSE,Infrastructure / security,No level stated
+81,TypeScript,FALSE,Infrastructure / security,No level stated
+82,Python,FALSE,Data / ML,No level stated
+82,SQL,FALSE,Data / ML,No level stated
+82,TypeScript,FALSE,Data / ML,No level stated
+83,Docker,FALSE,Software development,No level stated
+83,Git,FALSE,Software development,No level stated
+83,Python,FALSE,Software development,No level stated
+84,Azure,FALSE,Infrastructure / security,Senior / lead
+84,Python,FALSE,Infrastructure / security,Senior / lead
+85,Git,FALSE,Software development,Senior / lead
+85,Kubernetes,FALSE,Software development,Senior / lead
+87,Docker,FALSE,Infrastructure / security,Senior / lead
+87,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+87,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+87,Python,FALSE,Infrastructure / security,Senior / lead
+87,Ruby,FALSE,Infrastructure / security,Senior / lead
+89,Python,FALSE,Data / ML,Senior / lead
+89,SQL,FALSE,Data / ML,Senior / lead
+90,AWS,FALSE,Software development,Senior / lead
+90,Git,FALSE,Software development,Senior / lead
+90,Kubernetes,FALSE,Software development,Senior / lead
+90,Node.js,FALSE,Software development,Senior / lead
+90,React,FALSE,Software development,Senior / lead
+90,SQL,FALSE,Software development,Senior / lead
+90,TypeScript,FALSE,Software development,Senior / lead
+91,Python,FALSE,Data / ML,Senior / lead
+92,Python,FALSE,Software development,No level stated
+93,React,FALSE,Software development,Senior / lead
+93,TypeScript,FALSE,Software development,Senior / lead
+94,Go,FALSE,Software development,No level stated
+94,Java,FALSE,Software development,No level stated
+94,React,FALSE,Software development,No level stated
+94,TypeScript,FALSE,Software development,No level stated
+96,Azure,FALSE,Software development,Senior / lead
+96,Git,FALSE,Software development,Senior / lead
+96,Go,FALSE,Software development,Senior / lead
+96,Python,FALSE,Software development,Senior / lead
+96,React,FALSE,Software development,Senior / lead
+97,Python,FALSE,Data / ML,Senior / lead
+98,Azure,FALSE,Infrastructure / security,Early career
+99,AWS,FALSE,Software development,Senior / lead
+99,Docker,FALSE,Software development,Senior / lead
+99,Git,FALSE,Software development,Senior / lead
+99,React,FALSE,Software development,Senior / lead
+99,TypeScript,FALSE,Software development,Senior / lead
+100,Java,FALSE,Software development,No level stated
+100,SQL,FALSE,Software development,No level stated
+101,Python,FALSE,Data / ML,Senior / lead
+102,Python,FALSE,Data / ML,Senior / lead
+103,Docker,FALSE,Software development,No level stated
+103,Kubernetes,FALSE,Software development,No level stated
+103,Python,FALSE,Software development,No level stated
+103,SQL,FALSE,Software development,No level stated
+104,Docker,FALSE,Software development,No level stated
+104,Kubernetes,FALSE,Software development,No level stated
+104,Python,FALSE,Software development,No level stated
+104,SQL,FALSE,Software development,No level stated
+105,Git,FALSE,Software development,No level stated
+105,SQL,FALSE,Software development,No level stated
+107,Git,FALSE,Software development,No level stated
+108,Git,FALSE,Software development,No level stated
+108,SQL,FALSE,Software development,No level stated
+110,Git,FALSE,Software development,No level stated
+110,SQL,FALSE,Software development,No level stated
+111,Git,FALSE,Software development,No level stated
+111,SQL,FALSE,Software development,No level stated
+112,Git,FALSE,Software development,No level stated
+112,SQL,FALSE,Software development,No level stated
+113,Git,FALSE,Software development,No level stated
+113,SQL,FALSE,Software development,No level stated
+115,Git,FALSE,Software development,No level stated
+115,SQL,FALSE,Software development,No level stated
+120,React,FALSE,Software development,No level stated
+122,AWS,FALSE,Infrastructure / security,Senior / lead
+122,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+123,React,FALSE,Software development,Senior / lead
+123,TypeScript,FALSE,Software development,Senior / lead
+125,AWS,FALSE,Software development,Senior / lead
+125,Docker,FALSE,Software development,Senior / lead
+125,Java,FALSE,Software development,Senior / lead
+125,Node.js,FALSE,Software development,Senior / lead
+125,Python,FALSE,Software development,Senior / lead
+125,Ruby,FALSE,Software development,Senior / lead
+133,Docker,FALSE,Software development,Senior / lead
+133,Java,FALSE,Software development,Senior / lead
+133,JavaScript,FALSE,Software development,Senior / lead
+133,Kubernetes,FALSE,Software development,Senior / lead
+133,PostgreSQL,FALSE,Software development,Senior / lead
+133,React,FALSE,Software development,Senior / lead
+133,TypeScript,FALSE,Software development,Senior / lead
+134,Python,FALSE,Software development,Senior / lead
+135,Docker,FALSE,Data / ML,No level stated
+135,Git,FALSE,Data / ML,No level stated
+135,Google Cloud,FALSE,Data / ML,No level stated
+135,Python,FALSE,Data / ML,No level stated
+135,SQL,FALSE,Data / ML,No level stated
+136,PHP,FALSE,Software development,Senior / lead
+137,Azure,FALSE,Infrastructure / security,Senior / lead
+139,Azure,FALSE,Infrastructure / security,Senior / lead
+141,Azure,FALSE,Infrastructure / security,No level stated
+142,Python,FALSE,Software development,No level stated
+144,Docker,FALSE,Infrastructure / security,No level stated
+144,Java,FALSE,Infrastructure / security,No level stated
+144,Kubernetes,FALSE,Infrastructure / security,No level stated
+144,PostgreSQL,FALSE,Infrastructure / security,No level stated
+144,Ruby,FALSE,Infrastructure / security,No level stated
+146,C#,FALSE,Software development,No level stated
+146,Python,FALSE,Software development,No level stated
+147,AWS,FALSE,Software development,Senior / lead
+147,Docker,FALSE,Software development,Senior / lead
+147,Git,FALSE,Software development,Senior / lead
+147,Java,FALSE,Software development,Senior / lead
+147,Kubernetes,FALSE,Software development,Senior / lead
+147,PostgreSQL,FALSE,Software development,Senior / lead
+148,Azure,TRUE,Infrastructure / security,Senior / lead
+149,Docker,FALSE,Software development,No level stated
+149,Git,FALSE,Software development,No level stated
+149,Python,FALSE,Software development,No level stated
+149,SQL,FALSE,Software development,No level stated
+152,AWS,FALSE,Software development,Senior / lead
+152,Git,FALSE,Software development,Senior / lead
+152,Python,FALSE,Software development,Senior / lead
+154,AWS,FALSE,Data / ML,No level stated
+154,Docker,FALSE,Data / ML,No level stated
+154,Python,FALSE,Data / ML,No level stated
+154,SQL,FALSE,Data / ML,No level stated
+155,C#,FALSE,Software development,No level stated
+156,Azure,FALSE,Software development,No level stated
+156,C#,FALSE,Software development,No level stated
+156,Git,FALSE,Software development,No level stated
+156,Python,FALSE,Software development,No level stated
+156,SQL,FALSE,Software development,No level stated
+157,AWS,FALSE,Infrastructure / security,No level stated
+157,Azure,FALSE,Infrastructure / security,No level stated
+157,Git,FALSE,Infrastructure / security,No level stated
+157,Google Cloud,FALSE,Infrastructure / security,No level stated
+157,Python,FALSE,Infrastructure / security,No level stated
+157,SQL,FALSE,Infrastructure / security,No level stated
+158,Azure,FALSE,Infrastructure / security,No level stated
+160,AWS,FALSE,Infrastructure / security,Senior / lead
+160,Azure,FALSE,Infrastructure / security,Senior / lead
+160,Docker,FALSE,Infrastructure / security,Senior / lead
+160,Git,FALSE,Infrastructure / security,Senior / lead
+160,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+160,Java,FALSE,Infrastructure / security,Senior / lead
+160,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+160,Python,FALSE,Infrastructure / security,Senior / lead
+160,TypeScript,FALSE,Infrastructure / security,Senior / lead
+161,Docker,FALSE,Software development,Early career
+161,Git,FALSE,Software development,Early career
+161,Java,FALSE,Software development,Early career
+161,JavaScript,FALSE,Software development,Early career
+161,Kubernetes,FALSE,Software development,Early career
+161,Node.js,FALSE,Software development,Early career
+161,Python,FALSE,Software development,Early career
+161,TypeScript,FALSE,Software development,Early career
+162,Docker,FALSE,Software development,Senior / lead
+162,Git,FALSE,Software development,Senior / lead
+162,Java,FALSE,Software development,Senior / lead
+162,JavaScript,FALSE,Software development,Senior / lead
+162,Kubernetes,FALSE,Software development,Senior / lead
+162,Python,FALSE,Software development,Senior / lead
+162,TypeScript,FALSE,Software development,Senior / lead
+163,JavaScript,FALSE,Software development,No level stated
+163,Node.js,FALSE,Software development,No level stated
+163,React,FALSE,Software development,No level stated
+163,TypeScript,FALSE,Software development,No level stated
+164,Docker,FALSE,Software development,No level stated
+164,Git,FALSE,Software development,No level stated
+164,PostgreSQL,FALSE,Software development,No level stated
+164,React,FALSE,Software development,No level stated
+164,TypeScript,FALSE,Software development,No level stated
+165,Azure,FALSE,Software development,Senior / lead
+166,AWS,FALSE,Software development,Senior / lead
+166,Docker,FALSE,Software development,Senior / lead
+166,Git,FALSE,Software development,Senior / lead
+166,Java,FALSE,Software development,Senior / lead
+166,Kubernetes,FALSE,Software development,Senior / lead
+166,PostgreSQL,FALSE,Software development,Senior / lead
+166,TypeScript,FALSE,Software development,Senior / lead
+167,AWS,FALSE,Data / ML,Senior / lead
+167,Google Cloud,FALSE,Data / ML,Senior / lead
+167,Java,FALSE,Data / ML,Senior / lead
+167,Python,FALSE,Data / ML,Senior / lead
+168,AWS,FALSE,Software development,Senior / lead
+168,Docker,FALSE,Software development,Senior / lead
+168,Git,FALSE,Software development,Senior / lead
+168,Node.js,FALSE,Software development,Senior / lead
+168,TypeScript,FALSE,Software development,Senior / lead
+169,AWS,FALSE,Software development,Senior / lead
+169,Google Cloud,FALSE,Software development,Senior / lead
+169,JavaScript,FALSE,Software development,Senior / lead
+169,Node.js,FALSE,Software development,Senior / lead
+169,React,FALSE,Software development,Senior / lead
+169,TypeScript,FALSE,Software development,Senior / lead
+170,AWS,FALSE,Software development,No level stated
+170,Azure,FALSE,Software development,No level stated
+170,Docker,FALSE,Software development,No level stated
+170,Google Cloud,FALSE,Software development,No level stated
+170,Kubernetes,FALSE,Software development,No level stated
+171,Git,FALSE,Software development,No level stated
+171,Python,FALSE,Software development,No level stated
+172,Python,FALSE,Software development,Senior / lead
+173,Python,FALSE,Software development,Senior / lead
+174,Python,FALSE,Software development,Senior / lead
+175,C#,FALSE,Software development,Senior / lead
+176,Git,FALSE,Software development,Senior / lead
+176,Python,FALSE,Software development,Senior / lead
+177,Docker,FALSE,Software development,Senior / lead
+177,Python,FALSE,Software development,Senior / lead
+178,AWS,FALSE,Infrastructure / security,No level stated
+178,Docker,FALSE,Infrastructure / security,No level stated
+178,Kubernetes,FALSE,Infrastructure / security,No level stated
+178,Python,FALSE,Infrastructure / security,No level stated
+179,Docker,FALSE,Software development,Early career
+179,Git,FALSE,Software development,Early career
+179,Node.js,FALSE,Software development,Early career
+179,Python,FALSE,Software development,Early career
+180,Python,FALSE,Software development,No level stated
+182,Azure,FALSE,Data / ML,Early career
+182,Kubernetes,FALSE,Data / ML,Early career
+182,Python,FALSE,Data / ML,Early career
+185,React,FALSE,Software development,Senior / lead
+185,TypeScript,FALSE,Software development,Senior / lead
+187,Python,FALSE,Software development,Senior / lead
+187,TypeScript,FALSE,Software development,Senior / lead
+188,Git,FALSE,Data / ML,Early career
+188,Python,FALSE,Data / ML,Early career
+190,C#,FALSE,Software development,No level stated
+190,SQL,FALSE,Software development,No level stated
+191,Git,FALSE,Software development,No level stated
+192,Docker,FALSE,Software development,No level stated
+192,JavaScript,FALSE,Software development,No level stated
+192,Python,FALSE,Software development,No level stated
+192,React,FALSE,Software development,No level stated
+192,SQL,FALSE,Software development,No level stated
+194,Python,FALSE,Data / ML,No level stated
+194,SQL,FALSE,Data / ML,No level stated
+196,Git,FALSE,Software development,No level stated
+196,Java,FALSE,Software development,No level stated
+196,JavaScript,FALSE,Software development,No level stated
+196,PHP,FALSE,Software development,No level stated
+196,Python,FALSE,Software development,No level stated
+196,React,FALSE,Software development,No level stated
+196,SQL,FALSE,Software development,No level stated
+198,Python,FALSE,Data / ML,No level stated
+198,SQL,FALSE,Data / ML,No level stated
+199,AWS,FALSE,Infrastructure / security,Senior / lead
+199,Azure,FALSE,Infrastructure / security,Senior / lead
+199,Docker,FALSE,Infrastructure / security,Senior / lead
+199,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+199,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+200,AWS,FALSE,Software development,No level stated
+200,Python,FALSE,Software development,No level stated
+200,React,FALSE,Software development,No level stated
+200,TypeScript,FALSE,Software development,No level stated
+201,Docker,FALSE,Software development,Senior / lead
+201,Git,FALSE,Software development,Senior / lead
+201,Python,FALSE,Software development,Senior / lead
+202,Kubernetes,FALSE,Infrastructure / security,No level stated
+203,Kubernetes,FALSE,Infrastructure / security,No level stated
+204,AWS,FALSE,Software development,Senior / lead
+204,Azure,FALSE,Software development,Senior / lead
+204,Google Cloud,FALSE,Software development,Senior / lead
+206,AWS,FALSE,Software development,Senior / lead
+206,Docker,FALSE,Software development,Senior / lead
+206,Node.js,FALSE,Software development,Senior / lead
+206,PostgreSQL,FALSE,Software development,Senior / lead
+206,TypeScript,FALSE,Software development,Senior / lead
+207,Azure,FALSE,Software development,Senior / lead
+207,C#,FALSE,Software development,Senior / lead
+208,Python,TRUE,Software development,No level stated
+209,Java,FALSE,Software development,No level stated
+209,SAP,FALSE,Software development,No level stated
+210,AWS,FALSE,Software development,Senior / lead
+210,Git,FALSE,Software development,Senior / lead
+210,Python,FALSE,Software development,Senior / lead
+211,AWS,FALSE,Software development,Senior / lead
+211,Git,FALSE,Software development,Senior / lead
+211,JavaScript,FALSE,Software development,Senior / lead
+211,Python,FALSE,Software development,Senior / lead
+211,TypeScript,FALSE,Software development,Senior / lead
+212,AWS,FALSE,Data / ML,Senior / lead
+212,Python,FALSE,Data / ML,Senior / lead
+213,AWS,FALSE,Infrastructure / security,Senior / lead
+213,Python,FALSE,Infrastructure / security,Senior / lead
+214,AWS,FALSE,Infrastructure / security,Senior / lead
+214,Azure,FALSE,Infrastructure / security,Senior / lead
+214,Git,FALSE,Infrastructure / security,Senior / lead
+214,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+214,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+214,Python,FALSE,Infrastructure / security,Senior / lead
+214,SQL,FALSE,Infrastructure / security,Senior / lead
+215,AWS,FALSE,Data / ML,Early career
+215,Azure,FALSE,Data / ML,Early career
+215,Git,FALSE,Data / ML,Early career
+215,Python,FALSE,Data / ML,Early career
+215,SQL,FALSE,Data / ML,Early career
+220,SAP,FALSE,Software development,Senior / lead
+222,Python,FALSE,Software development,Early career
+223,AWS,FALSE,Software development,Senior / lead
+223,C#,FALSE,Software development,Senior / lead
+223,Docker,FALSE,Software development,Senior / lead
+223,Kubernetes,FALSE,Software development,Senior / lead
+223,PHP,FALSE,Software development,Senior / lead
+223,PostgreSQL,FALSE,Software development,Senior / lead
+223,React,FALSE,Software development,Senior / lead
+223,TypeScript,FALSE,Software development,Senior / lead
+224,AWS,TRUE,Software development,No level stated
+224,Docker,TRUE,Software development,No level stated
+224,Git,TRUE,Software development,No level stated
+224,Java,TRUE,Software development,No level stated
+224,Kubernetes,TRUE,Software development,No level stated
+224,PostgreSQL,TRUE,Software development,No level stated
+224,Python,TRUE,Software development,No level stated
+224,SQL,TRUE,Software development,No level stated
+224,TypeScript,TRUE,Software development,No level stated
+225,Azure,FALSE,Infrastructure / security,No level stated
+226,AWS,FALSE,Infrastructure / security,Senior / lead
+226,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+226,Node.js,FALSE,Infrastructure / security,Senior / lead
+226,React,FALSE,Infrastructure / security,Senior / lead
+226,TypeScript,FALSE,Infrastructure / security,Senior / lead
+228,AWS,FALSE,Infrastructure / security,No level stated
+228,Azure,FALSE,Infrastructure / security,No level stated
+228,Git,FALSE,Infrastructure / security,No level stated
+228,Google Cloud,FALSE,Infrastructure / security,No level stated
+228,Python,FALSE,Infrastructure / security,No level stated
+229,AWS,FALSE,Data / ML,Senior / lead
+229,Azure,FALSE,Data / ML,Senior / lead
+229,Docker,FALSE,Data / ML,Senior / lead
+229,Google Cloud,FALSE,Data / ML,Senior / lead
+229,Kubernetes,FALSE,Data / ML,Senior / lead
+230,Git,FALSE,Software development,Early career
+230,JavaScript,FALSE,Software development,Early career
+230,Python,FALSE,Software development,Early career
+230,SQL,FALSE,Software development,Early career
+233,Python,FALSE,Infrastructure / security,No level stated
+233,React,FALSE,Infrastructure / security,No level stated
+233,TypeScript,FALSE,Infrastructure / security,No level stated
+234,AWS,FALSE,Software development,Senior / lead
+236,Azure,FALSE,Data / ML,Early career
+236,Git,FALSE,Data / ML,Early career
+236,Python,FALSE,Data / ML,Early career
+236,SQL,FALSE,Data / ML,Early career
+237,React,FALSE,Software development,Senior / lead
+241,AWS,FALSE,Infrastructure / security,No level stated
+241,Azure,FALSE,Infrastructure / security,No level stated
+241,Docker,FALSE,Infrastructure / security,No level stated
+241,Google Cloud,FALSE,Infrastructure / security,No level stated
+241,Kubernetes,FALSE,Infrastructure / security,No level stated
+242,Docker,FALSE,Software development,Senior / lead
+242,PostgreSQL,FALSE,Software development,Senior / lead
+242,SQL,FALSE,Software development,Senior / lead
+242,TypeScript,FALSE,Software development,Senior / lead
+243,AWS,FALSE,Software development,Senior / lead
+243,Azure,FALSE,Software development,Senior / lead
+243,C#,FALSE,Software development,Senior / lead
+243,Java,FALSE,Software development,Senior / lead
+243,React,FALSE,Software development,Senior / lead
+243,TypeScript,FALSE,Software development,Senior / lead
+245,Docker,FALSE,Software development,Senior / lead
+245,Git,FALSE,Software development,Senior / lead
+245,PHP,FALSE,Software development,Senior / lead
+245,PostgreSQL,FALSE,Software development,Senior / lead
+246,AWS,TRUE,Software development,No level stated
+246,Azure,TRUE,Software development,No level stated
+246,Docker,TRUE,Software development,No level stated
+246,Google Cloud,TRUE,Software development,No level stated
+246,JavaScript,TRUE,Software development,No level stated
+246,Kubernetes,TRUE,Software development,No level stated
+246,PHP,TRUE,Software development,No level stated
+246,Python,TRUE,Software development,No level stated
+246,Ruby,TRUE,Software development,No level stated
+247,AWS,FALSE,Software development,No level stated
+247,Docker,FALSE,Software development,No level stated
+247,Java,FALSE,Software development,No level stated
+247,JavaScript,FALSE,Software development,No level stated
+247,Kubernetes,FALSE,Software development,No level stated
+247,PostgreSQL,FALSE,Software development,No level stated
+247,Python,FALSE,Software development,No level stated
+249,AWS,TRUE,Data / ML,Senior / lead
+249,Azure,TRUE,Data / ML,Senior / lead
+249,Docker,TRUE,Data / ML,Senior / lead
+249,Git,TRUE,Data / ML,Senior / lead
+249,Google Cloud,TRUE,Data / ML,Senior / lead
+249,Kubernetes,TRUE,Data / ML,Senior / lead
+249,Python,TRUE,Data / ML,Senior / lead
+250,Azure,FALSE,Infrastructure / security,No level stated
+250,Git,FALSE,Infrastructure / security,No level stated
+250,Power BI,FALSE,Infrastructure / security,No level stated
+250,Python,FALSE,Infrastructure / security,No level stated
+250,SQL,FALSE,Infrastructure / security,No level stated
+251,Azure,FALSE,Data / ML,Senior / lead
+251,Git,FALSE,Data / ML,Senior / lead
+251,Power BI,FALSE,Data / ML,Senior / lead
+251,Python,FALSE,Data / ML,Senior / lead
+251,SQL,FALSE,Data / ML,Senior / lead
+252,Python,FALSE,Data / ML,Senior / lead
+252,SQL,FALSE,Data / ML,Senior / lead
+254,AWS,FALSE,Infrastructure / security,No level stated
+254,Azure,FALSE,Infrastructure / security,No level stated
+268,Git,FALSE,Software development,No level stated
+268,PostgreSQL,FALSE,Software development,No level stated
+268,Python,FALSE,Software development,No level stated
+269,Python,FALSE,Software development,No level stated
+271,Python,FALSE,Software development,No level stated
+271,SAP,FALSE,Software development,No level stated
+272,Git,FALSE,Software development,Senior / lead
+272,JavaScript,FALSE,Software development,Senior / lead
+272,Python,FALSE,Software development,Senior / lead
+273,Python,FALSE,Software development,No level stated
+277,Kubernetes,FALSE,Infrastructure / security,No level stated
+279,SAP,TRUE,Software development,Senior / lead
+280,Docker,FALSE,Infrastructure / security,No level stated
+280,Kubernetes,FALSE,Infrastructure / security,No level stated
+280,Python,FALSE,Infrastructure / security,No level stated
+281,Python,FALSE,Data / ML,No level stated
+281,SQL,FALSE,Data / ML,No level stated
+282,Power BI,FALSE,Data / ML,Senior / lead
+282,Python,FALSE,Data / ML,Senior / lead
+282,SQL,FALSE,Data / ML,Senior / lead
+283,AWS,FALSE,Data / ML,Senior / lead
+283,Git,FALSE,Data / ML,Senior / lead
+283,Kubernetes,FALSE,Data / ML,Senior / lead
+283,Python,FALSE,Data / ML,Senior / lead
+283,SQL,FALSE,Data / ML,Senior / lead
+284,Node.js,FALSE,Software development,Early career
+284,React,FALSE,Software development,Early career
+284,TypeScript,FALSE,Software development,Early career
+286,AWS,FALSE,Data / ML,Early career
+286,Java,FALSE,Data / ML,Early career
+286,Python,FALSE,Data / ML,Early career
+286,SQL,FALSE,Data / ML,Early career
+287,Kubernetes,FALSE,Infrastructure / security,No level stated
+290,Azure,FALSE,Infrastructure / security,Senior / lead
+292,AWS,FALSE,Software development,No level stated
+292,Azure,FALSE,Software development,No level stated
+292,Google Cloud,FALSE,Software development,No level stated
+292,Python,FALSE,Software development,No level stated
+292,SQL,FALSE,Software development,No level stated
+293,AWS,FALSE,Software development,No level stated
+293,Azure,FALSE,Software development,No level stated
+293,Google Cloud,FALSE,Software development,No level stated
+293,JavaScript,FALSE,Software development,No level stated
+293,Python,FALSE,Software development,No level stated
+293,TypeScript,FALSE,Software development,No level stated
+294,AWS,TRUE,Software development,Senior / lead
+294,Docker,TRUE,Software development,Senior / lead
+294,Python,TRUE,Software development,Senior / lead
+295,PostgreSQL,FALSE,Software development,Senior / lead
+295,React,FALSE,Software development,Senior / lead
+295,TypeScript,FALSE,Software development,Senior / lead
+296,SAP,FALSE,Software development,Senior / lead
+297,SAP,FALSE,Software development,Senior / lead
+299,AWS,FALSE,Data / ML,Senior / lead
+299,Git,FALSE,Data / ML,Senior / lead
+299,PostgreSQL,FALSE,Data / ML,Senior / lead
+299,Python,FALSE,Data / ML,Senior / lead
+299,SQL,FALSE,Data / ML,Senior / lead
+300,Azure,FALSE,Infrastructure / security,Senior / lead
+301,AWS,FALSE,Infrastructure / security,No level stated
+301,Git,FALSE,Infrastructure / security,No level stated
+301,Kubernetes,FALSE,Infrastructure / security,No level stated
+301,Node.js,FALSE,Infrastructure / security,No level stated
+301,PostgreSQL,FALSE,Infrastructure / security,No level stated
+303,Git,TRUE,Software development,Early career
+303,JavaScript,TRUE,Software development,Early career
+303,TypeScript,TRUE,Software development,Early career
+305,Git,FALSE,Software development,No level stated
+305,PostgreSQL,FALSE,Software development,No level stated
+305,React,FALSE,Software development,No level stated
+305,SQL,FALSE,Software development,No level stated
+305,TypeScript,FALSE,Software development,No level stated
+306,AWS,FALSE,Infrastructure / security,Senior / lead
+306,Docker,FALSE,Infrastructure / security,Senior / lead
+306,Git,FALSE,Infrastructure / security,Senior / lead
+306,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+306,Python,FALSE,Infrastructure / security,Senior / lead
+308,AWS,FALSE,Software development,Senior / lead
+308,Azure,FALSE,Software development,Senior / lead
+308,Google Cloud,FALSE,Software development,Senior / lead
+308,Power BI,FALSE,Software development,Senior / lead
+309,AWS,FALSE,Infrastructure / security,No level stated
+309,Azure,FALSE,Infrastructure / security,No level stated
+309,Docker,FALSE,Infrastructure / security,No level stated
+309,Google Cloud,FALSE,Infrastructure / security,No level stated
+309,Kubernetes,FALSE,Infrastructure / security,No level stated
+309,Node.js,FALSE,Infrastructure / security,No level stated
+310,AWS,FALSE,Infrastructure / security,No level stated
+310,Azure,FALSE,Infrastructure / security,No level stated
+310,Docker,FALSE,Infrastructure / security,No level stated
+310,Google Cloud,FALSE,Infrastructure / security,No level stated
+310,Kubernetes,FALSE,Infrastructure / security,No level stated
+310,Node.js,FALSE,Infrastructure / security,No level stated
+311,AWS,FALSE,Infrastructure / security,No level stated
+311,Azure,FALSE,Infrastructure / security,No level stated
+311,Docker,FALSE,Infrastructure / security,No level stated
+311,Google Cloud,FALSE,Infrastructure / security,No level stated
+311,Kubernetes,FALSE,Infrastructure / security,No level stated
+311,Node.js,FALSE,Infrastructure / security,No level stated
+312,TypeScript,FALSE,Software development,No level stated
+313,PostgreSQL,FALSE,Software development,Senior / lead
+313,Python,FALSE,Software development,Senior / lead
+314,AWS,FALSE,Software development,No level stated
+314,Azure,FALSE,Software development,No level stated
+314,Git,FALSE,Software development,No level stated
+314,Go,FALSE,Software development,No level stated
+314,Google Cloud,FALSE,Software development,No level stated
+314,Kubernetes,FALSE,Software development,No level stated
+314,PostgreSQL,FALSE,Software development,No level stated
+314,Python,FALSE,Software development,No level stated
+315,Git,FALSE,Software development,No level stated
+317,AWS,FALSE,Data / ML,Senior / lead
+317,Azure,FALSE,Data / ML,Senior / lead
+317,Docker,FALSE,Data / ML,Senior / lead
+317,Google Cloud,FALSE,Data / ML,Senior / lead
+317,Kubernetes,FALSE,Data / ML,Senior / lead
+317,Python,FALSE,Data / ML,Senior / lead
+318,AWS,TRUE,Infrastructure / security,Senior / lead
+318,Git,TRUE,Infrastructure / security,Senior / lead
+318,Kubernetes,TRUE,Infrastructure / security,Senior / lead
+318,PostgreSQL,TRUE,Infrastructure / security,Senior / lead
+318,Python,TRUE,Infrastructure / security,Senior / lead
+319,SAP,FALSE,Infrastructure / security,No level stated
+320,JavaScript,FALSE,Software development,No level stated
+320,SAP,FALSE,Software development,No level stated
+321,SAP,FALSE,Software development,Senior / lead
+322,SAP,FALSE,Software development,Senior / lead
+323,SAP,FALSE,Software development,No level stated
+325,PostgreSQL,FALSE,Software development,Early career
+326,Node.js,FALSE,Software development,No level stated
+326,PHP,FALSE,Software development,No level stated
+326,Python,FALSE,Software development,No level stated
+327,Node.js,FALSE,Software development,No level stated
+327,PHP,FALSE,Software development,No level stated
+327,Python,FALSE,Software development,No level stated
+328,JavaScript,TRUE,Software development,Senior / lead
+328,TypeScript,TRUE,Software development,Senior / lead
+330,AWS,FALSE,Software development,Senior / lead
+330,Java,FALSE,Software development,Senior / lead
+330,SQL,FALSE,Software development,Senior / lead
+331,AWS,FALSE,Infrastructure / security,Senior / lead
+331,Docker,FALSE,Infrastructure / security,Senior / lead
+331,Git,FALSE,Infrastructure / security,Senior / lead
+331,Java,FALSE,Infrastructure / security,Senior / lead
+331,PostgreSQL,FALSE,Infrastructure / security,Senior / lead
+331,Python,FALSE,Infrastructure / security,Senior / lead
+332,AWS,FALSE,Infrastructure / security,Senior / lead
+332,Docker,FALSE,Infrastructure / security,Senior / lead
+332,Git,FALSE,Infrastructure / security,Senior / lead
+332,Java,FALSE,Infrastructure / security,Senior / lead
+332,PostgreSQL,FALSE,Infrastructure / security,Senior / lead
+332,Python,FALSE,Infrastructure / security,Senior / lead
+333,AWS,FALSE,Software development,Senior / lead
+333,Azure,FALSE,Software development,Senior / lead
+333,Docker,FALSE,Software development,Senior / lead
+333,Git,FALSE,Software development,Senior / lead
+333,Kubernetes,FALSE,Software development,Senior / lead
+333,PostgreSQL,FALSE,Software development,Senior / lead
+333,Python,FALSE,Software development,Senior / lead
+333,React,FALSE,Software development,Senior / lead
+333,TypeScript,FALSE,Software development,Senior / lead
+336,React,FALSE,Software development,Senior / lead
+336,TypeScript,FALSE,Software development,Senior / lead
+337,Node.js,FALSE,Software development,Early career
+337,PostgreSQL,FALSE,Software development,Early career
+337,React,FALSE,Software development,Early career
+337,TypeScript,FALSE,Software development,Early career
+338,Node.js,FALSE,Software development,No level stated
+338,PostgreSQL,FALSE,Software development,No level stated
+338,React,FALSE,Software development,No level stated
+338,TypeScript,FALSE,Software development,No level stated
+340,AWS,FALSE,Software development,No level stated
+340,Azure,FALSE,Software development,No level stated
+340,Google Cloud,FALSE,Software development,No level stated
+341,AWS,FALSE,Data / ML,No level stated
+341,Azure,FALSE,Data / ML,No level stated
+341,Docker,FALSE,Data / ML,No level stated
+341,Google Cloud,FALSE,Data / ML,No level stated
+341,Kubernetes,FALSE,Data / ML,No level stated
+341,Python,FALSE,Data / ML,No level stated
+341,SQL,FALSE,Data / ML,No level stated
+343,Python,FALSE,Infrastructure / security,No level stated
+344,Python,FALSE,Software development,No level stated
+345,Kubernetes,TRUE,Infrastructure / security,No level stated
+346,Git,FALSE,Software development,Senior / lead
+346,Java,FALSE,Software development,Senior / lead
+346,PostgreSQL,FALSE,Software development,Senior / lead
+347,Docker,TRUE,Infrastructure / security,Senior / lead
+347,Java,TRUE,Infrastructure / security,Senior / lead
+347,Kubernetes,TRUE,Infrastructure / security,Senior / lead
+348,Docker,TRUE,Software development,Senior / lead
+348,Java,TRUE,Software development,Senior / lead
+348,Kubernetes,TRUE,Software development,Senior / lead
+348,SQL,TRUE,Software development,Senior / lead
+349,Git,TRUE,Data / ML,Senior / lead
+349,SQL,TRUE,Data / ML,Senior / lead
+350,AWS,FALSE,Software development,Senior / lead
+350,Azure,FALSE,Software development,Senior / lead
+350,Docker,FALSE,Software development,Senior / lead
+350,Google Cloud,FALSE,Software development,Senior / lead
+350,Java,FALSE,Software development,Senior / lead
+350,Python,FALSE,Software development,Senior / lead
+350,SQL,FALSE,Software development,Senior / lead
+350,TypeScript,FALSE,Software development,Senior / lead
+351,Docker,FALSE,Software development,Senior / lead
+351,Git,FALSE,Software development,Senior / lead
+351,Google Cloud,FALSE,Software development,Senior / lead
+351,PostgreSQL,FALSE,Software development,Senior / lead
+351,Python,FALSE,Software development,Senior / lead
+351,SQL,FALSE,Software development,Senior / lead
+352,Python,FALSE,Data / ML,No level stated
+352,SQL,FALSE,Data / ML,No level stated
+353,Python,FALSE,Data / ML,No level stated
+353,SQL,FALSE,Data / ML,No level stated
+354,Git,FALSE,Software development,Early career
+354,TypeScript,FALSE,Software development,Early career
+355,Git,FALSE,Software development,Early career
+355,TypeScript,FALSE,Software development,Early career
+356,Azure,FALSE,Infrastructure / security,No level stated
+358,SAP,FALSE,Infrastructure / security,Senior / lead
+360,Python,FALSE,Software development,Senior / lead
+365,AWS,FALSE,Data / ML,No level stated
+365,Python,FALSE,Data / ML,No level stated
+365,SQL,FALSE,Data / ML,No level stated
+366,JavaScript,FALSE,Software development,No level stated
+366,PostgreSQL,FALSE,Software development,No level stated
+366,Python,FALSE,Software development,No level stated
+366,SQL,FALSE,Software development,No level stated
+370,AWS,TRUE,Software development,Senior / lead
+370,JavaScript,TRUE,Software development,Senior / lead
+370,Node.js,TRUE,Software development,Senior / lead
+370,React,TRUE,Software development,Senior / lead
+370,TypeScript,TRUE,Software development,Senior / lead
+371,AWS,TRUE,Software development,Senior / lead
+371,Azure,TRUE,Software development,Senior / lead
+371,Google Cloud,TRUE,Software development,Senior / lead
+371,JavaScript,TRUE,Software development,Senior / lead
+371,React,TRUE,Software development,Senior / lead
+371,TypeScript,TRUE,Software development,Senior / lead
+372,AWS,FALSE,Software development,Senior / lead
+372,Java,FALSE,Software development,Senior / lead
+372,React,FALSE,Software development,Senior / lead
+373,AWS,FALSE,Infrastructure / security,No level stated
+373,Azure,FALSE,Infrastructure / security,No level stated
+373,Docker,FALSE,Infrastructure / security,No level stated
+373,Git,FALSE,Infrastructure / security,No level stated
+373,PostgreSQL,FALSE,Infrastructure / security,No level stated
+373,Python,FALSE,Infrastructure / security,No level stated
+374,AWS,FALSE,Infrastructure / security,No level stated
+375,AWS,FALSE,Infrastructure / security,No level stated
+377,Git,FALSE,Data / ML,No level stated
+377,Python,FALSE,Data / ML,No level stated
+377,SAP,FALSE,Data / ML,No level stated
+377,SQL,FALSE,Data / ML,No level stated
+378,AWS,FALSE,Data / ML,No level stated
+378,Azure,FALSE,Data / ML,No level stated
+378,Google Cloud,FALSE,Data / ML,No level stated
+378,Python,FALSE,Data / ML,No level stated
+378,SQL,FALSE,Data / ML,No level stated
+379,C#,FALSE,Software development,No level stated
+379,Docker,FALSE,Software development,No level stated
+379,SQL,FALSE,Software development,No level stated
+380,Azure,FALSE,Data / ML,Senior / lead
+380,Python,FALSE,Data / ML,Senior / lead
+380,SQL,FALSE,Data / ML,Senior / lead
+382,C#,FALSE,Software development,No level stated
+382,Git,FALSE,Software development,No level stated
+382,SQL,FALSE,Software development,No level stated
+384,AWS,FALSE,Software development,Senior / lead
+384,Azure,FALSE,Software development,Senior / lead
+384,Docker,FALSE,Software development,Senior / lead
+384,Java,FALSE,Software development,Senior / lead
+384,PostgreSQL,FALSE,Software development,Senior / lead
+385,AWS,TRUE,Software development,Senior / lead
+385,Git,TRUE,Software development,Senior / lead
+385,Ruby,TRUE,Software development,Senior / lead
+386,Python,FALSE,Software development,No level stated
+388,Docker,FALSE,Software development,No level stated
+388,Git,FALSE,Software development,No level stated
+388,Java,FALSE,Software development,No level stated
+388,Python,FALSE,Software development,No level stated
+388,React,FALSE,Software development,No level stated
+388,TypeScript,FALSE,Software development,No level stated
+389,AWS,FALSE,Infrastructure / security,Senior / lead
+389,Azure,FALSE,Infrastructure / security,Senior / lead
+389,Docker,FALSE,Infrastructure / security,Senior / lead
+389,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+389,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+389,PostgreSQL,FALSE,Infrastructure / security,Senior / lead
+390,Java,FALSE,Software development,Senior / lead
+390,PostgreSQL,FALSE,Software development,Senior / lead
+390,React,FALSE,Software development,Senior / lead
+390,SQL,FALSE,Software development,Senior / lead
+390,TypeScript,FALSE,Software development,Senior / lead
+395,AWS,FALSE,Software development,No level stated
+395,Git,FALSE,Software development,No level stated
+395,Java,FALSE,Software development,No level stated
+395,PostgreSQL,FALSE,Software development,No level stated
+395,SQL,FALSE,Software development,No level stated
+397,Docker,FALSE,Infrastructure / security,Senior / lead
+397,Git,FALSE,Infrastructure / security,Senior / lead
+397,TypeScript,FALSE,Infrastructure / security,Senior / lead
+398,Git,FALSE,Software development,No level stated
+399,Git,FALSE,Data / ML,No level stated
+399,Java,FALSE,Data / ML,No level stated
+399,Python,FALSE,Data / ML,No level stated
+399,TypeScript,FALSE,Data / ML,No level stated
+400,C#,FALSE,Software development,No level stated
+400,Git,FALSE,Software development,No level stated
+400,Node.js,FALSE,Software development,No level stated
+400,SQL,FALSE,Software development,No level stated
+403,Python,FALSE,Software development,No level stated
+404,Docker,FALSE,Software development,Senior / lead
+404,Git,FALSE,Software development,Senior / lead
+404,Node.js,FALSE,Software development,Senior / lead
+404,PostgreSQL,FALSE,Software development,Senior / lead
+404,TypeScript,FALSE,Software development,Senior / lead
+405,Docker,FALSE,Software development,Senior / lead
+405,Git,FALSE,Software development,Senior / lead
+405,Node.js,FALSE,Software development,Senior / lead
+405,PostgreSQL,FALSE,Software development,Senior / lead
+405,TypeScript,FALSE,Software development,Senior / lead
+406,AWS,FALSE,Software development,No level stated
+406,Azure,FALSE,Software development,No level stated
+406,Docker,FALSE,Software development,No level stated
+406,Google Cloud,FALSE,Software development,No level stated
+406,Java,FALSE,Software development,No level stated
+406,JavaScript,FALSE,Software development,No level stated
+406,Kubernetes,FALSE,Software development,No level stated
+406,Python,FALSE,Software development,No level stated
+406,SQL,FALSE,Software development,No level stated
+407,Docker,FALSE,Data / ML,No level stated
+407,Java,FALSE,Data / ML,No level stated
+407,Kubernetes,FALSE,Data / ML,No level stated
+407,Python,FALSE,Data / ML,No level stated
+407,SQL,FALSE,Data / ML,No level stated
+408,AWS,FALSE,Software development,No level stated
+408,Kubernetes,FALSE,Software development,No level stated
+408,PostgreSQL,FALSE,Software development,No level stated
+408,Python,FALSE,Software development,No level stated
+408,React,FALSE,Software development,No level stated
+408,SQL,FALSE,Software development,No level stated
+408,TypeScript,FALSE,Software development,No level stated
+417,C#,FALSE,Software development,Senior / lead
+418,JavaScript,FALSE,Software development,Senior / lead
+418,PHP,FALSE,Software development,Senior / lead
+418,PostgreSQL,FALSE,Software development,Senior / lead
+418,React,FALSE,Software development,Senior / lead
+418,TypeScript,FALSE,Software development,Senior / lead
+419,JavaScript,FALSE,Software development,Early career
+420,AWS,FALSE,Software development,No level stated
+420,Azure,FALSE,Software development,No level stated
+420,Git,FALSE,Software development,No level stated
+420,Google Cloud,FALSE,Software development,No level stated
+420,Java,FALSE,Software development,No level stated
+420,PostgreSQL,FALSE,Software development,No level stated
+420,React,FALSE,Software development,No level stated
+420,TypeScript,FALSE,Software development,No level stated
+421,AWS,FALSE,Software development,Senior / lead
+421,Azure,FALSE,Software development,Senior / lead
+421,Google Cloud,FALSE,Software development,Senior / lead
+421,React,FALSE,Software development,Senior / lead
+421,TypeScript,FALSE,Software development,Senior / lead
+422,AWS,FALSE,Data / ML,Senior / lead
+422,Python,FALSE,Data / ML,Senior / lead
+422,SQL,FALSE,Data / ML,Senior / lead
+423,AWS,FALSE,Data / ML,Senior / lead
+423,Python,FALSE,Data / ML,Senior / lead
+423,SQL,FALSE,Data / ML,Senior / lead
+424,AWS,FALSE,Software development,No level stated
+424,PHP,FALSE,Software development,No level stated
+425,Java,FALSE,Software development,Senior / lead
+425,React,FALSE,Software development,Senior / lead
+425,TypeScript,FALSE,Software development,Senior / lead
+426,Python,FALSE,Software development,Early career
+426,SQL,FALSE,Software development,Early career
+427,Git,FALSE,Infrastructure / security,No level stated
+427,Python,FALSE,Infrastructure / security,No level stated
+428,Python,FALSE,Data / ML,No level stated
+428,SQL,FALSE,Data / ML,No level stated
+429,AWS,FALSE,Software development,No level stated
+429,Azure,FALSE,Software development,No level stated
+429,Docker,FALSE,Software development,No level stated
+429,Git,FALSE,Software development,No level stated
+429,JavaScript,FALSE,Software development,No level stated
+429,Kubernetes,FALSE,Software development,No level stated
+429,PHP,FALSE,Software development,No level stated
+429,React,FALSE,Software development,No level stated
+430,Docker,FALSE,Infrastructure / security,No level stated
+430,Kubernetes,FALSE,Infrastructure / security,No level stated
+430,Python,FALSE,Infrastructure / security,No level stated
+431,Git,FALSE,Data / ML,No level stated
+431,Java,FALSE,Data / ML,No level stated
+431,Python,FALSE,Data / ML,No level stated
+431,TypeScript,FALSE,Data / ML,No level stated
+434,Power BI,FALSE,Data / ML,No level stated
+434,SQL,FALSE,Data / ML,No level stated
+438,Git,FALSE,Infrastructure / security,No level stated
+438,Python,FALSE,Infrastructure / security,No level stated
+440,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+440,Java,FALSE,Infrastructure / security,Senior / lead
+440,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+440,Python,FALSE,Infrastructure / security,Senior / lead
+440,SQL,FALSE,Infrastructure / security,Senior / lead
+441,Google Cloud,FALSE,Software development,Senior / lead
+441,Kubernetes,FALSE,Software development,Senior / lead
+441,Python,FALSE,Software development,Senior / lead
+441,React,FALSE,Software development,Senior / lead
+441,TypeScript,FALSE,Software development,Senior / lead
+442,AWS,FALSE,Infrastructure / security,Senior / lead
+442,Azure,FALSE,Infrastructure / security,Senior / lead
+442,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+442,JavaScript,FALSE,Infrastructure / security,Senior / lead
+442,Python,FALSE,Infrastructure / security,Senior / lead
+443,Docker,FALSE,Software development,No level stated
+443,JavaScript,FALSE,Software development,No level stated
+443,Node.js,FALSE,Software development,No level stated
+443,Python,FALSE,Software development,No level stated
+443,SAP,FALSE,Software development,No level stated
+443,SQL,FALSE,Software development,No level stated
+445,Kubernetes,FALSE,Infrastructure / security,No level stated
+449,Git,FALSE,Infrastructure / security,No level stated
+449,Kubernetes,FALSE,Infrastructure / security,No level stated
+449,Python,FALSE,Infrastructure / security,No level stated
+449,SAP,FALSE,Infrastructure / security,No level stated
+450,Azure,FALSE,Software development,Senior / lead
+450,C#,FALSE,Software development,Senior / lead
+450,Git,FALSE,Software development,Senior / lead
+450,PostgreSQL,FALSE,Software development,Senior / lead
+451,AWS,FALSE,Software development,No level stated
+451,Docker,FALSE,Software development,No level stated
+451,Git,FALSE,Software development,No level stated
+451,Google Cloud,FALSE,Software development,No level stated
+451,Java,FALSE,Software development,No level stated
+451,Kubernetes,FALSE,Software development,No level stated
+451,PostgreSQL,FALSE,Software development,No level stated
+451,Python,FALSE,Software development,No level stated
+452,AWS,FALSE,Software development,Senior / lead
+452,Docker,FALSE,Software development,Senior / lead
+452,Git,FALSE,Software development,Senior / lead
+452,Google Cloud,FALSE,Software development,Senior / lead
+452,Java,FALSE,Software development,Senior / lead
+452,Kubernetes,FALSE,Software development,Senior / lead
+452,PostgreSQL,FALSE,Software development,Senior / lead
+452,Python,FALSE,Software development,Senior / lead
+453,SQL,FALSE,Infrastructure / security,No level stated
+455,Git,FALSE,Infrastructure / security,Senior / lead
+455,PHP,FALSE,Infrastructure / security,Senior / lead
+455,Power BI,FALSE,Infrastructure / security,Senior / lead
+455,Python,FALSE,Infrastructure / security,Senior / lead
+455,React,FALSE,Infrastructure / security,Senior / lead
+458,PostgreSQL,TRUE,Software development,Early career
+460,SAP,TRUE,Software development,Senior / lead
+461,Kubernetes,FALSE,Software development,Senior / lead
+462,Kubernetes,FALSE,Software development,Senior / lead
+463,AWS,TRUE,Software development,Senior / lead
+463,Git,TRUE,Software development,Senior / lead
+463,JavaScript,TRUE,Software development,Senior / lead
+463,PHP,TRUE,Software development,Senior / lead
+463,SQL,TRUE,Software development,Senior / lead
+464,JavaScript,FALSE,Software development,No level stated
+464,Python,FALSE,Software development,No level stated
+464,SQL,FALSE,Software development,No level stated
+465,AWS,FALSE,Infrastructure / security,Senior / lead
+465,Azure,FALSE,Infrastructure / security,Senior / lead
+465,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+465,Java,FALSE,Infrastructure / security,Senior / lead
+465,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+465,Python,FALSE,Infrastructure / security,Senior / lead
+465,React,FALSE,Infrastructure / security,Senior / lead
+465,Ruby,FALSE,Infrastructure / security,Senior / lead
+465,TypeScript,FALSE,Infrastructure / security,Senior / lead
+466,Python,FALSE,Software development,Senior / lead
+468,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+468,Python,FALSE,Infrastructure / security,Senior / lead
+469,Python,FALSE,Data / ML,Senior / lead
+470,Python,FALSE,Data / ML,Senior / lead
+471,Go,FALSE,Software development,Senior / lead
+471,Java,FALSE,Software development,Senior / lead
+471,Kubernetes,FALSE,Software development,Senior / lead
+471,Python,FALSE,Software development,Senior / lead
+472,Python,FALSE,Software development,Senior / lead
+473,AWS,FALSE,Software development,No level stated
+473,Azure,FALSE,Software development,No level stated
+473,Google Cloud,FALSE,Software development,No level stated
+473,Kubernetes,FALSE,Software development,No level stated
+473,Python,FALSE,Software development,No level stated
+474,Java,FALSE,Software development,Early career
+474,TypeScript,FALSE,Software development,Early career
+475,Azure,FALSE,Infrastructure / security,No level stated
+476,Docker,FALSE,Software development,No level stated
+476,JavaScript,FALSE,Software development,No level stated
+476,PostgreSQL,FALSE,Software development,No level stated
+476,Python,FALSE,Software development,No level stated
+476,TypeScript,FALSE,Software development,No level stated
+477,Python,FALSE,Software development,Senior / lead
+478,Docker,FALSE,Infrastructure / security,Senior / lead
+478,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+478,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+478,Python,FALSE,Infrastructure / security,Senior / lead
+478,Ruby,FALSE,Infrastructure / security,Senior / lead
+479,PostgreSQL,FALSE,Software development,Senior / lead
+479,Python,FALSE,Software development,Senior / lead
+479,React,FALSE,Software development,Senior / lead
+479,SAP,FALSE,Software development,Senior / lead
+480,Docker,TRUE,Infrastructure / security,No level stated
+480,Git,TRUE,Infrastructure / security,No level stated
+480,Python,TRUE,Infrastructure / security,No level stated
+481,Docker,TRUE,Infrastructure / security,No level stated
+481,Git,TRUE,Infrastructure / security,No level stated
+481,Python,TRUE,Infrastructure / security,No level stated
+482,Python,FALSE,Software development,Senior / lead
+482,SAP,FALSE,Software development,Senior / lead
+483,C#,FALSE,Software development,Senior / lead
+483,Node.js,FALSE,Software development,Senior / lead
+486,Python,FALSE,Software development,No level stated
+486,React,FALSE,Software development,No level stated
+486,TypeScript,FALSE,Software development,No level stated
+487,Git,FALSE,Infrastructure / security,No level stated
+487,Python,FALSE,Infrastructure / security,No level stated
+488,Docker,FALSE,Software development,Senior / lead
+489,JavaScript,FALSE,Infrastructure / security,No level stated
+489,PHP,FALSE,Infrastructure / security,No level stated
+489,Power BI,FALSE,Infrastructure / security,No level stated
+489,Python,FALSE,Infrastructure / security,No level stated
+489,SQL,FALSE,Infrastructure / security,No level stated
+489,TypeScript,FALSE,Infrastructure / security,No level stated
+492,AWS,TRUE,Infrastructure / security,Senior / lead
+492,Azure,TRUE,Infrastructure / security,Senior / lead
+492,Docker,TRUE,Infrastructure / security,Senior / lead
+492,Git,TRUE,Infrastructure / security,Senior / lead
+492,Google Cloud,TRUE,Infrastructure / security,Senior / lead
+492,PostgreSQL,TRUE,Infrastructure / security,Senior / lead
+494,Git,FALSE,Software development,No level stated
+494,Java,FALSE,Software development,No level stated
+494,React,FALSE,Software development,No level stated
+494,TypeScript,FALSE,Software development,No level stated
+495,C#,FALSE,Software development,No level stated
+495,Docker,FALSE,Software development,No level stated
+495,PostgreSQL,FALSE,Software development,No level stated
+496,AWS,FALSE,Software development,Senior / lead
+496,Azure,FALSE,Software development,Senior / lead
+496,Google Cloud,FALSE,Software development,Senior / lead
+496,Kubernetes,FALSE,Software development,Senior / lead
+496,PostgreSQL,FALSE,Software development,Senior / lead
+497,AWS,FALSE,Software development,No level stated
+497,Azure,FALSE,Software development,No level stated
+497,Google Cloud,FALSE,Software development,No level stated
+498,AWS,FALSE,Software development,No level stated
+498,Azure,FALSE,Software development,No level stated
+498,Google Cloud,FALSE,Software development,No level stated
+499,JavaScript,FALSE,Infrastructure / security,Senior / lead
+499,TypeScript,FALSE,Infrastructure / security,Senior / lead
+500,Power BI,FALSE,Software development,Senior / lead
+500,Python,FALSE,Software development,Senior / lead
+500,SQL,FALSE,Software development,Senior / lead
+501,Docker,FALSE,Software development,No level stated
+501,Python,FALSE,Software development,No level stated
+502,Git,FALSE,Software development,Senior / lead
+502,Python,FALSE,Software development,Senior / lead
+503,Python,FALSE,Software development,Senior / lead
+503,React,FALSE,Software development,Senior / lead
+503,TypeScript,FALSE,Software development,Senior / lead
+506,AWS,FALSE,Software development,No level stated
+506,TypeScript,FALSE,Software development,No level stated
+507,Azure,FALSE,Software development,No level stated
+507,C#,FALSE,Software development,No level stated
+507,Docker,FALSE,Software development,No level stated
+507,React,FALSE,Software development,No level stated
+511,SQL,FALSE,Infrastructure / security,No level stated
+512,Java,FALSE,Software development,No level stated
+512,JavaScript,FALSE,Software development,No level stated
+512,TypeScript,FALSE,Software development,No level stated
+513,Docker,FALSE,Infrastructure / security,No level stated
+513,Kubernetes,FALSE,Infrastructure / security,No level stated
+514,AWS,FALSE,Software development,No level stated
+514,Node.js,FALSE,Software development,No level stated
+515,Python,FALSE,Data / ML,No level stated
+516,Python,FALSE,Data / ML,No level stated
+520,Azure,FALSE,Infrastructure / security,No level stated
+522,AWS,TRUE,Infrastructure / security,No level stated
+522,Azure,TRUE,Infrastructure / security,No level stated
+522,Docker,TRUE,Infrastructure / security,No level stated
+522,Google Cloud,TRUE,Infrastructure / security,No level stated
+522,Kubernetes,TRUE,Infrastructure / security,No level stated
+523,Git,FALSE,Software development,Senior / lead
+523,Python,FALSE,Software development,Senior / lead
+523,React,FALSE,Software development,Senior / lead
+523,TypeScript,FALSE,Software development,Senior / lead
+524,Git,FALSE,Software development,No level stated
+524,JavaScript,FALSE,Software development,No level stated
+524,Kubernetes,FALSE,Software development,No level stated
+524,Python,FALSE,Software development,No level stated
+524,TypeScript,FALSE,Software development,No level stated
+527,C#,FALSE,Software development,No level stated
+527,SQL,FALSE,Software development,No level stated
+528,PostgreSQL,FALSE,Software development,No level stated
+528,React,FALSE,Software development,No level stated
+528,TypeScript,FALSE,Software development,No level stated
+529,Azure,FALSE,Software development,No level stated
+529,Java,FALSE,Software development,No level stated
+529,JavaScript,FALSE,Software development,No level stated
+532,JavaScript,FALSE,Software development,No level stated
+532,Node.js,FALSE,Software development,No level stated
+532,TypeScript,FALSE,Software development,No level stated
+533,AWS,FALSE,Software development,No level stated
+533,Docker,FALSE,Software development,No level stated
+533,Git,FALSE,Software development,No level stated
+533,Kubernetes,FALSE,Software development,No level stated
+533,Python,FALSE,Software development,No level stated
+535,Kubernetes,FALSE,Software development,Senior / lead
+535,Node.js,FALSE,Software development,Senior / lead
+535,PostgreSQL,FALSE,Software development,Senior / lead
+535,React,FALSE,Software development,Senior / lead
+535,TypeScript,FALSE,Software development,Senior / lead
+537,Docker,FALSE,Data / ML,No level stated
+537,PHP,FALSE,Data / ML,No level stated
+537,Python,FALSE,Data / ML,No level stated
+537,SQL,FALSE,Data / ML,No level stated
+539,TypeScript,FALSE,Infrastructure / security,No level stated
+540,AWS,FALSE,Infrastructure / security,Senior / lead
+540,Docker,FALSE,Infrastructure / security,Senior / lead
+540,Google Cloud,FALSE,Infrastructure / security,Senior / lead
+540,Kubernetes,FALSE,Infrastructure / security,Senior / lead
+541,AWS,FALSE,Data / ML,Senior / lead
+541,Azure,FALSE,Data / ML,Senior / lead
+541,Git,FALSE,Data / ML,Senior / lead
+541,Google Cloud,FALSE,Data / ML,Senior / lead
+541,Python,FALSE,Data / ML,Senior / lead
+541,SQL,FALSE,Data / ML,Senior / lead

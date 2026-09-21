@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Jin Liu"
-  site-url: "https://liu118-oss.github.io"
+  site-url: "https://liu118-oss.github.io/AEDS-6400-Blog/"
   navbar:
     right:
       - about.qmd
