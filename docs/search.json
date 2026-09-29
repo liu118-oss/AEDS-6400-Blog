@@ -7,53 +7,60 @@
     "text": "Hi! I’m Jin Liu.\nThis blog shares my weekly work for AEDS 6400. Each post uses economic data to practice data acquisition, cleaning, analysis, and visualization."
   },
   {
-    "objectID": "posts/week-02/index.html",
-    "href": "posts/week-02/index.html",
-    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "objectID": "posts/week-03/index.html",
+    "href": "posts/week-03/index.html",
+    "title": "Does Education Protect Workers from Unemployment?",
     "section": "",
-    "text": "Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used Arbeitnow, a Germany-focused job board, to examine skills, role types, work arrangement, and experience level."
+    "text": "Unemployment is costly for workers and families, but its burden is not distributed evenly. Education may reduce unemployment risk by giving workers more specialized skills, access to a wider range of occupations, or stronger attachment to employers. It may also separate workers into industries that respond differently to recessions. I ask: How does unemployment vary by education among U.S. adults ages 25-64, and does the gap change when the labor market weakens?"
   },
   {
-    "objectID": "posts/week-02/index.html#a-career-decision-not-just-a-word-count",
-    "href": "posts/week-02/index.html#a-career-decision-not-just-a-word-count",
-    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "objectID": "posts/week-03/index.html#why-unemployment-by-education-matters",
+    "href": "posts/week-03/index.html#why-unemployment-by-education-matters",
+    "title": "Does Education Protect Workers from Unemployment?",
     "section": "",
-    "text": "Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used Arbeitnow, a Germany-focused job board, to examine skills, role types, work arrangement, and experience level."
+    "text": "Unemployment is costly for workers and families, but its burden is not distributed evenly. Education may reduce unemployment risk by giving workers more specialized skills, access to a wider range of occupations, or stronger attachment to employers. It may also separate workers into industries that respond differently to recessions. I ask: How does unemployment vary by education among U.S. adults ages 25-64, and does the gap change when the labor market weakens?"
   },
   {
-    "objectID": "posts/week-02/index.html#from-public-pages-to-clean-data",
-    "href": "posts/week-02/index.html#from-public-pages-to-clean-data",
-    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
-    "section": "From public pages to clean data",
-    "text": "From public pages to clean data\nOn September 21, 2026, my R collection script used rvest to read 100 public listing pages. It saved their HTML and extracted 5000 unique job titles and URLs. Of those titles, 1019 matched a documented software, data, or IT role pattern. Arbeitnow also offers a public job-board API with full descriptions; collecting its paginated feed avoided requesting thousands of individual job pages. The API ended after 29 pages of jobs and supplied 3153 unique descriptions, of which 543 matched the technology-role pattern. 1836 API jobs also appeared in the 100-page HTML snapshot. The two sources are snapshots of the same changing board, so their page lists do not line up exactly.\n\n\nCode\nlibrary(rvest)\npage &lt;- read_html(\"data/raw/html/page-001.html\")\nlinks &lt;- html_elements(page, \"a[data-job-item-link]\")\njob_urls &lt;- html_attr(links, \"href\")\njob_titles &lt;- html_text2(links)\n\n\nThe API pagination helper manages the paced feed requests. The separate analysis script cleans description HTML, removes duplicate URLs, and searches for 20 named technologies. It counts a skill once per job even when the word appears repeatedly. Every skill percentage below divides by the 543 technology jobs with descriptions, not by all HTML listings. The scripts save the cleaned data, tables, and figures; the README gives replication commands. The complete project is in the GitHub repository. Collection used sequential requests with pauses, followed the site’s robots.txt, and used no login or access workaround. Arbeitnow’s API terms ask users to link back to the site."
+    "objectID": "posts/week-03/index.html#data-and-method",
+    "href": "posts/week-03/index.html#data-and-method",
+    "title": "Does Education Protect Workers from Unemployment?",
+    "section": "Data and method",
+    "text": "Data and method\nI use IPUMS CPS, which harmonizes the monthly Current Population Survey across time. My extract contains April Basic Monthly samples from 2000 through 2025 and the variables YEAR, MONTH, AGE, EDUC, LABFORCE, EMPSTAT, and WTFINL. April gives one comparable cross-section per year and captures the abrupt pandemic disruption in April 2020.\nThe analysis includes civilians ages 25-64 who are in the labor force. I group education into four levels: less than high school, high school or GED, some college or an associate degree, and a bachelor’s degree or higher. A person is unemployed when the detailed EMPSTAT code is 20-22. The unemployment rate is unemployed people divided by the civilian labor force.\nEvery estimate uses the final Basic Monthly CPS person weight, WTFINL:\n\\[\n\\text{Unemployment rate}_g=\n\\frac{\\sum_{i\\in g} WTFINL_i\\times Unemployed_i}\n{\\sum_{i\\in g} WTFINL_i}.\n\\]\nThis makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete analysis script generates every table and figure."
   },
   {
-    "objectID": "posts/week-02/index.html#which-skills-appear-most-often",
-    "href": "posts/week-02/index.html#which-skills-appear-most-often",
-    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
-    "section": "Which skills appear most often?",
-    "text": "Which skills appear most often?\n\n\n\n\nTable 1: Most frequently mentioned technologies among 543 technology job descriptions. Postings can mention more than one skill.\n\n\n\n\n\n\nSkill\nPostings\nShare of technology postings\n\n\n\n\nPython\n187\n34.4%\n\n\nAWS\n114\n21%\n\n\nGit\n108\n19.9%\n\n\nKubernetes\n91\n16.8%\n\n\nTypeScript\n91\n16.8%\n\n\nDocker\n88\n16.2%\n\n\nSQL\n86\n15.8%\n\n\n\n\n\n\n\n\n\n\n\nBar chart ranking named technologies by the share of technology postings mentioning them.\n\n\nPython appears in 187 postings (34.4%), followed by AWS in 114 (21%) and Git in 108 (19.9%). Python and Git appear together in 64 postings. These are mentions, not proof that every employer requires the skill. Percentages do not sum to 100 because one posting can name several technologies.\nThe overall ranking hides important differences. My title-based groups contain 325 software development, 161 infrastructure or security, and 57 data or machine-learning postings. The two most frequently named skills in each group are:\n\n\n\n\nTable 2: Top two skill mentions within each role group. Percentages use the number of jobs in that group.\n\n\n\n\n\n\nRole group\nSkill\nPostings\nWithin-group share\n\n\n\n\nData / ML\nPython\n49\n86%\n\n\nData / ML\nSQL\n32\n56.1%\n\n\nInfrastructure / security\nKubernetes\n42\n26.1%\n\n\nInfrastructure / security\nPython\n41\n25.5%\n\n\nSoftware development\nPython\n97\n29.8%\n\n\nSoftware development\nTypeScript\n78\n24%"
+    "objectID": "posts/week-03/index.html#a-persistent-education-gradient",
+    "href": "posts/week-03/index.html#a-persistent-education-gradient",
+    "title": "Does Education Protect Workers from Unemployment?",
+    "section": "A persistent education gradient",
+    "text": "A persistent education gradient\n\nThe first figure establishes whether unemployment rates differ consistently across education groups and shows how all four groups move with the national labor market. Comparing 2000, 2010, 2020, and 2025 also reveals which groups experienced the largest increases during weak labor markets.\nIn April 2025, the weighted unemployment rate was 6.3% for workers without a high-school diploma and 2.4% for workers with a bachelor’s degree or higher. The same ordering is visible across most years. During the April 2020 shock, the rates rose to 20.8% and 7.9%, respectively. Education therefore marks a persistent difference in unemployment risk, while all groups still move with the wider economy."
   },
   {
-    "objectID": "posts/week-02/index.html#work-arrangement-and-experience-level",
-    "href": "posts/week-02/index.html#work-arrangement-and-experience-level",
-    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
-    "section": "Work arrangement and experience level",
-    "text": "Work arrangement and experience level\nOnly 42 of the 543 technology jobs (7.7%) are marked remote. The other 501 have remote = FALSE in the source. That means not marked remote; it does not prove they require full-time office attendance. Remote shares are 9.9% for infrastructure and security, 7.4% for software development, and 3.5% for data and machine learning. The last figure comes from just 2 remote postings, so I would not infer a stable difference between fields.\n\n\n\nBar chart of the percentage of each technology role group marked remote in the Arbeitnow API.\n\n\nExperience is another constraint: 198 postings (36.5%) include a senior or lead term in the title, while only 41 (7.6%) include an early-career term. The rest do not state a clear level in the title. An entry-level or remote job seeker should therefore filter listings by those needs before using the overall skill ranking to plan a project."
+    "objectID": "posts/week-03/index.html#the-gap-changes-over-the-business-cycle",
+    "href": "posts/week-03/index.html#the-gap-changes-over-the-business-cycle",
+    "title": "Does Education Protect Workers from Unemployment?",
+    "section": "The gap changes over the business cycle",
+    "text": "The gap changes over the business cycle\n\nThe second figure subtracts the unemployment rate for bachelor’s-degree holders from each other group’s rate. This shifts attention from the overall cycle to inequality in unemployment risk. Higher lines during 2010 or 2020 indicate that downturns widened the education gap rather than raising unemployment equally for everyone.\nThe gap between the least-educated group and bachelor’s-degree holders was 12.9 percentage points in April 2020, compared with 3.9 percentage points in April 2025. The recession-era gap was therefore larger. This comparison shows whether weaker labor markets merely raise unemployment or also concentrate more of the increase among workers with less education."
   },
   {
-    "objectID": "posts/week-02/index.html#what-should-a-job-seeker-do",
-    "href": "posts/week-02/index.html#what-should-a-job-seeker-do",
-    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
-    "section": "What should a job seeker do?",
-    "text": "What should a job seeker do?\nIf I were targeting data or machine-learning roles, I would build a Python project that queries and analyzes data with SQL: those two skills appear in 49 of 57 data postings and 32 of them, respectively. For software development, I would show Python or TypeScript in a working application. For infrastructure, I would demonstrate deploying and monitoring an application with Kubernetes or a cloud service. These projects provide evidence of ability rather than a list of keywords on a résumé.\nThe sample has limits. Arbeitnow is one board, many jobs are Germany-focused, and the title filter may miss relevant roles. A technology mentioned in company background or as a preference is still counted. Only 378 of the 543 technology postings mention one of my 20 chosen terms, so the dictionary is incomplete. This analysis measures current advertised language, not hiring outcomes or the return to learning a skill."
+    "objectID": "posts/week-03/index.html#education-is-not-simply-standing-in-for-age",
+    "href": "posts/week-03/index.html#education-is-not-simply-standing-in-for-age",
+    "title": "Does Education Protect Workers from Unemployment?",
+    "section": "Education is not simply standing in for age",
+    "text": "Education is not simply standing in for age\n\nEducation and age are related: older adults have had more time to complete degrees, while younger workers have less labor-market experience. The final figure compares education groups within four age bands in 2025. A consistent education gradient within rows would show that the overall relationship is not solely the result of different age composition.\nIn 4 of the four age groups, unemployment was higher for adults without a high-school diploma than for adults with a bachelor’s degree or higher. The comparison does not remove every possible difference between workers, but it shows how much of the aggregate education pattern remains after making a simple age adjustment."
   },
   {
-    "objectID": "posts/week-02/index.html#takeaway",
-    "href": "posts/week-02/index.html#takeaway",
-    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
-    "section": "Takeaway",
-    "text": "Takeaway\nThe useful lesson is to choose a role and work arrangement first, then use job descriptions to prioritize a small, demonstrable set of skills. Python is the broadest starting point here, but SQL, TypeScript, and Kubernetes matter differently across roles. Remote and early-career openings are a small, specifically labeled part of this sample. Check target postings before investing in a course, and repeat the analysis as listings change."
+    "objectID": "posts/week-03/index.html#interpretation-and-takeaway",
+    "href": "posts/week-03/index.html#interpretation-and-takeaway",
+    "title": "Does Education Protect Workers from Unemployment?",
+    "section": "Interpretation and takeaway",
+    "text": "Interpretation and takeaway\nThese figures describe associations, not causal effects. Degree holders differ from other workers in occupation, industry, location, experience, and many other ways. The analysis also uses one month per year, so it describes April conditions rather than an annual average.\nThe practical lesson is that a single national unemployment rate can conceal large differences in economic security. Read together, the figures show whether more-educated workers experience lower unemployment in ordinary years, whether their advantage expands in downturns, and whether it remains visible within age groups. The main takeaway is that education is related both to the level of unemployment risk and to how strongly workers are exposed when the labor market deteriorates. For workforce agencies, the descriptive evidence can help target job-search assistance and retraining toward less-educated workers, especially during downturns."
+  },
+  {
+    "objectID": "posts/week-03/index.html#data-citation",
+    "href": "posts/week-03/index.html#data-citation",
+    "title": "Does Education Protect Workers from Unemployment?",
+    "section": "Data citation",
+    "text": "Data citation\nFlood, Sarah, Miriam King, Renae Rodgers, Steven Ruggles, J. Robert Warren, Daniel Backman, Etienne Breton, Grace Cooper, Julia A. Rivera Drew, Stephanie Richards, David Van Riper, and Kari C. W. Williams. 2025. IPUMS CPS: Version 13.0 [dataset]. Minneapolis, MN: IPUMS. https://doi.org/10.18128/D030.V13.0."
   },
   {
     "objectID": "posts/week-01/index.html",
@@ -112,10 +119,59 @@
     "text": "The takeaway\nEigenvectors identify directions where a linear transformation reduces to scaling. Eigenvalues tell us the scale factor, including whether the arrow reverses or disappears.\nThe surprising part is that a rule that mixes coordinates can become simple when viewed along the right directions. The next time you see \\(A\\mathbf{v}=\\lambda\\mathbf{v}\\), picture an arrow staying on its line—and ask how much it stretches."
   },
   {
+    "objectID": "posts/week-02/index.html",
+    "href": "posts/week-02/index.html",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "",
+    "text": "Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used Arbeitnow, a Germany-focused job board, to examine skills, role types, work arrangement, and experience level."
+  },
+  {
+    "objectID": "posts/week-02/index.html#a-career-decision-not-just-a-word-count",
+    "href": "posts/week-02/index.html#a-career-decision-not-just-a-word-count",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "",
+    "text": "Learning a new tool takes time. For someone interested in a software, data, or IT job, should the next project use Python, TypeScript, a cloud platform, or something else? Does the board offer remote or entry-level opportunities? Job advertisements offer practical clues. I used Arbeitnow, a Germany-focused job board, to examine skills, role types, work arrangement, and experience level."
+  },
+  {
+    "objectID": "posts/week-02/index.html#from-public-pages-to-clean-data",
+    "href": "posts/week-02/index.html#from-public-pages-to-clean-data",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "From public pages to clean data",
+    "text": "From public pages to clean data\nOn September 21, 2026, my R collection script used rvest to read 100 public listing pages. It saved their HTML and extracted 5000 unique job titles and URLs. Of those titles, 1019 matched a documented software, data, or IT role pattern. Arbeitnow also offers a public job-board API with full descriptions; collecting its paginated feed avoided requesting thousands of individual job pages. The API ended after 29 pages of jobs and supplied 3153 unique descriptions, of which 543 matched the technology-role pattern. 1836 API jobs also appeared in the 100-page HTML snapshot. The two sources are snapshots of the same changing board, so their page lists do not line up exactly.\n\n\nCode\nlibrary(rvest)\npage &lt;- read_html(\"data/raw/html/page-001.html\")\nlinks &lt;- html_elements(page, \"a[data-job-item-link]\")\njob_urls &lt;- html_attr(links, \"href\")\njob_titles &lt;- html_text2(links)\n\n\nThe API pagination helper manages the paced feed requests. The separate analysis script cleans description HTML, removes duplicate URLs, and searches for 20 named technologies. It counts a skill once per job even when the word appears repeatedly. Every skill percentage below divides by the 543 technology jobs with descriptions, not by all HTML listings. The scripts save the cleaned data, tables, and figures; the README gives replication commands. The complete project is in the GitHub repository. Collection used sequential requests with pauses, followed the site’s robots.txt, and used no login or access workaround. Arbeitnow’s API terms ask users to link back to the site."
+  },
+  {
+    "objectID": "posts/week-02/index.html#which-skills-appear-most-often",
+    "href": "posts/week-02/index.html#which-skills-appear-most-often",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "Which skills appear most often?",
+    "text": "Which skills appear most often?\n\n\n\n\nTable 1: Most frequently mentioned technologies among 543 technology job descriptions. Postings can mention more than one skill.\n\n\n\n\n\n\nSkill\nPostings\nShare of technology postings\n\n\n\n\nPython\n187\n34.4%\n\n\nAWS\n114\n21%\n\n\nGit\n108\n19.9%\n\n\nKubernetes\n91\n16.8%\n\n\nTypeScript\n91\n16.8%\n\n\nDocker\n88\n16.2%\n\n\nSQL\n86\n15.8%\n\n\n\n\n\n\n\n\n\n\n\nBar chart ranking named technologies by the share of technology postings mentioning them.\n\n\nPython appears in 187 postings (34.4%), followed by AWS in 114 (21%) and Git in 108 (19.9%). Python and Git appear together in 64 postings. These are mentions, not proof that every employer requires the skill. Percentages do not sum to 100 because one posting can name several technologies.\nThe overall ranking hides important differences. My title-based groups contain 325 software development, 161 infrastructure or security, and 57 data or machine-learning postings. The two most frequently named skills in each group are:\n\n\n\n\nTable 2: Top two skill mentions within each role group. Percentages use the number of jobs in that group.\n\n\n\n\n\n\nRole group\nSkill\nPostings\nWithin-group share\n\n\n\n\nData / ML\nPython\n49\n86%\n\n\nData / ML\nSQL\n32\n56.1%\n\n\nInfrastructure / security\nKubernetes\n42\n26.1%\n\n\nInfrastructure / security\nPython\n41\n25.5%\n\n\nSoftware development\nPython\n97\n29.8%\n\n\nSoftware development\nTypeScript\n78\n24%"
+  },
+  {
+    "objectID": "posts/week-02/index.html#work-arrangement-and-experience-level",
+    "href": "posts/week-02/index.html#work-arrangement-and-experience-level",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "Work arrangement and experience level",
+    "text": "Work arrangement and experience level\nOnly 42 of the 543 technology jobs (7.7%) are marked remote. The other 501 have remote = FALSE in the source. That means not marked remote; it does not prove they require full-time office attendance. Remote shares are 9.9% for infrastructure and security, 7.4% for software development, and 3.5% for data and machine learning. The last figure comes from just 2 remote postings, so I would not infer a stable difference between fields.\n\n\n\nBar chart of the percentage of each technology role group marked remote in the Arbeitnow API.\n\n\nExperience is another constraint: 198 postings (36.5%) include a senior or lead term in the title, while only 41 (7.6%) include an early-career term. The rest do not state a clear level in the title. An entry-level or remote job seeker should therefore filter listings by those needs before using the overall skill ranking to plan a project."
+  },
+  {
+    "objectID": "posts/week-02/index.html#what-should-a-job-seeker-do",
+    "href": "posts/week-02/index.html#what-should-a-job-seeker-do",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "What should a job seeker do?",
+    "text": "What should a job seeker do?\nIf I were targeting data or machine-learning roles, I would build a Python project that queries and analyzes data with SQL: those two skills appear in 49 of 57 data postings and 32 of them, respectively. For software development, I would show Python or TypeScript in a working application. For infrastructure, I would demonstrate deploying and monitoring an application with Kubernetes or a cloud service. These projects provide evidence of ability rather than a list of keywords on a résumé.\nThe sample has limits. Arbeitnow is one board, many jobs are Germany-focused, and the title filter may miss relevant roles. A technology mentioned in company background or as a preference is still counted. Only 378 of the 543 technology postings mention one of my 20 chosen terms, so the dictionary is incomplete. This analysis measures current advertised language, not hiring outcomes or the return to learning a skill."
+  },
+  {
+    "objectID": "posts/week-02/index.html#takeaway",
+    "href": "posts/week-02/index.html#takeaway",
+    "title": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs",
+    "section": "Takeaway",
+    "text": "Takeaway\nThe useful lesson is to choose a role and work arrangement first, then use job descriptions to prioritize a small, demonstrable set of skills. Python is the broadest starting point here, but SQL, TypeScript, and Kubernetes matter differently across roles. Remote and early-career openings are a small, specifically labeled part of this sample. Check target postings before investing in a course, and repeat the analysis as listings change."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "AEDS 6400 Blog",
     "section": "",
-    "text": "Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
+    "text": "Does Education Protect Workers from Unemployment?\n\n\n\nlabor-market\n\nunemployment\n\neducation\n\ndata-visualization\n\n\n\nA weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.\n\n\n\n\n\nSep 28, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
   }
 ]

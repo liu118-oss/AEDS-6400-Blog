@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jin Liu">
+<meta name="dcterms.date" content="2026-09-28">
+<meta name="description" content="A weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.">
 
-<title>AEDS 6400 Blog – Jin Liu</title>
+<title>Does Education Protect Workers from Unemployment? – Jin Liu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,25 +32,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,35 +76,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -135,8 +107,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Jin Liu" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light">
 
@@ -145,7 +117,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jin Liu</span>
     </a>
   </div>
@@ -156,7 +128,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,143 +146,115 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">AEDS 6400 Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Does Education Protect Workers from Unemployment?</h1>
+                  <div>
+        <div class="description">
+          A weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">labor-market</div>
+                <div class="quarto-category">unemployment</div>
+                <div class="quarto-category">education</div>
+                <div class="quarto-category">data-visualization</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jin Liu </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 28, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZGF0YS12aXN1YWxpemF0aW9u">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWR1Y2F0aW9u">education <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGFib3ItbWFya2V0">labor-market <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bGluZWFyLWFsZ2VicmE=">linear-algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWF0aGVtYXRpY3M=">mathematics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dW5lbXBsb3ltZW50">unemployment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2ViLXNjcmFwaW5n">web-scraping <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-unemployment-by-education-matters" id="toc-why-unemployment-by-education-matters" class="nav-link active" data-scroll-target="#why-unemployment-by-education-matters">Why unemployment by education matters</a></li>
+  <li><a href="#data-and-method" id="toc-data-and-method" class="nav-link" data-scroll-target="#data-and-method">Data and method</a></li>
+  <li><a href="#a-persistent-education-gradient" id="toc-a-persistent-education-gradient" class="nav-link" data-scroll-target="#a-persistent-education-gradient">A persistent education gradient</a></li>
+  <li><a href="#the-gap-changes-over-the-business-cycle" id="toc-the-gap-changes-over-the-business-cycle" class="nav-link" data-scroll-target="#the-gap-changes-over-the-business-cycle">The gap changes over the business cycle</a></li>
+  <li><a href="#education-is-not-simply-standing-in-for-age" id="toc-education-is-not-simply-standing-in-for-age" class="nav-link" data-scroll-target="#education-is-not-simply-standing-in-for-age">Education is not simply standing in for age</a></li>
+  <li><a href="#interpretation-and-takeaway" id="toc-interpretation-and-takeaway" class="nav-link" data-scroll-target="#interpretation-and-takeaway">Interpretation and takeaway</a></li>
+  <li><a href="#data-citation" id="toc-data-citation" class="nav-link" data-scroll-target="#data-citation">Data citation</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="why-unemployment-by-education-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-unemployment-by-education-matters">Why unemployment by education matters</h2>
+<p>Unemployment is costly for workers and families, but its burden is not distributed evenly. Education may reduce unemployment risk by giving workers more specialized skills, access to a wider range of occupations, or stronger attachment to employers. It may also separate workers into industries that respond differently to recessions. I ask: <strong>How does unemployment vary by education among U.S. adults ages 25-64, and does the gap change when the labor market weakens?</strong></p>
+</section>
+<section id="data-and-method" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-method">Data and method</h2>
+<p>I use <a href="https://cps.ipums.org/cps/">IPUMS CPS</a>, which harmonizes the monthly Current Population Survey across time. My extract contains April Basic Monthly samples from 2000 through 2025 and the variables <code>YEAR</code>, <code>MONTH</code>, <code>AGE</code>, <code>EDUC</code>, <code>LABFORCE</code>, <code>EMPSTAT</code>, and <code>WTFINL</code>. April gives one comparable cross-section per year and captures the abrupt pandemic disruption in April 2020.</p>
+<p>The analysis includes civilians ages 25-64 who are in the labor force. I group education into four levels: less than high school, high school or GED, some college or an associate degree, and a bachelor’s degree or higher. A person is unemployed when the detailed <code>EMPSTAT</code> code is 20-22. The unemployment rate is unemployed people divided by the civilian labor force.</p>
+<p>Every estimate uses the final Basic Monthly CPS person weight, <code>WTFINL</code>:</p>
+<p><span class="math display">\[
+\text{Unemployment rate}_g=
+\frac{\sum_{i\in g} WTFINL_i\times Unemployed_i}
+{\sum_{i\in g} WTFINL_i}.
+\]</span></p>
+<p>This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete <a href="code/01_analyze_cps.R">analysis script</a> generates every table and figure.</p>
+</section>
+<section id="a-persistent-education-gradient" class="level2">
+<h2 class="anchored" data-anchor-id="a-persistent-education-gradient">A persistent education gradient</h2>
+<p><img src="results/01_unemployment_trends.png" class="img-fluid"></p>
+<p>The first figure establishes whether unemployment rates differ consistently across education groups and shows how all four groups move with the national labor market. Comparing 2000, 2010, 2020, and 2025 also reveals which groups experienced the largest increases during weak labor markets.</p>
+<p>In April 2025, the weighted unemployment rate was <strong>6.3%</strong> for workers without a high-school diploma and <strong>2.4%</strong> for workers with a bachelor’s degree or higher. The same ordering is visible across most years. During the April 2020 shock, the rates rose to <strong>20.8%</strong> and <strong>7.9%</strong>, respectively. Education therefore marks a persistent difference in unemployment risk, while all groups still move with the wider economy.</p>
+</section>
+<section id="the-gap-changes-over-the-business-cycle" class="level2">
+<h2 class="anchored" data-anchor-id="the-gap-changes-over-the-business-cycle">The gap changes over the business cycle</h2>
+<p><img src="results/02_education_gaps.png" class="img-fluid"></p>
+<p>The second figure subtracts the unemployment rate for bachelor’s-degree holders from each other group’s rate. This shifts attention from the overall cycle to inequality in unemployment risk. Higher lines during 2010 or 2020 indicate that downturns widened the education gap rather than raising unemployment equally for everyone.</p>
+<p>The gap between the least-educated group and bachelor’s-degree holders was <strong>12.9 percentage points</strong> in April 2020, compared with <strong>3.9 percentage points</strong> in April 2025. The recession-era gap was therefore larger. This comparison shows whether weaker labor markets merely raise unemployment or also concentrate more of the increase among workers with less education.</p>
+</section>
+<section id="education-is-not-simply-standing-in-for-age" class="level2">
+<h2 class="anchored" data-anchor-id="education-is-not-simply-standing-in-for-age">Education is not simply standing in for age</h2>
+<p><img src="results/03_age_education_heatmap.png" class="img-fluid"></p>
+<p>Education and age are related: older adults have had more time to complete degrees, while younger workers have less labor-market experience. The final figure compares education groups within four age bands in 2025. A consistent education gradient within rows would show that the overall relationship is not solely the result of different age composition.</p>
+<p>In <strong>4 of the four age groups</strong>, unemployment was higher for adults without a high-school diploma than for adults with a bachelor’s degree or higher. The comparison does not remove every possible difference between workers, but it shows how much of the aggregate education pattern remains after making a simple age adjustment.</p>
+</section>
+<section id="interpretation-and-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-and-takeaway">Interpretation and takeaway</h2>
+<p>These figures describe associations, not causal effects. Degree holders differ from other workers in occupation, industry, location, experience, and many other ways. The analysis also uses one month per year, so it describes April conditions rather than an annual average.</p>
+<p>The practical lesson is that a single national unemployment rate can conceal large differences in economic security. Read together, the figures show whether more-educated workers experience lower unemployment in ordinary years, whether their advantage expands in downturns, and whether it remains visible within age groups. <strong>The main takeaway is that education is related both to the level of unemployment risk and to how strongly workers are exposed when the labor market deteriorates.</strong> For workforce agencies, the descriptive evidence can help target job-search assistance and retraining toward less-educated workers, especially during downturns.</p>
+</section>
+<section id="data-citation" class="level2">
+<h2 class="anchored" data-anchor-id="data-citation">Data citation</h2>
+<p>Flood, Sarah, Miriam King, Renae Rodgers, Steven Ruggles, J. Robert Warren, Daniel Backman, Etienne Breton, Grace Cooper, Julia A. Rivera Drew, Stephanie Richards, David Van Riper, and Kari C. W. Williams. 2025. <em>IPUMS CPS: Version 13.0</em> [dataset]. Minneapolis, MN: IPUMS. <a href="https://doi.org/10.18128/D030.V13.0">https://doi.org/10.18128/D030.V13.0</a>.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bGFib3ItbWFya2V0JTJDdW5lbXBsb3ltZW50JTJDZWR1Y2F0aW9uJTJDZGF0YS12aXN1YWxpemF0aW9u" data-listing-date-sort="1790568000000" data-listing-file-modified-sort="1790641315107" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1028">
-<div class="thumbnail"><a href="./posts/week-03/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/week-03/results/01_unemployment_trends.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week-03/index.html" class="no-external">Does Education Protect Workers from Unemployment?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGFib3ItbWFya2V0'); return false;">labor-market</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dW5lbXBsb3ltZW50'); return false;">unemployment</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWR1Y2F0aW9u'); return false;">education</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YS12aXN1YWxpemF0aW9u'); return false;">data-visualization</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/week-03/index.html" class="no-external">
-<p>A weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/week-03/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2026
-</div>
-<div class="listing-author">
-Jin Liu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="d2ViLXNjcmFwaW5nJTJDUiUyQ2xhYm9yLW1hcmtldA==" data-listing-date-sort="1789963200000" data-listing-file-modified-sort="1790032217246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1024">
-<div class="thumbnail"><a href="./posts/week-02/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/week-02/results/skill_frequencies.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week-02/index.html" class="no-external">Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('d2ViLXNjcmFwaW5n'); return false;">web-scraping</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGFib3ItbWFya2V0'); return false;">labor-market</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/week-02/index.html" class="no-external">
-<p>A reproducible R scrape turns German-focused job postings into role-specific study priorities.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/week-02/index.html" class="no-external">
-<div class="listing-date">
-Sep 21, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="bWF0aGVtYXRpY3MlMkNsaW5lYXItYWxnZWJyYSUyQ2Vjb25vbWljcw==" data-listing-date-sort="1789358400000" data-listing-file-modified-sort="1789425593891" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1121">
-<div class="thumbnail"><a href="./posts/week-01/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/week-01/index_files/figure-html/fig-eigenvectors-output-1.png" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)."  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week-01/index.html" class="no-external">Eigenvalues and Eigenvectors: The Directions That Stay on Track</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWF0aGVtYXRpY3M='); return false;">mathematics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGluZWFyLWFsZ2VicmE='); return false;">linear-algebra</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/week-01/index.html" class="no-external">
-<p>A matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/week-01/index.html" class="no-external">
-<div class="listing-date">
-Sep 14, 2026
-</div>
-<div class="listing-author">
-Jin Liu
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

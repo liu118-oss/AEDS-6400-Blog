@@ -10,7 +10,67 @@
 <atom:link href="https://liu118-oss.github.io/AEDS-6400-Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Mon, 21 Sep 2026 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 28 Sep 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Does Education Protect Workers from Unemployment?</title>
+  <dc:creator>Jin Liu</dc:creator>
+  <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="why-unemployment-by-education-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-unemployment-by-education-matters">Why unemployment by education matters</h2>
+<p>Unemployment is costly for workers and families, but its burden is not distributed evenly. Education may reduce unemployment risk by giving workers more specialized skills, access to a wider range of occupations, or stronger attachment to employers. It may also separate workers into industries that respond differently to recessions. I ask: <strong>How does unemployment vary by education among U.S. adults ages 25-64, and does the gap change when the labor market weakens?</strong></p>
+</section>
+<section id="data-and-method" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-method">Data and method</h2>
+<p>I use <a href="https://cps.ipums.org/cps/">IPUMS CPS</a>, which harmonizes the monthly Current Population Survey across time. My extract contains April Basic Monthly samples from 2000 through 2025 and the variables <code>YEAR</code>, <code>MONTH</code>, <code>AGE</code>, <code>EDUC</code>, <code>LABFORCE</code>, <code>EMPSTAT</code>, and <code>WTFINL</code>. April gives one comparable cross-section per year and captures the abrupt pandemic disruption in April 2020.</p>
+<p>The analysis includes civilians ages 25-64 who are in the labor force. I group education into four levels: less than high school, high school or GED, some college or an associate degree, and a bachelor’s degree or higher. A person is unemployed when the detailed <code>EMPSTAT</code> code is 20-22. The unemployment rate is unemployed people divided by the civilian labor force.</p>
+<p>Every estimate uses the final Basic Monthly CPS person weight, <code>WTFINL</code>:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7BUnemployment%20rate%7D_g=%0A%5Cfrac%7B%5Csum_%7Bi%5Cin%20g%7D%20WTFINL_i%5Ctimes%20Unemployed_i%7D%0A%7B%5Csum_%7Bi%5Cin%20g%7D%20WTFINL_i%7D.%0A"></p>
+<p>This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete <a href="code/01_analyze_cps.R">analysis script</a> generates every table and figure.</p>
+</section>
+<section id="a-persistent-education-gradient" class="level2">
+<h2 class="anchored" data-anchor-id="a-persistent-education-gradient">A persistent education gradient</h2>
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/results/01_unemployment_trends.png" class="img-fluid"></p>
+<p>The first figure establishes whether unemployment rates differ consistently across education groups and shows how all four groups move with the national labor market. Comparing 2000, 2010, 2020, and 2025 also reveals which groups experienced the largest increases during weak labor markets.</p>
+<p>In April 2025, the weighted unemployment rate was <strong>6.3%</strong> for workers without a high-school diploma and <strong>2.4%</strong> for workers with a bachelor’s degree or higher. The same ordering is visible across most years. During the April 2020 shock, the rates rose to <strong>20.8%</strong> and <strong>7.9%</strong>, respectively. Education therefore marks a persistent difference in unemployment risk, while all groups still move with the wider economy.</p>
+</section>
+<section id="the-gap-changes-over-the-business-cycle" class="level2">
+<h2 class="anchored" data-anchor-id="the-gap-changes-over-the-business-cycle">The gap changes over the business cycle</h2>
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/results/02_education_gaps.png" class="img-fluid"></p>
+<p>The second figure subtracts the unemployment rate for bachelor’s-degree holders from each other group’s rate. This shifts attention from the overall cycle to inequality in unemployment risk. Higher lines during 2010 or 2020 indicate that downturns widened the education gap rather than raising unemployment equally for everyone.</p>
+<p>The gap between the least-educated group and bachelor’s-degree holders was <strong>12.9 percentage points</strong> in April 2020, compared with <strong>3.9 percentage points</strong> in April 2025. The recession-era gap was therefore larger. This comparison shows whether weaker labor markets merely raise unemployment or also concentrate more of the increase among workers with less education.</p>
+</section>
+<section id="education-is-not-simply-standing-in-for-age" class="level2">
+<h2 class="anchored" data-anchor-id="education-is-not-simply-standing-in-for-age">Education is not simply standing in for age</h2>
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/results/03_age_education_heatmap.png" class="img-fluid"></p>
+<p>Education and age are related: older adults have had more time to complete degrees, while younger workers have less labor-market experience. The final figure compares education groups within four age bands in 2025. A consistent education gradient within rows would show that the overall relationship is not solely the result of different age composition.</p>
+<p>In <strong>4 of the four age groups</strong>, unemployment was higher for adults without a high-school diploma than for adults with a bachelor’s degree or higher. The comparison does not remove every possible difference between workers, but it shows how much of the aggregate education pattern remains after making a simple age adjustment.</p>
+</section>
+<section id="interpretation-and-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-and-takeaway">Interpretation and takeaway</h2>
+<p>These figures describe associations, not causal effects. Degree holders differ from other workers in occupation, industry, location, experience, and many other ways. The analysis also uses one month per year, so it describes April conditions rather than an annual average.</p>
+<p>The practical lesson is that a single national unemployment rate can conceal large differences in economic security. Read together, the figures show whether more-educated workers experience lower unemployment in ordinary years, whether their advantage expands in downturns, and whether it remains visible within age groups. <strong>The main takeaway is that education is related both to the level of unemployment risk and to how strongly workers are exposed when the labor market deteriorates.</strong> For workforce agencies, the descriptive evidence can help target job-search assistance and retraining toward less-educated workers, especially during downturns.</p>
+</section>
+<section id="data-citation" class="level2">
+<h2 class="anchored" data-anchor-id="data-citation">Data citation</h2>
+<p>Flood, Sarah, Miriam King, Renae Rodgers, Steven Ruggles, J. Robert Warren, Daniel Backman, Etienne Breton, Grace Cooper, Julia A. Rivera Drew, Stephanie Richards, David Van Riper, and Kari C. W. Williams. 2025. <em>IPUMS CPS: Version 13.0</em> [dataset]. Minneapolis, MN: IPUMS. <a href="https://doi.org/10.18128/D030.V13.0">https://doi.org/10.18128/D030.V13.0</a>.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>labor-market</category>
+  <category>unemployment</category>
+  <category>education</category>
+  <category>data-visualization</category>
+  <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/</guid>
+  <pubDate>Mon, 28 Sep 2026 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</title>
   <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/</link>
