@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jin Liu">
+<meta name="dcterms.date" content="2026-10-06">
+<meta name="description" content="FRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.">
 
-<title>AEDS 6400 Blog – Jin Liu</title>
+<title>Why Lower New-Home Prices Have Not Restored Affordability – Jin Liu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,25 +32,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,68 +76,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Jin Liu" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light">
 
@@ -145,7 +88,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jin Liu</span>
     </a>
   </div>
@@ -156,7 +99,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,179 +117,157 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">AEDS 6400 Blog</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Why Lower New-Home Prices Have Not Restored Affordability</h1>
+                  <div>
+        <div class="description">
+          FRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">housing</div>
+                <div class="quarto-category">interest-rates</div>
+                <div class="quarto-category">affordability</div>
+                <div class="quarto-category">fred</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jin Liu </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 6, 2026</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YWZmb3JkYWJpbGl0eQ==">affordability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YS12aXN1YWxpemF0aW9u">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWR1Y2F0aW9u">education <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnJlZA==">fred <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aG91c2luZw==">housing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZXJlc3QtcmF0ZXM=">interest-rates <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGFib3ItbWFya2V0">labor-market <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bGluZWFyLWFsZ2VicmE=">linear-algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWF0aGVtYXRpY3M=">mathematics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dW5lbXBsb3ltZW50">unemployment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2ViLXNjcmFwaW5n">web-scraping <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-question" id="toc-the-question" class="nav-link active" data-scroll-target="#the-question">The question</a></li>
+  <li><a href="#data-and-method" id="toc-data-and-method" class="nav-link" data-scroll-target="#data-and-method">Data and method</a></li>
+  <li><a href="#sticker-prices-overstate-part-of-the-long-run-increase" id="toc-sticker-prices-overstate-part-of-the-long-run-increase" class="nav-link" data-scroll-target="#sticker-prices-overstate-part-of-the-long-run-increase">Sticker prices overstate part of the long-run increase</a></li>
+  <li><a href="#mortgage-rates-reversed-direction-after-2021" id="toc-mortgage-rates-reversed-direction-after-2021" class="nav-link" data-scroll-target="#mortgage-rates-reversed-direction-after-2021">Mortgage rates reversed direction after 2021</a></li>
+  <li><a href="#the-combined-payment-burden-tells-the-clearest-story" id="toc-the-combined-payment-burden-tells-the-clearest-story" class="nav-link" data-scroll-target="#the-combined-payment-burden-tells-the-clearest-story">The combined payment burden tells the clearest story</a></li>
+  <li><a href="#what-this-benchmark-leaves-out" id="toc-what-this-benchmark-leaves-out" class="nav-link" data-scroll-target="#what-this-benchmark-leaves-out">What this benchmark leaves out</a></li>
+  <li><a href="#takeaway" id="toc-takeaway" class="nav-link" data-scroll-target="#takeaway">Takeaway</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="aG91c2luZyUyQ2ludGVyZXN0LXJhdGVzJTJDYWZmb3JkYWJpbGl0eSUyQ2ZyZWQ=" data-listing-date-sort="1791259200000" data-listing-file-modified-sort="1791331483633" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1049">
-<div class="thumbnail"><a href="./posts/week-04/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/week-04/results/01_real_home_prices.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week-04/index.html" class="no-external">Why Lower New-Home Prices Have Not Restored Affordability</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('aG91c2luZw=='); return false;">housing</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('aW50ZXJlc3QtcmF0ZXM='); return false;">interest-rates</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YWZmb3JkYWJpbGl0eQ=='); return false;">affordability</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZnJlZA=='); return false;">fred</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/week-04/index.html" class="no-external">
-<p>FRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/week-04/index.html" class="no-external">
-<div class="listing-date">
-Oct 6, 2026
-</div>
-<div class="listing-author">
-Jin Liu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="bGFib3ItbWFya2V0JTJDdW5lbXBsb3ltZW50JTJDZWR1Y2F0aW9uJTJDZGF0YS12aXN1YWxpemF0aW9u" data-listing-date-sort="1790568000000" data-listing-file-modified-sort="1790641315107" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1028">
-<div class="thumbnail"><a href="./posts/week-03/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/week-03/results/01_unemployment_trends.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week-03/index.html" class="no-external">Does Education Protect Workers from Unemployment?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGFib3ItbWFya2V0'); return false;">labor-market</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('dW5lbXBsb3ltZW50'); return false;">unemployment</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWR1Y2F0aW9u'); return false;">education</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YS12aXN1YWxpemF0aW9u'); return false;">data-visualization</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/week-03/index.html" class="no-external">
-<p>A weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/week-03/index.html" class="no-external">
-<div class="listing-date">
-Sep 28, 2026
-</div>
-<div class="listing-author">
-Jin Liu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="d2ViLXNjcmFwaW5nJTJDUiUyQ2xhYm9yLW1hcmtldA==" data-listing-date-sort="1789963200000" data-listing-file-modified-sort="1790032217246" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1024">
-<div class="thumbnail"><a href="./posts/week-02/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/week-02/results/skill_frequencies.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week-02/index.html" class="no-external">Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('d2ViLXNjcmFwaW5n'); return false;">web-scraping</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGFib3ItbWFya2V0'); return false;">labor-market</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/week-02/index.html" class="no-external">
-<p>A reproducible R scrape turns German-focused job postings into role-specific study priorities.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/week-02/index.html" class="no-external">
-<div class="listing-date">
-Sep 21, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="bWF0aGVtYXRpY3MlMkNsaW5lYXItYWxnZWJyYSUyQ2Vjb25vbWljcw==" data-listing-date-sort="1789358400000" data-listing-file-modified-sort="1789425593891" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1121">
-<div class="thumbnail"><a href="./posts/week-01/index.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/week-01/index_files/figure-html/fig-eigenvectors-output-1.png" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)."  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/week-01/index.html" class="no-external">Eigenvalues and Eigenvectors: The Directions That Stay on Track</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bWF0aGVtYXRpY3M='); return false;">mathematics</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bGluZWFyLWFsZ2VicmE='); return false;">linear-algebra</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbm9taWNz'); return false;">economics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/week-01/index.html" class="no-external">
-<p>A matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/week-01/index.html" class="no-external">
-<div class="listing-date">
-Sep 14, 2026
-</div>
-<div class="listing-author">
-Jin Liu
-</div>
-</a>
+<section id="the-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-question">The question</h2>
+<p>Buying a home depends on more than its advertised price. Most households borrow, so mortgage rates determine how much of the price becomes a monthly payment. Income growth and inflation also affect whether comparisons across years are meaningful. I ask: <strong>How have home prices and mortgage rates jointly changed the affordability of buying a typical new U.S. home since 2000?</strong></p>
+<p>This question matters to households deciding whether a home fits their budget and to policymakers trying to understand why affordability can remain weak even when prices stop rising.</p>
+</section>
+<section id="data-and-method" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-method">Data and method</h2>
+<p>I download four public series programmatically from the Federal Reserve Bank of St.&nbsp;Louis’s <a href="https://fred.stlouisfed.org/">FRED</a> CSV endpoint: the median sales price of new houses (<code>MSPUS</code>), the 30-year fixed mortgage rate (<code>MORTGAGE30US</code>), the Consumer Price Index (<code>CPIAUCSL</code>), and median household income (<code>MEHOINUSA646N</code>). The underlying sources are the Census Bureau and HUD, Freddie Mac, the Bureau of Labor Statistics, and the Census Bureau.</p>
+<p>The series have different frequencies, so I calculate annual averages of quarterly home prices, weekly mortgage rates, and monthly CPI. Household income is already annual. I limit the analysis to 2000–2025, the latest complete year shared by all four series.</p>
+<p>Two transformations make the comparison economically meaningful. First, I use CPI to express home prices in 2025 dollars. Second, I estimate the monthly principal-and-interest payment on the median-priced home, assuming a 20% down payment and a 30-year fixed mortgage. I divide that payment by median monthly household income. This payment burden is an illustration, not a lending standard, and excludes property taxes, insurance, maintenance, and transaction costs. The complete <a href="code/01_analyze_housing.R">R analysis</a> downloads the data and generates every result.</p>
+</section>
+<section id="sticker-prices-overstate-part-of-the-long-run-increase" class="level2">
+<h2 class="anchored" data-anchor-id="sticker-prices-overstate-part-of-the-long-run-increase">Sticker prices overstate part of the long-run increase</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results/01_real_home_prices.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<p>The nominal median new-home price increased from $167,550 in 2000 to $415,400 in 2025. After accounting for inflation, the increase is smaller: the 2000 price equals about $313,283 in 2025 dollars. Inflation therefore explains an important part of the apparent increase, although real home prices still rose by 33%.</p>
+<p>The real-price series also changes the interpretation of the recent decline. In 2025 dollars, the annual average fell from approximately $476,353 in 2022 to $415,400 in 2025, a decline of 13%. Even after that correction, the 2025 level remained 3% above 2019. Buyers therefore received some price relief after 2022, but did not return to the pre-pandemic market.</p>
+</section>
+<section id="mortgage-rates-reversed-direction-after-2021" class="level2">
+<h2 class="anchored" data-anchor-id="mortgage-rates-reversed-direction-after-2021">Mortgage rates reversed direction after 2021</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results/02_mortgage_rates.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The average 30-year mortgage rate fell to 3.0% in 2021, allowing buyers to finance expensive homes relatively cheaply. By 2025, the average was 6.6%. The higher rate matters because it raises every monthly payment without changing the home’s purchase price or providing the buyer with more housing.</p>
+<p>High mortgage rates are not historically unique: the 2000 average was 8.1%. What changed is the amount being financed relative to income. The median new-home price equaled about 4.0 years of median household income in 2000 and 4.7 years in 2025. The same interest rate can therefore create a different burden when the loan principal and household income have changed.</p>
+</section>
+<section id="the-combined-payment-burden-tells-the-clearest-story" class="level2">
+<h2 class="anchored" data-anchor-id="the-combined-payment-burden-tells-the-clearest-story">The combined payment burden tells the clearest story</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="results/03_payment_burden.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For the assumptions used here, the estimated payment rose from $1,285 per month in 2021 to $2,121 in 2025. It increased from 21.8% to 29.1% of median gross household income. The burden peaked at 33.1% in 2023.</p>
+<p>The counterfactual line holds the mortgage rate at its 2021 average while allowing home prices and income to change. At that low rate, the 2025 payment would have been approximately $1,394, or 19.1% of income. The difference—about <strong>$728 per month</strong>—shows why modest price declines have not fully restored affordability.</p>
+</section>
+<section id="what-this-benchmark-leaves-out" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-benchmark-leaves-out">What this benchmark leaves out</h2>
+<p>This national comparison does not represent every buyer. <code>MSPUS</code> covers newly built homes, which can differ from existing homes in size, location, and quality. The median home and median household also come from separate datasets, so this is not the payment made by one observed household. Annual averages conceal changes within a year and large differences across local markets. Finally, many buyers put down less than 20%, and the calculation excludes mortgage insurance, property taxes, homeowners insurance, maintenance, fees, and closing costs. These omissions generally make the displayed payment smaller than the full monthly cost of ownership.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>What this means for households and policymakers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a prospective buyer, the useful comparison is the complete monthly cost relative to income, rather than the listing price alone. In 2025, principal and interest on the typical new home consumed about 29.1% of median gross household income before taxes, insurance, or maintenance. Buyers should calculate the payment at the rate they can actually obtain and leave room for those additional costs.</p>
+<p>For policymakers, the results separate two problems. Lower rates would reduce payments quickly, but rates move with broader financial conditions. Expanding housing supply addresses the price side more directly and can improve affordability without depending on a return to unusually low mortgage rates.</p>
+</div>
+</div>
+</section>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p>New-home prices remain high, but the recent affordability squeeze cannot be understood from prices alone. <strong>The transition from a 3.0% mortgage rate in 2021 to 6.6% in 2025 added roughly $728 to the illustrative monthly payment on a 2025 median-priced new home.</strong> Households should evaluate homes using payment-to-income calculations, while durable policy improvements require attention to both financing conditions and the supply of homes.</p>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<ul>
+<li><a href="https://fred.stlouisfed.org/series/MSPUS">Median Sales Price of New Houses Sold, MSPUS</a>, U.S. Census Bureau and U.S. Department of Housing and Urban Development.</li>
+<li><a href="https://fred.stlouisfed.org/series/MORTGAGE30US">30-Year Fixed Rate Mortgage Average, MORTGAGE30US</a>, Freddie Mac.</li>
+<li><a href="https://fred.stlouisfed.org/series/CPIAUCSL">Consumer Price Index, CPIAUCSL</a>, U.S. Bureau of Labor Statistics.</li>
+<li><a href="https://fred.stlouisfed.org/series/MEHOINUSA646N">Median Household Income, MEHOINUSA646N</a>, U.S. Census Bureau.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
