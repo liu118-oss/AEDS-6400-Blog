@@ -1,0 +1,6 @@
+PASS: all 67 unique Pennsylvania county GEOIDs matched the boundary file.
+PASS: geometries valid and nonempty; maps use EPSG:5070.
+PASS: source estimates, component totals and denominators checked by 02_prepare_data.R.
+PASS: approximate derived MOEs finite and nonnegative; intervals bounded to [0,1].
+CHECK: counties with burden MOE above 5 percentage points: 20
+PASS: two maps, two scatterplots and analysis CSV generated programmatically.

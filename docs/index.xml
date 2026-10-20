@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
-      xmlns:media="http://search.yahoo.com/mrss/" 
-      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+<rss  xmlns:atom="http://www.w3.org/2005/Atom"
+      xmlns:media="http://search.yahoo.com/mrss/"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
       version="2.0">
 <channel>
 <title>Jin Liu</title>
@@ -10,12 +10,118 @@
 <atom:link href="https://liu118-oss.github.io/AEDS-6400-Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Tue, 06 Oct 2026 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 19 Oct 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Why Lower Rent Does Not Always Mean Less Housing Pressure</title>
+  <dc:creator>Jin Liu</dc:creator>
+  <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-05/</link>
+  <description><![CDATA[
+
+
+
+
+
+<section id="when-a-lower-rent-is-still-hard-to-afford" class="level2">
+<h2 class="anchored" data-anchor-id="when-a-lower-rent-is-still-hard-to-afford">When a lower rent is still hard to afford</h2>
+<p>Chester County’s median monthly rent was $1,763. In Centre County, it was $1,207. Yet renters in Centre were more likely to spend at least 30% of their income on rent. The county with the smaller bill had the higher burden.</p>
+<p>A lower rent may look attractive, but how far it goes depends on the income available to pay it. For local housing organizations, focusing only on expensive areas could also miss renters struggling elsewhere.</p>
+<p><strong>Do Pennsylvania counties with lower rents generally have fewer renters spending a large share of their income on housing?</strong> I compare all 67 counties to answer that question. The aim is to see how much the price of housing tells us, and what we miss when we stop there.</p>
+</section>
+<section id="from-census-tables-to-county-maps" class="level2">
+<h2 class="anchored" data-anchor-id="from-census-tables-to-county-maps">From Census tables to county maps</h2>
+<p>I use the <a href="https://www.census.gov/programs-surveys/acs/data/summary-file.2024.html">2020–2024 American Community Survey</a>, which combines five years of survey data. These are estimates for that period, not current apartment listings. The rent measure is <em>median gross rent</em>: the middle monthly rent, including utilities paid separately by the tenant, expressed in 2024 dollars.</p>
+<p>For affordability, I calculate the share of rent-paying households spending <strong>30% or more of their income on rent and utilities</strong>. I call this the rent-burden rate. Households whose ratio cannot be calculated are excluded. Across Pennsylvania, 48.2% of households with a calculable ratio met that threshold, and 24.9% spent at least half their income on rent.</p>
+<p>The R scripts download the official tables and match each county to its <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html">Census map boundary</a>. The statewide shares combine household counts; they are not simple averages of county rates. The <a href="README.md">data and methods notes</a> explain the calculations and how to reproduce the analysis.</p>
+</section>
+<section id="where-rents-are-higher" class="level2">
+<h2 class="anchored" data-anchor-id="where-rents-are-higher">Where rents are higher</h2>
+<div id="fig-rent" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-05/results/01_median_rent_map.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rent-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Median monthly gross rent by Pennsylvania county, 2020–2024. Selected counties are labeled for comparison.
+</figcaption>
+</figure>
+</div>
+<p>Higher rents cluster in the southeast. Chester’s median is $1,763, compared with $1,397 in Philadelphia. Much of western and central Pennsylvania has lower rents. Bedford’s median is $784, while Allegheny’s is $1,153.</p>
+<p>The first map shows where rents are higher. The next asks whether those are also the places where renters have the most trouble paying them.</p>
+</section>
+<section id="housing-pressure-reaches-beyond-expensive-counties" class="level2">
+<h2 class="anchored" data-anchor-id="housing-pressure-reaches-beyond-expensive-counties">Housing pressure reaches beyond expensive counties</h2>
+<div id="fig-burden" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-burden-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-05/results/02_rent_burden_map.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-burden-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Share of rent-paying households spending at least 30% of income on rent. Open circles mark counties with larger margins of error.
+</figcaption>
+</figure>
+</div>
+<p>Housing pressure is not confined to the highest-rent counties in the southeast. Centre, in central Pennsylvania, has a burden rate of 57.0%. Monroe, in the northeast, is at 57.0%. Both have lower median rents than Chester, where the rate is 47.8%.</p>
+<p>The contrast also appears closer to Philadelphia. Its rent is below Chester’s, but its burden rate is higher, at 52.3%. Farther west, Bedford combines a much lower rent with an estimated burden rate of 49.9%. Bedford’s estimate has a wider margin of error, so small differences between it and other counties should not be treated as firm rankings.</p>
+</section>
+<section id="what-happens-when-we-compare-every-county" class="level2">
+<h2 class="anchored" data-anchor-id="what-happens-when-we-compare-every-county">What happens when we compare every county?</h2>
+<div id="fig-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-05/results/03_rent_vs_burden.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Median rent and rent-burden rate for all 67 counties. Vertical bars show approximate 90% margins of error for burden rates.
+</figcaption>
+</figure>
+</div>
+<p>The broader pattern is still clear: higher-rent counties generally have higher burden rates. The correlation is 0.54, counting each county equally. The relationship is positive, but there is plenty of variation around it.</p>
+<p>Centre and Chester illustrate that variation. Allegheny offers another comparison: its rent is close to Centre’s, while its burden rate is lower, at 46.2%. Lower rents often go with lighter burdens, but rent alone does not tell us which county has a larger share of struggling renters.</p>
+</section>
+<section id="income-helps-explain-the-difference" class="level2">
+<h2 class="anchored" data-anchor-id="income-helps-explain-the-difference">Income helps explain the difference</h2>
+<p>To see why the maps differ, I added median renter household income from <a href="https://api.census.gov/data/2024/acs/acs5/groups/B25119.html">ACS table B25119</a>. Centre’s median renter income is $39,074 a year, compared with $72,048 in Chester. Centre’s rent is lower, but its renter income is lower by much more.</p>
+<p>Dividing annual median rent by median renter income gives 37.1% for Centre and 29.4% for Chester. Monroe’s renter income is $47,645, putting its ratio at 35.1%. These comparisons help explain why housing pressure extends beyond the high-rent southeast: a smaller rent bill can still be large relative to local renters’ incomes.</p>
+<div id="fig-income" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-income-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-05/results/04_income_vs_burden.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-income-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Annual median rent divided by median renter income, compared with the actual rent-burden rate. Each point represents one county.
+</figcaption>
+</figure>
+</div>
+<p>Across the 67 counties, this income-based comparison has a correlation of 0.88 with the burden rate, compared with 0.54 for rent alone. This is a ratio of two county medians, <strong>not the share of income paid by a typical household</strong>. The stronger relationship is also partly expected: both measures compare housing costs with income. It helps us read the maps, rather than proving what causes a county’s burden rate.</p>
+<p>Centre has an important local feature: Penn State’s University Park campus. The county’s <a href="https://centrecountypa.gov/DocumentCenter/View/25310/Centre-County-2023-HNA_Final_6_20_2023#page=76">2023 Housing Needs Assessment</a> links high burden among its lowest-income renters to the concentration of college students. It also notes that resources such as student loans can complicate comparisons based on reported income. Students are therefore a plausible part of Centre’s story, although these county totals cannot separate their contribution from that of other renters. Households with zero or negative income have noncomputable ratios and are excluded from my burden rate; they are not automatically counted as burdened.</p>
+</section>
+<section id="what-should-a-renter-take-from-this" class="level2">
+<h2 class="anchored" data-anchor-id="what-should-a-renter-take-from-this">What should a renter take from this?</h2>
+<p>When comparing places to live, I would start with actual rent and utility costs, then compare them with the income I expected to have there. A county with cheaper housing may also offer lower earnings. For local housing organizations, the two maps together identify places worth examining more closely, including lower-rent counties where many households still struggle.</p>
+<p>The ACS estimates cover 2020–2024, not today’s listings, and county figures hide differences between neighborhoods and households. Error bars show uncertainty in the burden estimates; map circles flag margins above five percentage points. The rent measures exclude households paying no cash rent, while the added income measure covers all renter households. The 30% threshold offers a common comparison, but does not account for every household’s other expenses.</p>
+</section>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p>Lower rents generally go with lower rent burdens in Pennsylvania, but Centre and Monroe show why price alone can mislead. <strong>Rent tells us what housing costs; renter income helps explain how hard it is to pay.</strong> Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.</p>
+<hr>
+<p><em>Sources: U.S. Census Bureau, 2020–2024 ACS, tables B25064, B25070 and B25119; 2024 county boundaries. <a href="README.md">Data and methods</a> · <a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-05">GitHub: code and data</a> · <a href="results/replication.zip">Download replication files</a>.</em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>housing</category>
+  <category>affordability</category>
+  <category>GIS</category>
+  <category>Pennsylvania</category>
+  <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-05/</guid>
+  <pubDate>Mon, 19 Oct 2026 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Why Lower New-Home Prices Have Not Restored Affordability</title>
   <dc:creator>Jin Liu</dc:creator>
   <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-04/</link>
-  <description><![CDATA[ 
+  <description><![CDATA[
 
 
 
@@ -114,13 +220,13 @@
   <category>affordability</category>
   <category>fred</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-04/</guid>
-  <pubDate>Tue, 06 Oct 2026 04:00:00 GMT</pubDate>
+  <pubDate>Tue, 06 Oct 2026 07:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Does Education Protect Workers from Unemployment?</title>
   <dc:creator>Jin Liu</dc:creator>
   <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/</link>
-  <description><![CDATA[ 
+  <description><![CDATA[
 
 
 
@@ -174,12 +280,12 @@
   <category>education</category>
   <category>data-visualization</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/</guid>
-  <pubDate>Mon, 28 Sep 2026 04:00:00 GMT</pubDate>
+  <pubDate>Mon, 28 Sep 2026 07:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</title>
   <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/</link>
-  <description><![CDATA[ 
+  <description><![CDATA[
 
 
 
@@ -387,13 +493,13 @@ Table&nbsp;2: Top two skill mentions within each role group. Percentages use the
   <category>R</category>
   <category>labor-market</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/</guid>
-  <pubDate>Mon, 21 Sep 2026 04:00:00 GMT</pubDate>
+  <pubDate>Mon, 21 Sep 2026 07:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Eigenvalues and Eigenvectors: The Directions That Stay on Track</title>
   <dc:creator>Jin Liu</dc:creator>
   <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-01/</link>
-  <description><![CDATA[ 
+  <description><![CDATA[
 
 
 
@@ -814,7 +920,7 @@ Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow c
   <category>linear-algebra</category>
   <category>economics</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-01/</guid>
-  <pubDate>Mon, 14 Sep 2026 04:00:00 GMT</pubDate>
+  <pubDate>Mon, 14 Sep 2026 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

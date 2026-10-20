@@ -1,0 +1,3 @@
+data/raw/*.dat
+.DS_Store
+data/raw/*.zip

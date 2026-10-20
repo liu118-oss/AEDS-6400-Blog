@@ -1,0 +1,26 @@
+[
+  {
+    "table": "B25064",
+    "file": "acsdt5y2024-b25064.dat",
+    "source_url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b25064.dat",
+    "retrieved_date": "2026-10-19",
+    "sha256": "b36e6dc1fcef36b8b307d31b37517b64c80d8b9c70d48c9b1894242860f42eb0",
+    "period": "2020-2024 ACS 5-year estimates"
+  },
+  {
+    "table": "B25070",
+    "file": "acsdt5y2024-b25070.dat",
+    "source_url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b25070.dat",
+    "retrieved_date": "2026-10-19",
+    "sha256": "862ccc17d913305d11e6f802ce4518d76b30585ea0b05b251cd8cf21f8661386",
+    "period": "2020-2024 ACS 5-year estimates"
+  },
+  {
+    "table": "B25119",
+    "file": "acsdt5y2024-b25119.dat",
+    "source_url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b25119.dat",
+    "retrieved_date": "2026-10-19",
+    "sha256": "6ca979ddec5aebfe6b009e3b5902ea086752eccab6da6f6145d9b55ac147df0c",
+    "period": "2020-2024 ACS 5-year estimates"
+  }
+]
