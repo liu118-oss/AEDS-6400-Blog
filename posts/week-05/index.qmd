@@ -38,6 +38,9 @@ philadelphia <- get_county("Philadelphia")
 bedford <- get_county("Bedford")
 monroe <- get_county("Monroe")
 allegheny <- get_county("Allegheny")
+montgomery <- get_county("Montgomery")
+bucks <- get_county("Bucks")
+lawrence <- get_county("Lawrence")
 money <- function(x) dollar(x, accuracy = 1)
 pct <- function(x) percent(x, accuracy = 0.1)
 ```
@@ -74,6 +77,8 @@ Housing pressure is not confined to the highest-rent counties in the southeast. 
 
 The contrast also appears closer to Philadelphia. Its rent is below Chester's, but its burden rate is higher, at `r pct(philadelphia$burden_rate)`. Farther west, Bedford combines a much lower rent with an estimated burden rate of `r pct(bedford$burden_rate)`. Bedford's estimate has a wider margin of error, so small differences between it and other counties should not be treated as firm rankings.
 
+Taken together, the maps show that high rents and heavy rent burdens do not line up neatly. Chester, Montgomery and Bucks, the three highest-rent counties, are all in the southeast, but their burden rates are `r pct(chester$burden_rate)`, `r pct(montgomery$burden_rate)` and `r pct(bucks$burden_rate)` respectively, below Centre and Monroe. In western Pennsylvania, Lawrence has a median rent of just `r money(lawrence$median_gross_rent)`, yet an estimated `r pct(lawrence$burden_rate)` of renters meet the burden threshold. Housing pressure reaches beyond the most expensive areas; the income comparison below helps explain why.
+
 ## What happens when we compare every county?
 
 ![Median rent and rent-burden rate for all 67 counties. Vertical bars show approximate 90% margins of error for burden rates.](results/03_rent_vs_burden.png){#fig-comparison}
@@ -102,7 +107,7 @@ The ACS estimates cover 2020–2024, not today's listings, and county figures hi
 
 ## Takeaway
 
-Lower rents generally go with lower rent burdens in Pennsylvania, but Centre and Monroe show why price alone can mislead. **Rent tells us what housing costs; renter income helps explain how hard it is to pay.** Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.
+Lower rents generally go with lower rent burdens in Pennsylvania, but Centre and Lawrence show why price alone can mislead. **Rent tells us what housing costs; renter income helps explain how hard it is to pay.** Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.
 
 ---
 

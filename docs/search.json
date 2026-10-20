@@ -49,6 +49,13 @@
     "text": "The combined payment burden tells the clearest story\n\n\n\n\n\n\n\n\n\nFor the assumptions used here, the estimated payment rose from $1,285 per month in 2021 to $2,121 in 2025. It increased from 21.8% to 29.1% of median gross household income. The burden peaked at 33.1% in 2023.\nThe counterfactual line holds the mortgage rate at its 2021 average while allowing home prices and income to change. At that low rate, the 2025 payment would have been approximately $1,394, or 19.1% of income. The difference—about $728 per month—shows why modest price declines have not fully restored affordability."
   },
   {
+    "objectID": "posts/week-04/index.html#what-this-benchmark-leaves-out",
+    "href": "posts/week-04/index.html#what-this-benchmark-leaves-out",
+    "title": "Why Lower New-Home Prices Have Not Restored Affordability",
+    "section": "What this benchmark leaves out",
+    "text": "What this benchmark leaves out\nThis national comparison does not represent every buyer. MSPUS covers newly built homes, which can differ from existing homes in size, location, and quality. The median home and median household also come from separate datasets, so this is not the payment made by one observed household. Annual averages conceal changes within a year and large differences across local markets. Finally, many buyers put down less than 20%, and the calculation excludes mortgage insurance, property taxes, homeowners insurance, maintenance, fees, and closing costs. These omissions generally make the displayed payment smaller than the full monthly cost of ownership.\n\n\n\n\n\n\nImportantWhat this means for households and policymakers\n\n\n\nFor a prospective buyer, the useful comparison is the complete monthly cost relative to income, rather than the listing price alone. In 2025, principal and interest on the typical new home consumed about 29.1% of median gross household income before taxes, insurance, or maintenance. Buyers should calculate the payment at the rate they can actually obtain and leave room for those additional costs.\nFor policymakers, the results separate two problems. Lower rates would reduce payments quickly, but rates move with broader financial conditions. Expanding housing supply addresses the price side more directly and can improve affordability without depending on a return to unusually low mortgage rates."
+  },
+  {
     "objectID": "posts/week-04/index.html#takeaway",
     "href": "posts/week-04/index.html#takeaway",
     "title": "Why Lower New-Home Prices Have Not Restored Affordability",
@@ -168,6 +175,69 @@
     "text": "The takeaway\nEigenvectors identify directions where a linear transformation reduces to scaling. Eigenvalues tell us the scale factor, including whether the arrow reverses or disappears.\nThe surprising part is that a rule that mixes coordinates can become simple when viewed along the right directions. The next time you see \\(A\\mathbf{v}=\\lambda\\mathbf{v}\\), picture an arrow staying on its line—and ask how much it stretches."
   },
   {
+    "objectID": "posts/week-05/index.html",
+    "href": "posts/week-05/index.html",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "",
+    "text": "Chester County’s median monthly rent was $1,763. In Centre County, it was $1,207. Yet renters in Centre were more likely to spend at least 30% of their income on rent. The county with the smaller bill had the higher burden.\nA lower rent may look attractive, but how far it goes depends on the income available to pay it. For local housing organizations, focusing only on expensive areas could also miss renters struggling elsewhere.\nDo Pennsylvania counties with lower rents generally have fewer renters spending a large share of their income on housing? I compare all 67 counties to answer that question. The aim is to see how much the price of housing tells us, and what we miss when we stop there."
+  },
+  {
+    "objectID": "posts/week-05/index.html#when-a-lower-rent-is-still-hard-to-afford",
+    "href": "posts/week-05/index.html#when-a-lower-rent-is-still-hard-to-afford",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "",
+    "text": "Chester County’s median monthly rent was $1,763. In Centre County, it was $1,207. Yet renters in Centre were more likely to spend at least 30% of their income on rent. The county with the smaller bill had the higher burden.\nA lower rent may look attractive, but how far it goes depends on the income available to pay it. For local housing organizations, focusing only on expensive areas could also miss renters struggling elsewhere.\nDo Pennsylvania counties with lower rents generally have fewer renters spending a large share of their income on housing? I compare all 67 counties to answer that question. The aim is to see how much the price of housing tells us, and what we miss when we stop there."
+  },
+  {
+    "objectID": "posts/week-05/index.html#from-census-tables-to-county-maps",
+    "href": "posts/week-05/index.html#from-census-tables-to-county-maps",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "From Census tables to county maps",
+    "text": "From Census tables to county maps\nI use the 2020–2024 American Community Survey, which combines five years of survey data. These are estimates for that period, not current apartment listings. The rent measure is median gross rent: the middle monthly rent, including utilities paid separately by the tenant, expressed in 2024 dollars.\nFor affordability, I calculate the share of rent-paying households spending 30% or more of their income on rent and utilities. I call this the rent-burden rate. Households whose ratio cannot be calculated are excluded. Across Pennsylvania, 48.2% of households with a calculable ratio met that threshold, and 24.9% spent at least half their income on rent.\nThe R scripts download the official tables and match each county to its Census map boundary. The statewide shares combine household counts; they are not simple averages of county rates. The data and methods notes explain the calculations and how to reproduce the analysis."
+  },
+  {
+    "objectID": "posts/week-05/index.html#where-rents-are-higher",
+    "href": "posts/week-05/index.html#where-rents-are-higher",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "Where rents are higher",
+    "text": "Where rents are higher\n\n\n\n\n\n\nFigure 1: Median monthly gross rent by Pennsylvania county, 2020–2024. Selected counties are labeled for comparison.\n\n\n\nHigher rents cluster in the southeast. Chester’s median is $1,763, compared with $1,397 in Philadelphia. Much of western and central Pennsylvania has lower rents. Bedford’s median is $784, while Allegheny’s is $1,153.\nThe first map shows where rents are higher. The next asks whether those are also the places where renters have the most trouble paying them."
+  },
+  {
+    "objectID": "posts/week-05/index.html#housing-pressure-reaches-beyond-expensive-counties",
+    "href": "posts/week-05/index.html#housing-pressure-reaches-beyond-expensive-counties",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "Housing pressure reaches beyond expensive counties",
+    "text": "Housing pressure reaches beyond expensive counties\n\n\n\n\n\n\nFigure 2: Share of rent-paying households spending at least 30% of income on rent. Open circles mark counties with larger margins of error.\n\n\n\nHousing pressure is not confined to the highest-rent counties in the southeast. Centre, in central Pennsylvania, has a burden rate of 57.0%. Monroe, in the northeast, is at 57.0%. Both have lower median rents than Chester, where the rate is 47.8%.\nThe contrast also appears closer to Philadelphia. Its rent is below Chester’s, but its burden rate is higher, at 52.3%. Farther west, Bedford combines a much lower rent with an estimated burden rate of 49.9%. Bedford’s estimate has a wider margin of error, so small differences between it and other counties should not be treated as firm rankings.\nTaken together, the maps show that high rents and heavy rent burdens do not line up neatly. Chester, Montgomery and Bucks, the three highest-rent counties, are all in the southeast, but their burden rates are 47.8%, 49.0% and 47.9% respectively, below Centre and Monroe. In western Pennsylvania, Lawrence has a median rent of just $831, yet an estimated 51.0% of renters meet the burden threshold. Housing pressure reaches beyond the most expensive areas; the income comparison below helps explain why."
+  },
+  {
+    "objectID": "posts/week-05/index.html#what-happens-when-we-compare-every-county",
+    "href": "posts/week-05/index.html#what-happens-when-we-compare-every-county",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "What happens when we compare every county?",
+    "text": "What happens when we compare every county?\n\n\n\n\n\n\nFigure 3: Median rent and rent-burden rate for all 67 counties. Vertical bars show approximate 90% margins of error for burden rates.\n\n\n\nThe broader pattern is still clear: higher-rent counties generally have higher burden rates. The correlation is 0.54, counting each county equally. The relationship is positive, but there is plenty of variation around it.\nCentre and Chester illustrate that variation. Allegheny offers another comparison: its rent is close to Centre’s, while its burden rate is lower, at 46.2%. Lower rents often go with lighter burdens, but rent alone does not tell us which county has a larger share of struggling renters."
+  },
+  {
+    "objectID": "posts/week-05/index.html#income-helps-explain-the-difference",
+    "href": "posts/week-05/index.html#income-helps-explain-the-difference",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "Income helps explain the difference",
+    "text": "Income helps explain the difference\nTo see why the maps differ, I added median renter household income from ACS table B25119. Centre’s median renter income is $39,074 a year, compared with $72,048 in Chester. Centre’s rent is lower, but its renter income is lower by much more.\nDividing annual median rent by median renter income gives 37.1% for Centre and 29.4% for Chester. Monroe’s renter income is $47,645, putting its ratio at 35.1%. These comparisons help explain why housing pressure extends beyond the high-rent southeast: a smaller rent bill can still be large relative to local renters’ incomes.\n\n\n\n\n\n\nFigure 4: Annual median rent divided by median renter income, compared with the actual rent-burden rate. Each point represents one county.\n\n\n\nAcross the 67 counties, this income-based comparison has a correlation of 0.88 with the burden rate, compared with 0.54 for rent alone. This is a ratio of two county medians, not the share of income paid by a typical household. The stronger relationship is also partly expected: both measures compare housing costs with income. It helps us read the maps, rather than proving what causes a county’s burden rate.\nCentre has an important local feature: Penn State’s University Park campus. The county’s 2023 Housing Needs Assessment links high burden among its lowest-income renters to the concentration of college students. It also notes that resources such as student loans can complicate comparisons based on reported income. Students are therefore a plausible part of Centre’s story, although these county totals cannot separate their contribution from that of other renters. Households with zero or negative income have noncomputable ratios and are excluded from my burden rate; they are not automatically counted as burdened."
+  },
+  {
+    "objectID": "posts/week-05/index.html#what-should-a-renter-take-from-this",
+    "href": "posts/week-05/index.html#what-should-a-renter-take-from-this",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "What should a renter take from this?",
+    "text": "What should a renter take from this?\nWhen comparing places to live, I would start with actual rent and utility costs, then compare them with the income I expected to have there. A county with cheaper housing may also offer lower earnings. For local housing organizations, the two maps together identify places worth examining more closely, including lower-rent counties where many households still struggle.\nThe ACS estimates cover 2020–2024, not today’s listings, and county figures hide differences between neighborhoods and households. Error bars show uncertainty in the burden estimates; map circles flag margins above five percentage points. The rent measures exclude households paying no cash rent, while the added income measure covers all renter households. The 30% threshold offers a common comparison, but does not account for every household’s other expenses."
+  },
+  {
+    "objectID": "posts/week-05/index.html#takeaway",
+    "href": "posts/week-05/index.html#takeaway",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "Takeaway",
+    "text": "Takeaway\nLower rents generally go with lower rent burdens in Pennsylvania, but Centre and Lawrence show why price alone can mislead. Rent tells us what housing costs; renter income helps explain how hard it is to pay. Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.\n\nSources: U.S. Census Bureau, 2020–2024 ACS, tables B25064, B25070 and B25119; 2024 county boundaries. Data and methods · GitHub: code and data · Download replication files."
+  },
+  {
     "objectID": "posts/week-03/index.html",
     "href": "posts/week-03/index.html",
     "title": "Does Education Protect Workers from Unemployment?",
@@ -229,124 +299,5 @@
     "title": "AEDS 6400 Blog",
     "section": "",
     "text": "Why Lower Rent Does Not Always Mean Less Housing Pressure\n\n\n\nhousing\n\naffordability\n\nGIS\n\nPennsylvania\n\n\n\nA comparison of Pennsylvania counties shows why rent alone is not enough to judge housing affordability.\n\n\n\n\n\nOct 19, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower New-Home Prices Have Not Restored Affordability\n\n\n\nhousing\n\ninterest-rates\n\naffordability\n\nfred\n\n\n\nFRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.\n\n\n\n\n\nOct 6, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Education Protect Workers from Unemployment?\n\n\n\nlabor-market\n\nunemployment\n\neducation\n\ndata-visualization\n\n\n\nA weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.\n\n\n\n\n\nSep 28, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/week-04/index.html#what-this-benchmark-leaves-out",
-    "href": "posts/week-04/index.html#what-this-benchmark-leaves-out",
-    "title": "Why Lower New-Home Prices Have Not Restored Affordability",
-    "section": "What this benchmark leaves out",
-    "text": "What this benchmark leaves out\nThis national comparison does not represent every buyer. MSPUS covers newly built homes, which can differ from existing homes in size, location, and quality. The median home and median household also come from separate datasets, so this is not the payment made by one observed household. Annual averages conceal changes within a year and large differences across local markets. Finally, many buyers put down less than 20%, and the calculation excludes mortgage insurance, property taxes, homeowners insurance, maintenance, fees, and closing costs. These omissions generally make the displayed payment smaller than the full monthly cost of ownership.\n\n\n\n\n\n\nImportantWhat this means for households and policymakers\n\n\n\nFor a prospective buyer, the useful comparison is the complete monthly cost relative to income, rather than the listing price alone. In 2025, principal and interest on the typical new home consumed about 29.1% of median gross household income before taxes, insurance, or maintenance. Buyers should calculate the payment at the rate they can actually obtain and leave room for those additional costs.\nFor policymakers, the results separate two problems. Lower rates would reduce payments quickly, but rates move with broader financial conditions. Expanding housing supply addresses the price side more directly and can improve affordability without depending on a return to unusually low mortgage rates."
-  },
-  {
-    "objectID": "posts/week-05/index.html",
-    "href": "posts/week-05/index.html",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "",
-    "text": "Chester County’s median monthly rent was $1,763. In Centre County, it was $1,207. Yet renters in Centre were more likely to spend at least 30% of their income on rent. The county with the smaller bill had the higher burden.\nA lower rent may look attractive, but how far it goes depends on the income available to pay it. For local housing organizations, focusing only on expensive areas could also miss renters struggling elsewhere.\nDo Pennsylvania counties with lower rents generally have fewer renters spending a large share of their income on housing? I compare all 67 counties to answer that question. The aim is to see how much the price of housing tells us, and what we miss when we stop there."
-  },
-  {
-    "objectID": "posts/week-05/index.html#a-lower-bill-is-only-part-of-the-story",
-    "href": "posts/week-05/index.html#a-lower-bill-is-only-part-of-the-story",
-    "title": "Does Cheaper Rent Mean More Affordable Housing?",
-    "section": "",
-    "text": "When comparing places to live, monthly rent is an obvious starting point. A cheaper apartment leaves more money for food, transportation, and savings, provided income and other costs stay the same. But those conditions rarely hold when comparing entire counties. A place with lower rents may also have renters with less income.\nI ask: Across Pennsylvania, do counties with lower rents also have fewer households spending a large share of their income on rent? The answer is broadly yes, but there are meaningful exceptions. Chester County’s median gross rent was $1,763, compared with $1,207 in Centre County. Yet the share of renters spending at least 30% of their income on rent was lower in Chester. Looking at prices alone would miss that difference."
-  },
-  {
-    "objectID": "posts/week-05/index.html#what-the-numbers-measure",
-    "href": "posts/week-05/index.html#what-the-numbers-measure",
-    "title": "Does Cheaper Rent Mean More Affordable Housing?",
-    "section": "What the numbers measure",
-    "text": "What the numbers measure\nI use the Census Bureau’s 2020–2024 American Community Survey five-year estimates for all 67 Pennsylvania counties. These estimates describe the five-year period, rather than today’s rental listings. Median gross rent includes contract rent and tenant-paid utilities, expressed in 2024 dollars.\nThe second measure is the share of cash-rent households spending 30% or more of household income on gross rent, which I call the rent-burden rate. I exclude households whose rent-to-income ratio cannot be computed. Across the counties, about 48.2% of households with a computable ratio met this threshold; 24.9% spent at least half their income on rent. These totals pool households, rather than averaging county percentages.\nThe R scripts download official files, calculate the rates, and join them to Census county boundaries using geographic codes. The README documents the calculations and replication steps."
-  },
-  {
-    "objectID": "posts/week-05/index.html#the-price-map-points-southeast",
-    "href": "posts/week-05/index.html#the-price-map-points-southeast",
-    "title": "Does Cheaper Rent Mean More Affordable Housing?",
-    "section": "The price map points southeast",
-    "text": "The price map points southeast\n\n\n\n\n\n\nFigure 1: Pennsylvania county map of median monthly gross rent. The highest values cluster in the southeast; Chester, Philadelphia, Centre, Monroe, Bedford, and Allegheny are labeled.\n\n\n\nHigher rents cluster in southeastern Pennsylvania. Chester County stands out at $1,763, while nearby Philadelphia is lower at $1,397. Many western and central counties have substantially lower rents. Bedford’s median is $784, and Allegheny’s is $1,153.\nThis is useful information for someone comparing housing markets, but it is only a price comparison. The map does not tell us what renters earn or whether the homes being rented are comparable in size and quality. A lower county median is not necessarily a cheaper version of the same apartment."
-  },
-  {
-    "objectID": "posts/week-05/index.html#the-burden-map-changes-the-picture",
-    "href": "posts/week-05/index.html#the-burden-map-changes-the-picture",
-    "title": "Does Cheaper Rent Mean More Affordable Housing?",
-    "section": "The burden map changes the picture",
-    "text": "The burden map changes the picture\n\n\n\n\n\n\nFigure 2: Pennsylvania county map of the share of eligible renter households spending at least 30 percent of income on rent. Centre and Monroe have high estimated rates; open circles flag larger margins of error.\n\n\n\nThe second map shows that high burdens extend beyond the most expensive southeastern counties. Centre, in central Pennsylvania, has an estimated burden rate of 57.0%, and Monroe, in the northeast, is at 57.0%. Both have lower median rents than Chester, where the burden rate is 47.8%.\nPhiladelphia also illustrates why the two maps should be read together. Its median rent is below Chester’s, but its burden rate is 52.3%. Meanwhile, Bedford’s much lower rent accompanies an estimated burden rate of 49.9%. Bedford’s estimate is less precise, so the useful observation is that substantial pressure can exist in a lower-rent county, not that it ranks above a particular neighbor.\nThe geographic pattern matters for housing assistance. Concentrating only on places with the highest rents could overlook communities where a smaller monthly bill still takes a large share of household income. The maps identify this mismatch; they do not establish whether income differences, housing conditions, or the mix of renters explains it."
-  },
-  {
-    "objectID": "posts/week-05/index.html#lower-rents-usually-go-with-lighter-burdens",
-    "href": "posts/week-05/index.html#lower-rents-usually-go-with-lighter-burdens",
-    "title": "Does Cheaper Rent Mean More Affordable Housing?",
-    "section": "Lower rents usually go with lighter burdens",
-    "text": "Lower rents usually go with lighter burdens\n\n\n\n\n\n\nFigure 3: Scatterplot of all 67 counties comparing median rent with rent-burden rates. Vertical uncertainty bars and selected county labels show both the overall positive relationship and departures from it.\n\n\n\nAcross all counties, rents and burden rates have a positive correlation of 0.54, giving each county equal weight. Higher-rent counties generally have higher burdens. The exceptions therefore qualify the overall pattern rather than overturn it.\nThe scatterplot makes those exceptions easier to see. Centre sits above Chester despite its lower rent, while Allegheny’s burden rate is 46.2%. Rent is informative, but it does not place counties in the same order as affordability. This comparison describes county averages; it does not estimate how an individual household’s burden would change after moving."
-  },
-  {
-    "objectID": "posts/week-05/index.html#what-these-comparisons-leave-out",
-    "href": "posts/week-05/index.html#what-these-comparisons-leave-out",
-    "title": "Does Cheaper Rent Mean More Affordable Housing?",
-    "section": "What these comparisons leave out",
-    "text": "What these comparisons leave out\nThe ACS is a survey. The vertical bars show approximate 90% margins of error for burden rates; open circles on the burden map mark counties where that margin exceeds five percentage points. Close rankings deserve caution, especially in small counties. Median rents also have sampling error, recorded in the downloadable data.\nCounties contain different neighborhoods, housing types, and households. These tables cannot separate those differences or explain why a county has a high rate. They also leave out renters who pay no cash rent and exclude noncomputable ratios from the burden calculation. Finally, a 30% threshold cannot capture every household’s other expenses or resources."
-  },
-  {
-    "objectID": "posts/week-05/index.html#takeaway",
-    "href": "posts/week-05/index.html#takeaway",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "Takeaway",
-    "text": "Takeaway\nLower rents generally go with lower rent burdens in Pennsylvania, but Centre and Monroe show why price alone can mislead. Rent tells us what housing costs; renter income helps explain how hard it is to pay. Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.\n\nSources: U.S. Census Bureau, 2020–2024 ACS, tables B25064, B25070 and B25119; 2024 county boundaries. Data and methods · GitHub: code and data · Download replication files."
-  },
-  {
-    "objectID": "posts/week-05/index.html#data-and-replication",
-    "href": "posts/week-05/index.html#data-and-replication",
-    "title": "Does Cheaper Rent Mean More Affordable Housing?",
-    "section": "Data and replication",
-    "text": "Data and replication\n\nData: Census ACS 2020–2024, B25064: median gross rent and B25070: rent as a share of income.\nDownload: All county estimates and uncertainty measures.\nReproduce: README, download script, data preparation, and analysis and mapping.\nOne download: Replication files, including the article source, county data, Pennsylvania boundaries, and code."
-  },
-  {
-    "objectID": "posts/week-05/index.html#when-a-lower-rent-is-still-hard-to-afford",
-    "href": "posts/week-05/index.html#when-a-lower-rent-is-still-hard-to-afford",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "",
-    "text": "Chester County’s median monthly rent was $1,763. In Centre County, it was $1,207. Yet renters in Centre were more likely to spend at least 30% of their income on rent. The county with the smaller bill had the higher burden.\nA lower rent may look attractive, but how far it goes depends on the income available to pay it. For local housing organizations, focusing only on expensive areas could also miss renters struggling elsewhere.\nDo Pennsylvania counties with lower rents generally have fewer renters spending a large share of their income on housing? I compare all 67 counties to answer that question. The aim is to see how much the price of housing tells us, and what we miss when we stop there."
-  },
-  {
-    "objectID": "posts/week-05/index.html#from-census-tables-to-county-maps",
-    "href": "posts/week-05/index.html#from-census-tables-to-county-maps",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "From Census tables to county maps",
-    "text": "From Census tables to county maps\nI use the 2020–2024 American Community Survey, which combines five years of survey data. These are estimates for that period, not current apartment listings. The rent measure is median gross rent: the middle monthly rent, including utilities paid separately by the tenant, expressed in 2024 dollars.\nFor affordability, I calculate the share of rent-paying households spending 30% or more of their income on rent and utilities. I call this the rent-burden rate. Households whose ratio cannot be calculated are excluded. Across Pennsylvania, 48.2% of households with a calculable ratio met that threshold, and 24.9% spent at least half their income on rent.\nThe R scripts download the official tables and match each county to its Census map boundary. The statewide shares combine household counts; they are not simple averages of county rates. The data and methods notes explain the calculations and how to reproduce the analysis."
-  },
-  {
-    "objectID": "posts/week-05/index.html#where-rents-are-higher",
-    "href": "posts/week-05/index.html#where-rents-are-higher",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "Where rents are higher",
-    "text": "Where rents are higher\n\n\n\n\n\n\nFigure 1: Median monthly gross rent by Pennsylvania county, 2020–2024. Selected counties are labeled for comparison.\n\n\n\nHigher rents cluster in the southeast. Chester’s median is $1,763, compared with $1,397 in Philadelphia. Much of western and central Pennsylvania has lower rents. Bedford’s median is $784, while Allegheny’s is $1,153.\nThe first map shows where rents are higher. The next asks whether those are also the places where renters have the most trouble paying them."
-  },
-  {
-    "objectID": "posts/week-05/index.html#housing-pressure-reaches-beyond-expensive-counties",
-    "href": "posts/week-05/index.html#housing-pressure-reaches-beyond-expensive-counties",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "Housing pressure reaches beyond expensive counties",
-    "text": "Housing pressure reaches beyond expensive counties\n\n\n\n\n\n\nFigure 2: Share of rent-paying households spending at least 30% of income on rent. Open circles mark counties with larger margins of error.\n\n\n\nHousing pressure is not confined to the highest-rent counties in the southeast. Centre, in central Pennsylvania, has a burden rate of 57.0%. Monroe, in the northeast, is at 57.0%. Both have lower median rents than Chester, where the rate is 47.8%.\nThe contrast also appears closer to Philadelphia. Its rent is below Chester’s, but its burden rate is higher, at 52.3%. Farther west, Bedford combines a much lower rent with an estimated burden rate of 49.9%. Bedford’s estimate has a wider margin of error, so small differences between it and other counties should not be treated as firm rankings."
-  },
-  {
-    "objectID": "posts/week-05/index.html#what-happens-when-we-compare-every-county",
-    "href": "posts/week-05/index.html#what-happens-when-we-compare-every-county",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "What happens when we compare every county?",
-    "text": "What happens when we compare every county?\n\n\n\n\n\n\nFigure 3: Median rent and rent-burden rate for all 67 counties. Vertical bars show approximate 90% margins of error for burden rates.\n\n\n\nThe broader pattern is still clear: higher-rent counties generally have higher burden rates. The correlation is 0.54, counting each county equally. The relationship is positive, but there is plenty of variation around it.\nCentre and Chester illustrate that variation. Allegheny offers another comparison: its rent is close to Centre’s, while its burden rate is lower, at 46.2%. Lower rents often go with lighter burdens, but rent alone does not tell us which county has a larger share of struggling renters."
-  },
-  {
-    "objectID": "posts/week-05/index.html#what-should-a-renter-take-from-this",
-    "href": "posts/week-05/index.html#what-should-a-renter-take-from-this",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "What should a renter take from this?",
-    "text": "What should a renter take from this?\nWhen comparing places to live, I would start with actual rent and utility costs, then compare them with the income I expected to have there. A county with cheaper housing may also offer lower earnings. For local housing organizations, the two maps together identify places worth examining more closely, including lower-rent counties where many households still struggle.\nThe ACS estimates cover 2020–2024, not today’s listings, and county figures hide differences between neighborhoods and households. Error bars show uncertainty in the burden estimates; map circles flag margins above five percentage points. The rent measures exclude households paying no cash rent, while the added income measure covers all renter households. The 30% threshold offers a common comparison, but does not account for every household’s other expenses."
-  },
-  {
-    "objectID": "posts/week-05/index.html#income-helps-explain-the-difference",
-    "href": "posts/week-05/index.html#income-helps-explain-the-difference",
-    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
-    "section": "Income helps explain the difference",
-    "text": "Income helps explain the difference\nTo see why the maps differ, I added median renter household income from ACS table B25119. Centre’s median renter income is $39,074 a year, compared with $72,048 in Chester. Centre’s rent is lower, but its renter income is lower by much more.\nDividing annual median rent by median renter income gives 37.1% for Centre and 29.4% for Chester. Monroe’s renter income is $47,645, putting its ratio at 35.1%. These comparisons help explain why housing pressure extends beyond the high-rent southeast: a smaller rent bill can still be large relative to local renters’ incomes.\n\n\n\n\n\n\nFigure 4: Annual median rent divided by median renter income, compared with the actual rent-burden rate. Each point represents one county.\n\n\n\nAcross the 67 counties, this income-based comparison has a correlation of 0.88 with the burden rate, compared with 0.54 for rent alone. This is a ratio of two county medians, not the share of income paid by a typical household. The stronger relationship is also partly expected: both measures compare housing costs with income. It helps us read the maps, rather than proving what causes a county’s burden rate.\nCentre has an important local feature: Penn State’s University Park campus. The county’s 2023 Housing Needs Assessment links high burden among its lowest-income renters to the concentration of college students. It also notes that resources such as student loans can complicate comparisons based on reported income. Students are therefore a plausible part of Centre’s story, although these county totals cannot separate their contribution from that of other renters. Households with zero or negative income have noncomputable ratios and are excluded from my burden rate; they are not automatically counted as burdened."
   }
 ]
