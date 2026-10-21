@@ -36,7 +36,7 @@
 </section>
 <section id="three-ways-to-compare-majors" class="level2">
 <h2 class="anchored" data-anchor-id="three-ways-to-compare-majors">Three ways to compare majors</h2>
-<p>For majors, I use the same source’s <strong>2024 ACS-based data</strong>, covering 73 fields. These annual figures describe an earlier period than the monthly chart.</p>
+<p>For majors, I use the same source’s <strong>2024 ACS-based data</strong>, covering 73 fields. These annual figures describe an earlier period than the monthly chart. The <a href="code/02_make_figures.py">Python script</a> generates both charts. The <a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-07">GitHub repository</a> contains the code and data, and the <a href="README.md">README</a> gives the reproduction steps.</p>
 <p>Unemployment measures the share of the labor force without work and looking for it. <strong>Underemployment</strong> measures the share of employed graduates in jobs that typically do not require a college degree. It does not mean their job is unrelated to their subject. Early-career wages are median annual wages for full-time workers ages 22–27 with a bachelor’s degree only, rather than starting salaries. The two employment rates include graduates with higher degrees as well; all measures exclude current students.</p>
 <iframe src="results/02_majors.html" title="Interactive comparison of wages, unemployment and underemployment across majors" style="width:100%;height:770px;border:0;" loading="lazy"></iframe>
 <p><em>Figure 2. Outcomes by major, 2024. Source: New York Fed, using ACS/IPUMS. Dotted lines mark the published overall wage and unemployment benchmarks. Color shows underemployment; axes and the color scale stay fixed when filtering.</em></p>
@@ -60,6 +60,7 @@
 <section id="data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
 <p>Federal Reserve Bank of New York. 2026. <em>The Labor Market for Recent College Graduates</em>. <a href="https://www.newyorkfed.org/research/college-labor-market">https://www.newyorkfed.org/research/college-labor-market</a>. Accessed October 21, 2026.</p>
+<p>The monthly unemployment series uses CPS/IPUMS data from the U.S. Census Bureau and Bureau of Labor Statistics, through June 2026 (released August 6, 2026). Outcomes by major use 2024 ACS/IPUMS data from the U.S. Census Bureau (released February 4, 2026). Both source files and their original release notes are preserved with the analysis.</p>
 
 
 </section>
@@ -105,7 +106,7 @@ font-style: inherit;">python</span> code/analyze.py</span>
 <span id="cb1-3"><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">python</span> code/plot.py</span></code></pre></div></div>
-<p>The repository includes compact extracts, so downloading the large originals is optional. The <a href="README.md">README</a> explains both routes, the variable names and the income reference years.</p>
+<p>The repository includes compact extracts, so downloading the large originals is optional. The <a href="README.md">README</a> explains both routes, the variable names and the income reference years. The code, extracts and results are available in the <a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-06">GitHub repository</a>.</p>
 </section>
 <section id="match-the-two-generations-with-sql" class="level2">
 <h2 class="anchored" data-anchor-id="match-the-two-generations-with-sql">Match the two generations with SQL</h2>
@@ -512,8 +513,10 @@ Figure&nbsp;4: Annual median rent divided by median renter income, compared with
 <p>I use <a href="https://cps.ipums.org/cps/">IPUMS CPS</a>, which harmonizes the monthly Current Population Survey across time. My extract contains April Basic Monthly samples from 2000 through 2025 and the variables <code>YEAR</code>, <code>MONTH</code>, <code>AGE</code>, <code>EDUC</code>, <code>LABFORCE</code>, <code>EMPSTAT</code>, and <code>WTFINL</code>. April gives one comparable cross-section per year and captures the abrupt pandemic disruption in April 2020.</p>
 <p>The analysis includes civilians ages 25-64 who are in the labor force. I group education into four levels: less than high school, high school or GED, some college or an associate degree, and a bachelor’s degree or higher. A person is unemployed when the detailed <code>EMPSTAT</code> code is 20-22. The unemployment rate is unemployed people divided by the civilian labor force.</p>
 <p>Every estimate uses the final Basic Monthly CPS person weight, <code>WTFINL</code>:</p>
+<div style="overflow-x: auto;">
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctext%7BUnemployment%20rate%7D_g=%0A%5Cfrac%7B%5Csum_%7Bi%5Cin%20g%7D%20WTFINL_i%5Ctimes%20Unemployed_i%7D%0A%7B%5Csum_%7Bi%5Cin%20g%7D%20WTFINL_i%7D.%0A"></p>
-<p>This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete <a href="code/01_analyze_cps.R">analysis script</a> generates every table and figure.</p>
+</div>
+<p>This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete <a href="code/01_analyze_cps.R">analysis script</a> generates every table and figure. The <a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-03">GitHub repository</a> contains the code, aggregate data and results. The <a href="README.md">README</a> explains how to rerun the full analysis with an IPUMS extract, or rebuild the figures and article from the included aggregate data without an account.</p>
 </section>
 <section id="a-persistent-education-gradient" class="level2">
 <h2 class="anchored" data-anchor-id="a-persistent-education-gradient">A persistent education gradient</h2>
@@ -754,7 +757,7 @@ Table&nbsp;2: Top two skill mentions within each role group. Percentages use the
 </section>
 <section id="takeaway" class="level2">
 <h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
-<p>The useful lesson is to choose a <strong>role and work arrangement first</strong>, then use job descriptions to prioritize a small, demonstrable set of skills. Python is the broadest starting point here, but SQL, TypeScript, and Kubernetes matter differently across roles. Remote and early-career openings are a small, specifically labeled part of this sample. Check target postings before investing in a course, and repeat the analysis as listings change.</p>
+<p><strong>Choose the job you want before choosing the next tool to learn.</strong> For someone targeting data roles like those in this sample, Python and SQL are a practical starting point: use SQL to retrieve a small dataset, then Python to analyze it and explain the result. That gives a prospective employer something concrete to look at. Before paying for a course, check a handful of relevant openings in your target location to see whether the same skills appear. If remote or entry-level work is essential, filter for that first; the most common skill is less useful if the jobs mentioning it do not fit your needs.</p>
 
 
 </section>
@@ -778,9 +781,9 @@ Table&nbsp;2: Top two skill mentions within each role group. Percentages use the
 
 <section id="a-complicated-name-for-a-visual-idea" class="level2">
 <h2 class="anchored" data-anchor-id="a-complicated-name-for-a-visual-idea">A complicated name for a visual idea</h2>
-<p>Imagine drawing arrows on a stretchy sheet. You pull the sheet so that the arrows change length and tilt. Most arrows now point along different lines. But a few special arrows may stay on their original lines, even as they stretch.</p>
-<p>Those special arrows capture the idea of <strong>eigenvectors</strong>. Their <strong>eigenvalues</strong> tell us how much they are scaled.</p>
-<p>The names sound abstract because we often meet them through an equation before seeing the question they answer: <strong>Are there directions in which a complicated transformation acts like simple multiplication?</strong></p>
+<p><strong>Why can a rule that mixes coordinates become simple multiplication when I look along the right directions?</strong> This is the puzzle behind eigenvectors. It also explains their usefulness: those directions can help us see what happens when the same transformation acts again and again.</p>
+<p>Imagine arrows drawn on a stretchy sheet. Pulling the sheet changes most arrows’ lengths and tilts them away from their original lines. Yet some arrows may stay on the same lines. These are <strong>eigenvectors</strong>, and their <strong>eigenvalues</strong> tell us how much they are scaled.</p>
+<p>I will follow one transformation from a single step to repeated steps. The surprising part is that an ordinary arrow can move closer and closer to a particular direction, even though it did not start there. The special directions help explain why.</p>
 </section>
 <section id="think-of-a-matrix-as-a-rule-for-moving-arrows" class="level2">
 <h2 class="anchored" data-anchor-id="think-of-a-matrix-as-a-rule-for-moving-arrows">Think of a matrix as a rule for moving arrows</h2>
@@ -1169,7 +1172,7 @@ Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow c
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Bpmatrix%7D1%5C%5C0%5Cend%7Bpmatrix%7D%0A=%5Cfrac12%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D%0A+%5Cfrac12%5Cbegin%7Bpmatrix%7D1%5C%5C-1%5Cend%7Bpmatrix%7D.%0A"></p>
 <p>Apply the transformation repeatedly. After <img src="https://latex.codecogs.com/png.latex?n"> applications, the first piece has been multiplied by <img src="https://latex.codecogs.com/png.latex?3%5En">, while the second is unchanged:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AA%5En%5Cbegin%7Bpmatrix%7D1%5C%5C0%5Cend%7Bpmatrix%7D%0A=%5Cfrac%7B3%5En%7D%7B2%7D%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D%0A+%5Cfrac12%5Cbegin%7Bpmatrix%7D1%5C%5C-1%5Cend%7Bpmatrix%7D.%0A"></p>
-<p>The first piece eventually dwarfs the second, so the resulting arrow points increasingly close to the northeast diagonal. The eigenvectors explain the patterns; the eigenvalues explain how those patterns evolve.</p>
+<p>The first piece eventually dwarfs the second, so the resulting arrow points increasingly close to the northeast diagonal. This answers the question from the opening: the coordinates are mixed, but along the two diagonal directions the changes are simple. Comparing their scale factors tells us which part of the starting arrow will matter most after many steps. This conclusion applies to this matrix and starting arrow; not every transformation settles toward one direction.</p>
 <p>This convenient decomposition works here because the two eigenvectors span the plane. Not every matrix has enough independent eigenvectors for this approach. A 90-degree rotation in the real plane, for example, leaves no nonzero arrow on its original line, so it has no real eigenvectors. <a href="https://math.mit.edu/~roed/courses/211/lectures/Nov-8.pdf">MIT lecture notes</a></p>
 </section>
 <section id="an-economic-interpretation" class="level2">
@@ -1181,7 +1184,7 @@ Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow c
 <section id="the-takeaway" class="level2">
 <h2 class="anchored" data-anchor-id="the-takeaway">The takeaway</h2>
 <p>Eigenvectors identify directions where a linear transformation reduces to scaling. Eigenvalues tell us the scale factor, including whether the arrow reverses or disappears.</p>
-<p>The surprising part is that a rule that mixes coordinates can become simple when viewed along the right directions. The next time you see <img src="https://latex.codecogs.com/png.latex?A%5Cmathbf%7Bv%7D=%5Clambda%5Cmathbf%7Bv%7D">, picture an arrow staying on its line—and ask how much it stretches.</p>
+<p>The useful step is to look for directions that simplify the rule. In this example, one component triples each time while the other stays unchanged, so we can explain the growing dominance of the first without calculating every intermediate arrow. <strong>Eigenvectors show the directions to track; eigenvalues show how those components change.</strong></p>
 
 
 </section>

@@ -57,7 +57,7 @@ python code/analyze.py
 python code/plot.py
 ```
 
-The repository includes compact extracts, so downloading the large originals is optional. The [README](README.md) explains both routes, the variable names and the income reference years.
+The repository includes compact extracts, so downloading the large originals is optional. The [README](README.md) explains both routes, the variable names and the income reference years. The code, extracts and results are available in the [GitHub repository](https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-06).
 
 ## Match the two generations with SQL
 

@@ -91,4 +91,4 @@ The sample has limits. Arbeitnow is one board, many jobs are Germany-focused, an
 
 ## Takeaway
 
-The useful lesson is to choose a **role and work arrangement first**, then use job descriptions to prioritize a small, demonstrable set of skills. Python is the broadest starting point here, but SQL, TypeScript, and Kubernetes matter differently across roles. Remote and early-career openings are a small, specifically labeled part of this sample. Check target postings before investing in a course, and repeat the analysis as listings change.
+**Choose the job you want before choosing the next tool to learn.** For someone targeting data roles like those in this sample, Python and SQL are a practical starting point: use SQL to retrieve a small dataset, then Python to analyze it and explain the result. That gives a prospective employer something concrete to look at. Before paying for a course, check a handful of relevant openings in your target location to see whether the same skills appear. If remote or entry-level work is essential, filter for that first; the most common skill is less useful if the jobs mentioning it do not fit your needs.

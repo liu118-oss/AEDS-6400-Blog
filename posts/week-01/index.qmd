@@ -16,11 +16,11 @@ execute:
 
 ## A complicated name for a visual idea
 
-Imagine drawing arrows on a stretchy sheet. You pull the sheet so that the arrows change length and tilt. Most arrows now point along different lines. But a few special arrows may stay on their original lines, even as they stretch.
+**Why can a rule that mixes coordinates become simple multiplication when I look along the right directions?** This is the puzzle behind eigenvectors. It also explains their usefulness: those directions can help us see what happens when the same transformation acts again and again.
 
-Those special arrows capture the idea of **eigenvectors**. Their **eigenvalues** tell us how much they are scaled.
+Imagine arrows drawn on a stretchy sheet. Pulling the sheet changes most arrows' lengths and tilts them away from their original lines. Yet some arrows may stay on the same lines. These are **eigenvectors**, and their **eigenvalues** tell us how much they are scaled.
 
-The names sound abstract because we often meet them through an equation before seeing the question they answer: **Are there directions in which a complicated transformation acts like simple multiplication?**
+I will follow one transformation from a single step to repeated steps. The surprising part is that an ordinary arrow can move closer and closer to a particular direction, even though it did not start there. The special directions help explain why.
 
 ## Think of a matrix as a rule for moving arrows
 
@@ -148,7 +148,7 @@ A^n\begin{pmatrix}1\\0\end{pmatrix}
 +\frac12\begin{pmatrix}1\\-1\end{pmatrix}.
 $$
 
-The first piece eventually dwarfs the second, so the resulting arrow points increasingly close to the northeast diagonal. The eigenvectors explain the patterns; the eigenvalues explain how those patterns evolve.
+The first piece eventually dwarfs the second, so the resulting arrow points increasingly close to the northeast diagonal. This answers the question from the opening: the coordinates are mixed, but along the two diagonal directions the changes are simple. Comparing their scale factors tells us which part of the starting arrow will matter most after many steps. This conclusion applies to this matrix and starting arrow; not every transformation settles toward one direction.
 
 This convenient decomposition works here because the two eigenvectors span the plane. Not every matrix has enough independent eigenvectors for this approach. A 90-degree rotation in the real plane, for example, leaves no nonzero arrow on its original line, so it has no real eigenvectors. [MIT lecture notes](https://math.mit.edu/~roed/courses/211/lectures/Nov-8.pdf)
 
@@ -164,4 +164,4 @@ Instead of tracking two interacting coordinates, we can track **a common movemen
 
 Eigenvectors identify directions where a linear transformation reduces to scaling. Eigenvalues tell us the scale factor, including whether the arrow reverses or disappears.
 
-The surprising part is that a rule that mixes coordinates can become simple when viewed along the right directions. The next time you see $A\mathbf{v}=\lambda\mathbf{v}$, picture an arrow staying on its line—and ask how much it stretches.
+The useful step is to look for directions that simplify the rule. In this example, one component triples each time while the other stays unchanged, so we can explain the growing dominance of the first without calculating every intermediate arrow. **Eigenvectors show the directions to track; eigenvalues show how those components change.**

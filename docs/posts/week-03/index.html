@@ -217,12 +217,14 @@ window.Quarto = {
 <p>I use <a href="https://cps.ipums.org/cps/">IPUMS CPS</a>, which harmonizes the monthly Current Population Survey across time. My extract contains April Basic Monthly samples from 2000 through 2025 and the variables <code>YEAR</code>, <code>MONTH</code>, <code>AGE</code>, <code>EDUC</code>, <code>LABFORCE</code>, <code>EMPSTAT</code>, and <code>WTFINL</code>. April gives one comparable cross-section per year and captures the abrupt pandemic disruption in April 2020.</p>
 <p>The analysis includes civilians ages 25-64 who are in the labor force. I group education into four levels: less than high school, high school or GED, some college or an associate degree, and a bachelor’s degree or higher. A person is unemployed when the detailed <code>EMPSTAT</code> code is 20-22. The unemployment rate is unemployed people divided by the civilian labor force.</p>
 <p>Every estimate uses the final Basic Monthly CPS person weight, <code>WTFINL</code>:</p>
+<div style="overflow-x: auto;">
 <p><span class="math display">\[
 \text{Unemployment rate}_g=
 \frac{\sum_{i\in g} WTFINL_i\times Unemployed_i}
 {\sum_{i\in g} WTFINL_i}.
 \]</span></p>
-<p>This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete <a href="code/01_analyze_cps.R">analysis script</a> generates every table and figure.</p>
+</div>
+<p>This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete <a href="code/01_analyze_cps.R">analysis script</a> generates every table and figure. The <a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-03">GitHub repository</a> contains the code, aggregate data and results. The <a href="README.md">README</a> explains how to rerun the full analysis with an IPUMS extract, or rebuild the figures and article from the included aggregate data without an account.</p>
 </section>
 <section id="a-persistent-education-gradient" class="level2">
 <h2 class="anchored" data-anchor-id="a-persistent-education-gradient">A persistent education gradient</h2>

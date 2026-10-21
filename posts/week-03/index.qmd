@@ -11,6 +11,11 @@ format:
 execute:
   echo: false
   warning: false
+resources:
+  - README.md
+  - code/*.R
+  - data/processed/*.csv
+  - results/*.csv
 ---
 
 ```{r}
@@ -67,13 +72,17 @@ The analysis includes civilians ages 25-64 who are in the labor force. I group e
 
 Every estimate uses the final Basic Monthly CPS person weight, `WTFINL`:
 
+::: {style="overflow-x: auto;"}
+
 $$
 \text{Unemployment rate}_g=
 \frac{\sum_{i\in g} WTFINL_i\times Unemployed_i}
 {\sum_{i\in g} WTFINL_i}.
 $$
 
-This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete [analysis script](code/01_analyze_cps.R) generates every table and figure.
+:::
+
+This makes the results describe the U.S. population represented by the CPS rather than the raw observations in the extract. The complete [analysis script](code/01_analyze_cps.R) generates every table and figure. The [GitHub repository](https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-03) contains the code, aggregate data and results. The [README](README.md) explains how to rerun the full analysis with an IPUMS extract, or rebuild the figures and article from the included aggregate data without an account.
 
 ## A persistent education gradient
 

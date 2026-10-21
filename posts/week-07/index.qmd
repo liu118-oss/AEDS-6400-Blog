@@ -51,7 +51,7 @@ The comparison with other young workers adds context. Among 22–27-year-olds wi
 
 ## Three ways to compare majors
 
-For majors, I use the same source's **2024 ACS-based data**, covering `r m("all")` fields. These annual figures describe an earlier period than the monthly chart.
+For majors, I use the same source's **2024 ACS-based data**, covering `r m("all")` fields. These annual figures describe an earlier period than the monthly chart. The [Python script](code/02_make_figures.py) generates both charts. The [GitHub repository](https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-07) contains the code and data, and the [README](README.md) gives the reproduction steps.
 
 Unemployment measures the share of the labor force without work and looking for it. **Underemployment** measures the share of employed graduates in jobs that typically do not require a college degree. It does not mean their job is unrelated to their subject. Early-career wages are median annual wages for full-time workers ages 22–27 with a bachelor's degree only, rather than starting salaries. The two employment rates include graduates with higher degrees as well; all measures exclude current students.
 
@@ -84,3 +84,5 @@ These are group averages and medians, not predictions for an individual. They do
 ## Data sources
 
 Federal Reserve Bank of New York. 2026. *The Labor Market for Recent College Graduates*. [https://www.newyorkfed.org/research/college-labor-market](https://www.newyorkfed.org/research/college-labor-market). Accessed October 21, 2026.
+
+The monthly unemployment series uses CPS/IPUMS data from the U.S. Census Bureau and Bureau of Labor Statistics, through June 2026 (released August 6, 2026). Outcomes by major use 2024 ACS/IPUMS data from the U.S. Census Bureau (released February 4, 2026). Both source files and their original release notes are preserved with the analysis.
