@@ -10,7 +10,219 @@
 <atom:link href="https://liu118-oss.github.io/AEDS-6400-Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Mon, 19 Oct 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 20 Oct 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Does One Year of Income Tell the Whole Story?</title>
+  <dc:creator>Jin Liu</dc:creator>
+  <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-06/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="a-first-paycheck-is-only-a-starting-point" class="level2">
+<h2 class="anchored" data-anchor-id="a-first-paycheck-is-only-a-starting-point">A first paycheck is only a starting point</h2>
+<p><strong>Would I reach the same conclusion about economic mobility if I measured someone’s earnings at 27 instead of 37?</strong> Someone in their twenties may still be finishing school or changing jobs. Their earnings may say more about that stage of life than their longer-run position. This matters when using mobility estimates to judge how family background shapes opportunity.</p>
+<p>I use Python and SQL to match mothers with their adult children, then ask how the estimated earnings relationship changes when I average several years or measure the children later.</p>
+</section>
+<section id="start-with-people-then-income" class="level2">
+<h2 class="anchored" data-anchor-id="start-with-people-then-income">Start with people, then income</h2>
+<p>I use the public <a href="https://www.bls.gov/nls/getting-started/accessing-data.htm">NLSY79 and Child/Young Adult files</a> covering 1979–2018. The child file provides a mother’s ID, which connects to her record in NLSY79. The original files contain 11,545 children; every child has a matching mother.</p>
+<p>Here, “income” means annual earnings from wages, salaries, commissions and tips, rather than total household resources. I convert amounts to 2018 dollars using the <a href="https://www.bls.gov/cpi/data.htm">BLS Consumer Price Index</a>. Negative survey codes mean missing information; a reported zero is a real observation.</p>
+<p>To follow along, install the dependencies and run the scripts from this post’s folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">python</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-m</span> pip install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-r</span> requirements.txt</span>
+<span id="cb1-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">python</span> code/analyze.py</span>
+<span id="cb1-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">python</span> code/plot.py</span></code></pre></div></div>
+<p>The repository includes compact extracts, so downloading the large originals is optional. The <a href="README.md">README</a> explains both routes, the variable names and the income reference years.</p>
+</section>
+<section id="match-the-two-generations-with-sql" class="level2">
+<h2 class="anchored" data-anchor-id="match-the-two-generations-with-sql">Match the two generations with SQL</h2>
+<p>The first script creates a SQLite database. Open it in Python and match the IDs:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> sqlite3</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb2-3"></span>
+<span id="cb2-4">con <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sqlite3.<span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">connect</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"data/analysis.sqlite"</span>)</span>
+<span id="cb2-5">matched <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_sql_query(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb2-6"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    SELECT c.child_id, c.mother_id</span></span>
+<span id="cb2-7"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    FROM children AS c</span></span>
+<span id="cb2-8"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    JOIN mothers AS m ON c.mother_id = m.mother_id</span></span>
+<span id="cb2-9"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    WHERE m.sex = 2</span></span>
+<span id="cb2-10"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span>, con)</span></code></pre></div></div>
+<p><code>SELECT</code> chooses the columns to return. <code>JOIN</code> connects records with the same mother ID; it does not match people by row order. Several children can share one mother, so the matched table keeps one row per child.</p>
+<p>The IDs tell me who belongs to which family. Next, I need an earnings measure for each person. Instead of letting one unusually good or bad year represent a mother’s earnings, I average her available observations between ages 30 and 44:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">mother_average <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_sql_query(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb3-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    SELECT person_id AS mother_id,</span></span>
+<span id="cb3-3"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">           AVG(wage_real) AS mother_mean,</span></span>
+<span id="cb3-4"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">           COUNT(*) AS mother_n</span></span>
+<span id="cb3-5"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    FROM earnings</span></span>
+<span id="cb3-6"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    WHERE cohort = 'mother' AND age BETWEEN 30 AND 44</span></span>
+<span id="cb3-7"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    GROUP BY person_id</span></span>
+<span id="cb3-8"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    HAVING COUNT(*) &gt;= 3 AND AVG(wage_real) &gt; 0</span></span>
+<span id="cb3-9"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span>, con)</span></code></pre></div></div>
+<p><code>WHERE</code> selects the relevant records. <code>GROUP BY</code> gathers each mother’s years together. <code>AVG</code> and <code>COUNT</code> are aggregations: they produce her average earnings and number of observations. <code>HAVING</code> keeps groups with at least three valid years and a positive average. Average the dollar amounts first, then take logs.</p>
+<p>The script repeats this step for children at ages 25–34 and joins both averages back to the matched IDs. Zeros remain in these averages. For the single-year comparison, it selects the valid observation nearest age 37 for mothers and 30 for children, choosing the earlier year in a tie. Pairs with zero selected earnings are excluded because their logarithms are undefined; both estimates then use exactly the same pairs.</p>
+</section>
+<section id="one-year-versus-several-years" class="level2">
+<h2 class="anchored" data-anchor-id="one-year-versus-several-years">One year versus several years</h2>
+<p>An <strong>intergenerational earnings elasticity</strong>, or IGE, is the slope from regressing log child earnings on log maternal earnings. An elasticity of 0.10 means that 10% higher maternal earnings are associated with approximately 1% higher child earnings. It describes an association, not a causal effect.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb4-2"></span>
+<span id="cb4-3">pairs <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"data/matched_averaging.csv"</span>)</span>
+<span id="cb4-4">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.log(pairs[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mother_mean"</span>])</span>
+<span id="cb4-5">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.log(pairs[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"child_mean"</span>])</span>
+<span id="cb4-6">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.column_stack([np.ones(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(x)), x])</span>
+<span id="cb4-7">intercept, ige <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.linalg.lstsq(X, y, rcond<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>)[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div></div>
+<p>Use <code>mother_one</code> and <code>child_one</code> to estimate the single-year version. The script clusters uncertainty by mother because siblings share a family.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-06/results/01_averaging.png" class="img-fluid figure-img"></p>
+<figcaption>Using the same pairs, the estimated elasticity is higher with several years of earnings. Bars show 95% confidence intervals.</figcaption>
+</figure>
+</div>
+<p>With one year of earnings, the estimated relationship is <strong>about half as strong</strong> as with several years (48%). The families have not changed; the way I measure their earnings has. Among 2,114 pairs, the estimate rises from 0.055 to 0.113.</p>
+<p>A year of unemployment, changing hours or a bonus can shift someone’s earnings. Averaging reduces the influence of these temporary changes and can better reflect their longer-run position. The typical pair contributes 9 maternal years and 3 child years. These estimates describe mothers’ own earnings, which capture only part of a family’s resources; they should not be read as estimates of overall family-income mobility.</p>
+</section>
+<section id="measuring-later-in-a-career" class="level2">
+<h2 class="anchored" data-anchor-id="measuring-later-in-a-career">Measuring later in a career</h2>
+<p>Averaging and choosing an age address different problems. Several early-career years can still give an incomplete picture of later earnings. This is <strong>life-cycle bias</strong>: earnings measured at one age need not reflect the relationship between the generations’ lifetime earnings.</p>
+<p>Someone who stays in education may earn little at first and more later. If earnings paths differ across family backgrounds, averaging early earnings alone will not fix the timing problem.</p>
+<p>For this check, I hold maternal average earnings fixed and select each child’s earnings nearest ages 27 and 37, within ages 25–29 and 35–39. The same 1,004 children appear in both estimates. <a href="https://www.nlsinfo.org/content/cohorts/nlsy79-children/intro-to-the-sample/sample-design">Interviews become less frequent after age 30</a>, so this comparison uses one observation in each age window.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-06/results/02_lifecycle.png" class="img-fluid figure-img"></p>
+<figcaption>The estimate is higher when these same children’s earnings are measured later, but the difference remains uncertain.</figcaption>
+</figure>
+</div>
+<p>The estimate is higher when I measure the same children later, rising from 0.088 to 0.129. But the difference is uncertain: its 95% confidence interval runs from -0.020 to 0.103, including zero. This fits the idea that early-career earnings can miss part of the longer-run relationship, but this sample cannot say exactly how much.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sample check</th>
+<th style="text-align: right;">Children</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Matched to mothers</td>
+<td style="text-align: right;">11,545</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Eligible averages in both generations</td>
+<td style="text-align: right;">2,870</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Positive single-year earnings in both generations</td>
+<td style="text-align: right;">2,114</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Positive earnings at both younger and older ages</td>
+<td style="text-align: right;">1,004</td>
+</tr>
+</tbody>
+</table>
+<p>These are unweighted estimates for selected wage earners, not all American families. The older children disproportionately come from mothers who gave birth young. Missing interviews, top-coded high earnings and the exclusion of zero single-year earnings also limit the comparison. Calendar year changes alongside age, and neither age window measures lifetime earnings.</p>
+</section>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p><strong>Before comparing two mobility estimates, check how earnings were measured.</strong> In this sample, using several years produces a stronger mother–child earnings relationship than using one year. Measuring children later also raises the estimate, although that difference is less certain. The useful lesson is to look beyond the headline number: whose earnings, which ages, and how many years?</p>
+<p><a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-06">Code, data, and replication instructions</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <category>SQL</category>
+  <category>income</category>
+  <category>mobility</category>
+  <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-06/</guid>
+  <pubDate>Tue, 20 Oct 2026 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Why Lower Rent Does Not Always Mean Less Housing Pressure</title>
   <dc:creator>Jin Liu</dc:creator>

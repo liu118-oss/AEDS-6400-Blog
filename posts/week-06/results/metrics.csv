@@ -1,0 +1,12 @@
+metric,value
+unique_child_ids,True
+all_children_matched,True
+no_duplicate_income_years,True
+main_median_mother_years,9.0
+main_median_child_years,3.0
+life_mean_young_age,26.528884462151396
+life_mean_older_age,36.98804780876494
+life_birth_min,1970
+life_birth_max,1982
+life_median_maternal_birth_age,19.0
+zero_earnings_retained_in_averages,32055
