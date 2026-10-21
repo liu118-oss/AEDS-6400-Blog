@@ -298,7 +298,7 @@
     "href": "index.html",
     "title": "AEDS 6400 Blog",
     "section": "",
-    "text": "Does One Year of Income Tell the Whole Story?\n\n\n\nPython\n\nSQL\n\nincome\n\nmobility\n\n\n\nA Python and SQL tutorial linking mothers and children to see how income measurement changes an intergenerational earnings estimate.\n\n\n\n\n\nOct 20, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower Rent Does Not Always Mean Less Housing Pressure\n\n\n\nhousing\n\naffordability\n\nGIS\n\nPennsylvania\n\n\n\nA comparison of Pennsylvania counties shows why rent alone is not enough to judge housing affordability.\n\n\n\n\n\nOct 19, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower New-Home Prices Have Not Restored Affordability\n\n\n\nhousing\n\ninterest-rates\n\naffordability\n\nfred\n\n\n\nFRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.\n\n\n\n\n\nOct 6, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Education Protect Workers from Unemployment?\n\n\n\nlabor-market\n\nunemployment\n\neducation\n\ndata-visualization\n\n\n\nA weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.\n\n\n\n\n\nSep 28, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
+    "text": "Finding Work After College: How Do Majors Compare?\n\n\n\nPython\n\nPlotly\n\neducation\n\nlabor-market\n\n\n\nAn interactive look at graduate unemployment and the tradeoffs between pay and employment across college majors.\n\n\n\n\n\nOct 21, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes One Year of Income Tell the Whole Story?\n\n\n\nPython\n\nSQL\n\nincome\n\nmobility\n\n\n\nA Python and SQL tutorial linking mothers and children to see how income measurement changes an intergenerational earnings estimate.\n\n\n\n\n\nOct 20, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower Rent Does Not Always Mean Less Housing Pressure\n\n\n\nhousing\n\naffordability\n\nGIS\n\nPennsylvania\n\n\n\nA comparison of Pennsylvania counties shows why rent alone is not enough to judge housing affordability.\n\n\n\n\n\nOct 19, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower New-Home Prices Have Not Restored Affordability\n\n\n\nhousing\n\ninterest-rates\n\naffordability\n\nfred\n\n\n\nFRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.\n\n\n\n\n\nOct 6, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Education Protect Workers from Unemployment?\n\n\n\nlabor-market\n\nunemployment\n\neducation\n\ndata-visualization\n\n\n\nA weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.\n\n\n\n\n\nSep 28, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/week-06/index.html",
@@ -348,5 +348,54 @@
     "title": "Does One Year of Income Tell the Whole Story?",
     "section": "Takeaway",
     "text": "Takeaway\nBefore comparing two mobility estimates, check how earnings were measured. In this sample, using several years produces a stronger mother–child earnings relationship than using one year. Measuring children later also raises the estimate, although that difference is less certain. The useful lesson is to look beyond the headline number: whose earnings, which ages, and how many years?\nCode, data, and replication instructions"
+  },
+  {
+    "objectID": "posts/week-07/index.html",
+    "href": "posts/week-07/index.html",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "",
+    "text": "Does a high-paying major also make it easier to find work? In 2024, computer science graduates had median early-career wages of $87,000, but their unemployment rate was 7.0%. Nursing paid less, at $70,000, while its unemployment rate was 2.1%. If I looked only at salaries, I would miss that difference.\nFor someone choosing a major or preparing for graduation, the question is not just how much a job might pay. It is also whether graduates are working, and what kinds of jobs they hold. I use two interactive charts to explore the overall job market and then compare those measures across majors."
+  },
+  {
+    "objectID": "posts/week-07/index.html#a-good-salary-is-only-part-of-the-answer",
+    "href": "posts/week-07/index.html#a-good-salary-is-only-part-of-the-answer",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "",
+    "text": "Does a high-paying major also make it easier to find work? In 2024, computer science graduates had median early-career wages of $87,000, but their unemployment rate was 7.0%. Nursing paid less, at $70,000, while its unemployment rate was 2.1%. If I looked only at salaries, I would miss that difference.\nFor someone choosing a major or preparing for graduation, the question is not just how much a job might pay. It is also whether graduates are working, and what kinds of jobs they hold. I use two interactive charts to explore the overall job market and then compare those measures across majors."
+  },
+  {
+    "objectID": "posts/week-07/index.html#how-difficult-is-the-job-market",
+    "href": "posts/week-07/index.html#how-difficult-is-the-job-market",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "How difficult is the job market?",
+    "text": "How difficult is the job market?\nThe New York Fed’s graduate labor-market data put the recent-graduate unemployment rate at 5.7% in June 2026, compared with 4.1% for all workers. Recent graduates here are ages 22–27 with at least a bachelor’s degree, excluding people still in school.\n\nFigure 1. Unemployment rates through June 2026. Source: New York Fed, using CPS/IPUMS. Rates are seasonally adjusted and smoothed over three months; October 2025 is estimated by the source. All groups exclude current students.\nUse the time menu or slider to explore a period, and click a legend label to hide a group. In January 1990, recent graduates’ unemployment rate was 3.4%, compared with 5.1% for all workers. By June 2026, it was 5.7% versus 4.1%. That reversal helps explain why graduation can feel less like a secure landing today.\nThe comparison with other young workers adds context. Among 22–27-year-olds without a bachelor’s degree, unemployment was 7.2% in June 2026, higher than among recent graduates. Graduates face a difficult market, but that does not mean their peers without degrees are doing better. Comparing people of similar ages also avoids treating the experience of older workers as the only benchmark."
+  },
+  {
+    "objectID": "posts/week-07/index.html#three-ways-to-compare-majors",
+    "href": "posts/week-07/index.html#three-ways-to-compare-majors",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "Three ways to compare majors",
+    "text": "Three ways to compare majors\nFor majors, I use the same source’s 2024 ACS-based data, covering 73 fields. These annual figures describe an earlier period than the monthly chart.\nUnemployment measures the share of the labor force without work and looking for it. Underemployment measures the share of employed graduates in jobs that typically do not require a college degree. It does not mean their job is unrelated to their subject. Early-career wages are median annual wages for full-time workers ages 22–27 with a bachelor’s degree only, rather than starting salaries. The two employment rates include graduates with higher degrees as well; all measures exclude current students.\n\nFigure 2. Outcomes by major, 2024. Source: New York Fed, using ACS/IPUMS. Dotted lines mark the published overall wage and unemployment benchmarks. Color shows underemployment; axes and the color scale stay fixed when filtering.\nHover over a point to identify its major and see all three measures. The first menu changes the comparison; the second highlights a particular major. If that major falls outside the filter, the message says so. This lets me explore individual fields without covering the chart in overlapping labels."
+  },
+  {
+    "objectID": "posts/week-07/index.html#what-changes-when-i-change-the-question",
+    "href": "posts/week-07/index.html#what-changes-when-i-change-the-question",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "What changes when I change the question?",
+    "text": "What changes when I change the question?\nThe published overall benchmarks are $58,000 for wages, 4.2% for unemployment and 39.4% for underemployment. These are reference points, not standards for a “good” major.\nSelecting higher pay leaves 27 majors. Adding lower unemployment reduces that to 12. Computer science and computer engineering disappear: their high wages coexist with unemployment rates of 7.0% and 7.8%. Higher pay among full-time workers does not describe the experience of everyone seeking work.\nThe remaining group includes nursing, accounting, finance, economics and several engineering fields. Of these 12 majors, 11 also have below-overall underemployment. In this group, the three measures mostly point in the same direction.\nThe final filter asks a different question: which majors have lower unemployment but higher underemployment? It shows 17 fields. Agriculture has unemployment of 1.4%, yet underemployment of 57.1%. Criminal justice also falls into this group, with underemployment of 65.8%. Finding work and finding work that usually requires a degree are different outcomes. Switching filters makes that distinction visible."
+  },
+  {
+    "objectID": "posts/week-07/index.html#what-these-comparisons-leave-out",
+    "href": "posts/week-07/index.html#what-these-comparisons-leave-out",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "What these comparisons leave out",
+    "text": "What these comparisons leave out\nThese are group averages and medians, not predictions for an individual. They do not account for differences in students, locations or experience, and cannot show what changing majors would do to someone’s prospects. The files do not provide uncertainty intervals, so I would not read small gaps as firm rankings. They also do not measure how long a job search takes. A job classified as underemployment can still be worthwhile or a step toward another role."
+  },
+  {
+    "objectID": "posts/week-07/index.html#takeaway",
+    "href": "posts/week-07/index.html#takeaway",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "Takeaway",
+    "text": "Takeaway\nBefore calling a major promising, ask: promising in which way? A high salary, a low unemployment rate and a low underemployment rate answer different questions. I would use the chart to compare fields I am considering, then look more closely at the jobs and skills behind those numbers. It is a useful starting point for a career decision, rather than a reason to choose a subject from its salary alone.\nCode, data, and replication instructions"
   }
 ]

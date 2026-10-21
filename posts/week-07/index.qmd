@@ -1,0 +1,84 @@
+---
+title: "Finding Work After College: How Do Majors Compare?"
+author: "Jin Liu"
+description: "An interactive look at graduate unemployment and the tradeoffs between pay and employment across college majors."
+date: "2026-10-21"
+categories: [Python, Plotly, education, labor-market]
+format:
+  html:
+    toc: true
+execute:
+  echo: false
+  warning: false
+resources:
+  - results/*.html
+  - results/*.js
+  - results/*.csv
+  - README.md
+  - requirements.txt
+  - code/*.py
+  - data/raw/*
+  - data/processed/*.csv
+---
+
+```{r}
+#| include: false
+metrics <- read.csv("results/metrics.csv")
+m <- function(key) metrics$value[metrics$metric == key]
+pct <- function(key) sprintf("%.1f%%", m(key))
+usd <- function(key) paste0("$", format(m(key), big.mark=",", scientific=FALSE, trim=TRUE))
+```
+
+## A good salary is only part of the answer
+
+**Does a high-paying major also make it easier to find work?** In 2024, computer science graduates had median early-career wages of `r usd("cs_wage")`, but their unemployment rate was `r pct("cs_unemployment")`. Nursing paid less, at `r usd("nursing_wage")`, while its unemployment rate was `r pct("nursing_unemployment")`. If I looked only at salaries, I would miss that difference.
+
+For someone choosing a major or preparing for graduation, the question is not just how much a job might pay. It is also whether graduates are working, and what kinds of jobs they hold. I use two interactive charts to explore the overall job market and then compare those measures across majors.
+
+## How difficult is the job market?
+
+The [New York Fed's graduate labor-market data](https://www.newyorkfed.org/research/college-labor-market) put the recent-graduate unemployment rate at `r pct("recent_latest")` in June 2026, compared with `r pct("all_latest")` for all workers. Recent graduates here are ages 22–27 with at least a bachelor's degree, excluding people still in school.
+
+```{=html}
+<iframe src="results/01_trend.html" title="Interactive unemployment trends by education and age" style="width:100%;height:650px;border:0;" loading="lazy"></iframe>
+```
+
+*Figure 1. Unemployment rates through June 2026. Source: New York Fed, using CPS/IPUMS. Rates are seasonally adjusted and smoothed over three months; October 2025 is estimated by the source. All groups exclude current students.*
+
+Use the time menu or slider to explore a period, and click a legend label to hide a group. In January 1990, recent graduates' unemployment rate was `r pct("recent_first")`, compared with `r pct("all_first")` for all workers. By June 2026, it was `r pct("recent_latest")` versus `r pct("all_latest")`. That reversal helps explain why graduation can feel less like a secure landing today.
+
+The comparison with other young workers adds context. Among 22–27-year-olds without a bachelor's degree, unemployment was `r pct("young_latest")` in June 2026, higher than among recent graduates. Graduates face a difficult market, but that does not mean their peers without degrees are doing better. Comparing people of similar ages also avoids treating the experience of older workers as the only benchmark.
+
+## Three ways to compare majors
+
+For majors, I use the same source's **2024 ACS-based data**, covering `r m("all")` fields. These annual figures describe an earlier period than the monthly chart.
+
+Unemployment measures the share of the labor force without work and looking for it. **Underemployment** measures the share of employed graduates in jobs that typically do not require a college degree. It does not mean their job is unrelated to their subject. Early-career wages are median annual wages for full-time workers ages 22–27 with a bachelor's degree only, rather than starting salaries. The two employment rates include graduates with higher degrees as well; all measures exclude current students.
+
+```{=html}
+<iframe src="results/02_majors.html" title="Interactive comparison of wages, unemployment and underemployment across majors" style="width:100%;height:770px;border:0;" loading="lazy"></iframe>
+```
+
+*Figure 2. Outcomes by major, 2024. Source: New York Fed, using ACS/IPUMS. Dotted lines mark the published overall wage and unemployment benchmarks. Color shows underemployment; axes and the color scale stay fixed when filtering.*
+
+Hover over a point to identify its major and see all three measures. The first menu changes the comparison; the second highlights a particular major. If that major falls outside the filter, the message says so. This lets me explore individual fields without covering the chart in overlapping labels.
+
+## What changes when I change the question?
+
+The published overall benchmarks are `r usd("overall_wage")` for wages, `r pct("overall_unemployment")` for unemployment and `r pct("overall_underemployment")` for underemployment. These are reference points, not standards for a “good” major.
+
+Selecting higher pay leaves `r m("higher_pay")` majors. Adding lower unemployment reduces that to `r m("higher_pay_low_unemployment")`. Computer science and computer engineering disappear: their high wages coexist with unemployment rates of `r pct("cs_unemployment")` and `r pct("ce_unemployment")`. Higher pay among full-time workers does not describe the experience of everyone seeking work.
+
+The remaining group includes nursing, accounting, finance, economics and several engineering fields. Of these `r m("higher_pay_low_unemployment")` majors, `r m("all_three")` also have below-overall underemployment. In this group, the three measures mostly point in the same direction.
+
+The final filter asks a different question: which majors have lower unemployment but higher underemployment? It shows `r m("contrast")` fields. Agriculture has unemployment of `r pct("ag_unemployment")`, yet underemployment of `r pct("ag_underemployment")`. Criminal justice also falls into this group, with underemployment of `r pct("cj_underemployment")`. Finding work and finding work that usually requires a degree are different outcomes. Switching filters makes that distinction visible.
+
+## What these comparisons leave out
+
+These are group averages and medians, not predictions for an individual. They do not account for differences in students, locations or experience, and cannot show what changing majors would do to someone's prospects. The files do not provide uncertainty intervals, so I would not read small gaps as firm rankings. They also do not measure how long a job search takes. A job classified as underemployment can still be worthwhile or a step toward another role.
+
+## Takeaway
+
+**Before calling a major promising, ask: promising in which way?** A high salary, a low unemployment rate and a low underemployment rate answer different questions. I would use the chart to compare fields I am considering, then look more closely at the jobs and skills behind those numbers. It is a useful starting point for a career decision, rather than a reason to choose a subject from its salary alone.
+
+[Code, data, and replication instructions](https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-07)
