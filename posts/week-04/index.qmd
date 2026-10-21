@@ -75,21 +75,22 @@ The counterfactual line holds the mortgage rate at its 2021 average while allowi
 
 This national comparison does not represent every buyer. `MSPUS` covers newly built homes, which can differ from existing homes in size, location, and quality. The median home and median household also come from separate datasets, so this is not the payment made by one observed household. Annual averages conceal changes within a year and large differences across local markets. Finally, many buyers put down less than 20%, and the calculation excludes mortgage insurance, property taxes, homeowners insurance, maintenance, fees, and closing costs. These omissions generally make the displayed payment smaller than the full monthly cost of ownership.
 
-::: {.callout-important}
 ## What this means for households and policymakers
 
 For a prospective buyer, the useful comparison is the complete monthly cost relative to income, rather than the listing price alone. In 2025, principal and interest on the typical new home consumed about `r percent(r2025$payment_burden, accuracy = 0.1)` of median gross household income before taxes, insurance, or maintenance. Buyers should calculate the payment at the rate they can actually obtain and leave room for those additional costs.
 
 For policymakers, the results separate two problems. Lower rates would reduce payments quickly, but rates move with broader financial conditions. Expanding housing supply addresses the price side more directly and can improve affordability without depending on a return to unusually low mortgage rates.
-:::
 
 ## Takeaway
 
 New-home prices remain high, but the recent affordability squeeze cannot be understood from prices alone. **The transition from a `r percent(r2021$mortgage_rate / 100, accuracy = 0.1)` mortgage rate in 2021 to `r percent(r2025$mortgage_rate / 100, accuracy = 0.1)` in 2025 added roughly `r dollar(r2025$monthly_payment - r2025$payment_at_2021_rate, accuracy = 1)` to the illustrative monthly payment on a 2025 median-priced new home.** Households should evaluate homes using payment-to-income calculations, while durable policy improvements require attention to both financing conditions and the supply of homes.
 
-## Sources
+## Data sources
 
-- [Median Sales Price of New Houses Sold, MSPUS](https://fred.stlouisfed.org/series/MSPUS), U.S. Census Bureau and U.S. Department of Housing and Urban Development.
-- [30-Year Fixed Rate Mortgage Average, MORTGAGE30US](https://fred.stlouisfed.org/series/MORTGAGE30US), Freddie Mac.
-- [Consumer Price Index, CPIAUCSL](https://fred.stlouisfed.org/series/CPIAUCSL), U.S. Bureau of Labor Statistics.
-- [Median Household Income, MEHOINUSA646N](https://fred.stlouisfed.org/series/MEHOINUSA646N), U.S. Census Bureau.
+U.S. Census Bureau and U.S. Department of Housing and Urban Development. *Median Sales Price of Houses Sold for the United States* [MSPUS]. Retrieved from FRED, Federal Reserve Bank of St. Louis; [https://fred.stlouisfed.org/series/MSPUS](https://fred.stlouisfed.org/series/MSPUS), October 6, 2026.
+
+Freddie Mac. *30-Year Fixed Rate Mortgage Average in the United States* [MORTGAGE30US]. Retrieved from FRED, Federal Reserve Bank of St. Louis; [https://fred.stlouisfed.org/series/MORTGAGE30US](https://fred.stlouisfed.org/series/MORTGAGE30US), October 6, 2026.
+
+U.S. Bureau of Labor Statistics. *Consumer Price Index for All Urban Consumers: All Items in U.S. City Average* [CPIAUCSL]. Retrieved from FRED, Federal Reserve Bank of St. Louis; [https://fred.stlouisfed.org/series/CPIAUCSL](https://fred.stlouisfed.org/series/CPIAUCSL), October 6, 2026.
+
+U.S. Census Bureau. *Median Household Income in the United States* [MEHOINUSA646N]. Retrieved from FRED, Federal Reserve Bank of St. Louis; [https://fred.stlouisfed.org/series/MEHOINUSA646N](https://fred.stlouisfed.org/series/MEHOINUSA646N), October 6, 2026.

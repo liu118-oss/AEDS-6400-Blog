@@ -53,7 +53,7 @@
     "href": "posts/week-04/index.html#what-this-benchmark-leaves-out",
     "title": "Why Lower New-Home Prices Have Not Restored Affordability",
     "section": "What this benchmark leaves out",
-    "text": "What this benchmark leaves out\nThis national comparison does not represent every buyer. MSPUS covers newly built homes, which can differ from existing homes in size, location, and quality. The median home and median household also come from separate datasets, so this is not the payment made by one observed household. Annual averages conceal changes within a year and large differences across local markets. Finally, many buyers put down less than 20%, and the calculation excludes mortgage insurance, property taxes, homeowners insurance, maintenance, fees, and closing costs. These omissions generally make the displayed payment smaller than the full monthly cost of ownership.\n\n\n\n\n\n\nImportantWhat this means for households and policymakers\n\n\n\nFor a prospective buyer, the useful comparison is the complete monthly cost relative to income, rather than the listing price alone. In 2025, principal and interest on the typical new home consumed about 29.1% of median gross household income before taxes, insurance, or maintenance. Buyers should calculate the payment at the rate they can actually obtain and leave room for those additional costs.\nFor policymakers, the results separate two problems. Lower rates would reduce payments quickly, but rates move with broader financial conditions. Expanding housing supply addresses the price side more directly and can improve affordability without depending on a return to unusually low mortgage rates."
+    "text": "What this benchmark leaves out\nThis national comparison does not represent every buyer. MSPUS covers newly built homes, which can differ from existing homes in size, location, and quality. The median home and median household also come from separate datasets, so this is not the payment made by one observed household. Annual averages conceal changes within a year and large differences across local markets. Finally, many buyers put down less than 20%, and the calculation excludes mortgage insurance, property taxes, homeowners insurance, maintenance, fees, and closing costs. These omissions generally make the displayed payment smaller than the full monthly cost of ownership."
   },
   {
     "objectID": "posts/week-04/index.html#takeaway",
@@ -235,7 +235,7 @@
     "href": "posts/week-05/index.html#takeaway",
     "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
     "section": "Takeaway",
-    "text": "Takeaway\nLower rents generally go with lower rent burdens in Pennsylvania, but Centre and Lawrence show why price alone can mislead. Rent tells us what housing costs; renter income helps explain how hard it is to pay. Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.\n\nSources: U.S. Census Bureau, 2020–2024 ACS, tables B25064, B25070 and B25119; 2024 county boundaries. Data and methods · GitHub: code and data · Download replication files."
+    "text": "Takeaway\nLower rents generally go with lower rent burdens in Pennsylvania, but Centre and Lawrence show why price alone can mislead. Rent tells us what housing costs; renter income helps explain how hard it is to pay. Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs."
   },
   {
     "objectID": "posts/week-03/index.html",
@@ -347,7 +347,7 @@
     "href": "posts/week-06/index.html#takeaway",
     "title": "Does One Year of Income Tell the Whole Story?",
     "section": "Takeaway",
-    "text": "Takeaway\nBefore comparing two mobility estimates, check how earnings were measured. In this sample, using several years produces a stronger mother–child earnings relationship than using one year. Measuring children later also raises the estimate, although that difference is less certain. The useful lesson is to look beyond the headline number: whose earnings, which ages, and how many years?\nCode, data, and replication instructions"
+    "text": "Takeaway\nBefore comparing two mobility estimates, check how earnings were measured. In this sample, using several years produces a stronger mother–child earnings relationship than using one year. Measuring children later also raises the estimate, although that difference is less certain. The useful lesson is to look beyond the headline number: whose earnings, which ages, and how many years?"
   },
   {
     "objectID": "posts/week-07/index.html",
@@ -396,6 +396,55 @@
     "href": "posts/week-07/index.html#takeaway",
     "title": "Finding Work After College: How Do Majors Compare?",
     "section": "Takeaway",
-    "text": "Takeaway\nBefore calling a major promising, ask: promising in which way? A high salary, a low unemployment rate and a low underemployment rate answer different questions. I would use the chart to compare fields I am considering, then look more closely at the jobs and skills behind those numbers. It is a useful starting point for a career decision, rather than a reason to choose a subject from its salary alone.\nCode, data, and replication instructions"
+    "text": "Takeaway\nBefore calling a major promising, ask: promising in which way? A high salary, a low unemployment rate and a low underemployment rate answer different questions. I would use the chart to compare fields I am considering, then look more closely at the jobs and skills behind those numbers. It is a useful starting point for a career decision, rather than a reason to choose a subject from its salary alone."
+  },
+  {
+    "objectID": "posts/week-06/index.html#sources",
+    "href": "posts/week-06/index.html#sources",
+    "title": "Does One Year of Income Tell the Whole Story?",
+    "section": "Sources",
+    "text": "Sources\n\nBureau of Labor Statistics, U.S. Department of Labor. National Longitudinal Survey of Youth 1979 cohort (NLSY79), 1979–2018. Produced and distributed by the Center for Human Resource Research, The Ohio State University.\nBureau of Labor Statistics, U.S. Department of Labor. NLSY79 Child and Young Adult, 1979–2018. Produced and distributed by the Center for Human Resource Research, The Ohio State University.\nBureau of Labor Statistics. Consumer Price Index for All Urban Consumers (CPI-U), U.S. city average, all items, CUUR0000SA0.\nCode, data extracts and replication steps: GitHub repository and README."
+  },
+  {
+    "objectID": "posts/week-07/index.html#sources",
+    "href": "posts/week-07/index.html#sources",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "Sources",
+    "text": "Sources\n\nFederal Reserve Bank of New York. The Labor Market for Recent College Graduates. Monthly unemployment rates through June 2026 (released August 6, 2026) and outcomes by major for 2024 (released February 4, 2026), based on U.S. Census Bureau CPS and ACS data via IPUMS.\n© 2026 Federal Reserve Bank of New York. Content from the New York Fed subject to the Terms of Use at newyorkfed.org.\nCode, data and replication steps: GitHub repository and README."
+  },
+  {
+    "objectID": "posts/week-06/index.html#data-sources",
+    "href": "posts/week-06/index.html#data-sources",
+    "title": "Does One Year of Income Tell the Whole Story?",
+    "section": "Data sources",
+    "text": "Data sources\nBureau of Labor Statistics, U.S. Department of Labor. National Longitudinal Survey of Youth 1979 cohort, 1979–2018 (rounds 1–28). Produced and distributed by the Center for Human Resource Research, The Ohio State University. Columbus, OH: 2021. https://www.bls.gov/nls/nlsy79.htm.\nBureau of Labor Statistics, U.S. Department of Labor, and National Institute for Child Health and Human Development. Children of the NLSY79, 1979–2018. Produced and distributed by the Center for Human Resource Research, The Ohio State University. Columbus, OH: 2021. https://www.bls.gov/nls/nlsy79-children.htm.\nU.S. Bureau of Labor Statistics. Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CUUR0000SA0). https://data.bls.gov/timeseries/CUUR0000SA0. Accessed October 2026."
+  },
+  {
+    "objectID": "posts/week-07/index.html#data-sources",
+    "href": "posts/week-07/index.html#data-sources",
+    "title": "Finding Work After College: How Do Majors Compare?",
+    "section": "Data sources",
+    "text": "Data sources\nFederal Reserve Bank of New York. 2026. The Labor Market for Recent College Graduates. https://www.newyorkfed.org/research/college-labor-market. Accessed October 21, 2026."
+  },
+  {
+    "objectID": "posts/week-04/index.html#data-sources",
+    "href": "posts/week-04/index.html#data-sources",
+    "title": "Why Lower New-Home Prices Have Not Restored Affordability",
+    "section": "Data sources",
+    "text": "Data sources\nU.S. Census Bureau and U.S. Department of Housing and Urban Development. Median Sales Price of Houses Sold for the United States [MSPUS]. Retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/MSPUS, October 6, 2026.\nFreddie Mac. 30-Year Fixed Rate Mortgage Average in the United States [MORTGAGE30US]. Retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/MORTGAGE30US, October 6, 2026.\nU.S. Bureau of Labor Statistics. Consumer Price Index for All Urban Consumers: All Items in U.S. City Average [CPIAUCSL]. Retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CPIAUCSL, October 6, 2026.\nU.S. Census Bureau. Median Household Income in the United States [MEHOINUSA646N]. Retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/MEHOINUSA646N, October 6, 2026."
+  },
+  {
+    "objectID": "posts/week-05/index.html#data-sources",
+    "href": "posts/week-05/index.html#data-sources",
+    "title": "Why Lower Rent Does Not Always Mean Less Housing Pressure",
+    "section": "Data sources",
+    "text": "Data sources\nU.S. Census Bureau. 2020–2024 American Community Survey 5-Year Estimates, Tables B25064 (Median Gross Rent), B25070 (Gross Rent as a Percentage of Household Income in the Past 12 Months) and B25119 (Median Household Income in the Past 12 Months by Tenure). Table-Based Summary File. https://www.census.gov/programs-surveys/acs/data/summary-file.2024.html. Accessed October 19, 2026.\nU.S. Census Bureau. 2024 Cartographic Boundary Files: Counties, 1:500,000 (cb_2024_us_county_500k). https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html. Accessed October 19, 2026."
+  },
+  {
+    "objectID": "posts/week-04/index.html#what-this-means-for-households-and-policymakers",
+    "href": "posts/week-04/index.html#what-this-means-for-households-and-policymakers",
+    "title": "Why Lower New-Home Prices Have Not Restored Affordability",
+    "section": "What this means for households and policymakers",
+    "text": "What this means for households and policymakers\nFor a prospective buyer, the useful comparison is the complete monthly cost relative to income, rather than the listing price alone. In 2025, principal and interest on the typical new home consumed about 29.1% of median gross household income before taxes, insurance, or maintenance. Buyers should calculate the payment at the rate they can actually obtain and leave room for those additional costs.\nFor policymakers, the results separate two problems. Lower rates would reduce payments quickly, but rates move with broader financial conditions. Expanding housing supply addresses the price side more directly and can improve affordability without depending on a return to unusually low mortgage rates."
   }
 ]

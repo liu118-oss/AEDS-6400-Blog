@@ -143,4 +143,10 @@ These are unweighted estimates for selected wage earners, not all American famil
 
 **Before comparing two mobility estimates, check how earnings were measured.** In this sample, using several years produces a stronger mother–child earnings relationship than using one year. Measuring children later also raises the estimate, although that difference is less certain. The useful lesson is to look beyond the headline number: whose earnings, which ages, and how many years?
 
-[Code, data, and replication instructions](https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-06)
+## Data sources
+
+Bureau of Labor Statistics, U.S. Department of Labor. *National Longitudinal Survey of Youth 1979 cohort, 1979–2018 (rounds 1–28)*. Produced and distributed by the Center for Human Resource Research, The Ohio State University. Columbus, OH: 2021. [https://www.bls.gov/nls/nlsy79.htm](https://www.bls.gov/nls/nlsy79.htm).
+
+Bureau of Labor Statistics, U.S. Department of Labor, and National Institute for Child Health and Human Development. *Children of the NLSY79, 1979–2018*. Produced and distributed by the Center for Human Resource Research, The Ohio State University. Columbus, OH: 2021. [https://www.bls.gov/nls/nlsy79-children.htm](https://www.bls.gov/nls/nlsy79-children.htm).
+
+U.S. Bureau of Labor Statistics. *Consumer Price Index for All Urban Consumers: All Items in U.S. City Average* (CUUR0000SA0). [https://data.bls.gov/timeseries/CUUR0000SA0](https://data.bls.gov/timeseries/CUUR0000SA0). Accessed October 2026.

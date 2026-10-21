@@ -81,4 +81,6 @@ These are group averages and medians, not predictions for an individual. They do
 
 **Before calling a major promising, ask: promising in which way?** A high salary, a low unemployment rate and a low underemployment rate answer different questions. I would use the chart to compare fields I am considering, then look more closely at the jobs and skills behind those numbers. It is a useful starting point for a career decision, rather than a reason to choose a subject from its salary alone.
 
-[Code, data, and replication instructions](https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-07)
+## Data sources
+
+Federal Reserve Bank of New York. 2026. *The Labor Market for Recent College Graduates*. [https://www.newyorkfed.org/research/college-labor-market](https://www.newyorkfed.org/research/college-labor-market). Accessed October 21, 2026.

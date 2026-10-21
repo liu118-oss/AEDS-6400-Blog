@@ -109,6 +109,8 @@ The ACS estimates cover 2020–2024, not today's listings, and county figures hi
 
 Lower rents generally go with lower rent burdens in Pennsylvania, but Centre and Lawrence show why price alone can mislead. **Rent tells us what housing costs; renter income helps explain how hard it is to pay.** Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.
 
----
+## Data sources
 
-*Sources: U.S. Census Bureau, 2020–2024 ACS, tables B25064, B25070 and B25119; 2024 county boundaries. [Data and methods](README.md) · [GitHub: code and data](https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-05) · [Download replication files](results/replication.zip).*
+U.S. Census Bureau. *2020–2024 American Community Survey 5-Year Estimates*, Tables B25064 (Median Gross Rent), B25070 (Gross Rent as a Percentage of Household Income in the Past 12 Months) and B25119 (Median Household Income in the Past 12 Months by Tenure). Table-Based Summary File. [https://www.census.gov/programs-surveys/acs/data/summary-file.2024.html](https://www.census.gov/programs-surveys/acs/data/summary-file.2024.html). Accessed October 19, 2026.
+
+U.S. Census Bureau. *2024 Cartographic Boundary Files: Counties, 1:500,000* (cb_2024_us_county_500k). [https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html](https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html). Accessed October 19, 2026.

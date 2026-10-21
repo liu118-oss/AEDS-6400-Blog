@@ -191,12 +191,13 @@ p3 <- ggplot(burden_plot, aes(year, burden, color = scenario)) +
   geom_text(
     data = burden_labels,
     aes(label = percent(burden, accuracy = 0.1)),
-    nudge_x = 0.35, fontface = "bold", show.legend = FALSE
+    # Left-align labels beside the end points so the points do not cover the text.
+    nudge_x = 0.3, hjust = 0, fontface = "bold", show.legend = FALSE
   ) +
   scale_color_manual(values = colors) +
   scale_x_continuous(breaks = seq(2000, 2025, 5)) +
   scale_y_continuous(labels = percent_format(accuracy = 1)) +
-  coord_cartesian(xlim = c(2000, 2026)) +
+  coord_cartesian(xlim = c(2000, 2027)) +
   labs(
     title = "Higher rates now account for much of the payment squeeze",
     subtitle = "Principal and interest on a median-priced new home with 20% down, as a share of median household income",

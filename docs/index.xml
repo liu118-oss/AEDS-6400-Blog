@@ -56,7 +56,10 @@
 <section id="takeaway" class="level2">
 <h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
 <p><strong>Before calling a major promising, ask: promising in which way?</strong> A high salary, a low unemployment rate and a low underemployment rate answer different questions. I would use the chart to compare fields I am considering, then look more closely at the jobs and skills behind those numbers. It is a useful starting point for a career decision, rather than a reason to choose a subject from its salary alone.</p>
-<p><a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-07">Code, data, and replication instructions</a></p>
+</section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
+<p>Federal Reserve Bank of New York. 2026. <em>The Labor Market for Recent College Graduates</em>. <a href="https://www.newyorkfed.org/research/college-labor-market">https://www.newyorkfed.org/research/college-labor-market</a>. Accessed October 21, 2026.</p>
 
 
 </section>
@@ -268,7 +271,12 @@ font-style: inherit;">0</span>]</span></code></pre></div></div>
 <section id="takeaway" class="level2">
 <h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
 <p><strong>Before comparing two mobility estimates, check how earnings were measured.</strong> In this sample, using several years produces a stronger mother–child earnings relationship than using one year. Measuring children later also raises the estimate, although that difference is less certain. The useful lesson is to look beyond the headline number: whose earnings, which ages, and how many years?</p>
-<p><a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-06">Code, data, and replication instructions</a></p>
+</section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
+<p>Bureau of Labor Statistics, U.S. Department of Labor. <em>National Longitudinal Survey of Youth 1979 cohort, 1979–2018 (rounds 1–28)</em>. Produced and distributed by the Center for Human Resource Research, The Ohio State University. Columbus, OH: 2021. <a href="https://www.bls.gov/nls/nlsy79.htm">https://www.bls.gov/nls/nlsy79.htm</a>.</p>
+<p>Bureau of Labor Statistics, U.S. Department of Labor, and National Institute for Child Health and Human Development. <em>Children of the NLSY79, 1979–2018</em>. Produced and distributed by the Center for Human Resource Research, The Ohio State University. Columbus, OH: 2021. <a href="https://www.bls.gov/nls/nlsy79-children.htm">https://www.bls.gov/nls/nlsy79-children.htm</a>.</p>
+<p>U.S. Bureau of Labor Statistics. <em>Consumer Price Index for All Urban Consumers: All Items in U.S. City Average</em> (CUUR0000SA0). <a href="https://data.bls.gov/timeseries/CUUR0000SA0">https://data.bls.gov/timeseries/CUUR0000SA0</a>. Accessed October 2026.</p>
 
 
 </section>
@@ -374,8 +382,11 @@ Figure&nbsp;4: Annual median rent divided by median renter income, compared with
 <section id="takeaway" class="level2">
 <h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
 <p>Lower rents generally go with lower rent burdens in Pennsylvania, but Centre and Lawrence show why price alone can mislead. <strong>Rent tells us what housing costs; renter income helps explain how hard it is to pay.</strong> Renters should compare costs with their own expected income. Housing organizations should examine low renter incomes alongside high rents when deciding where to look more closely at housing needs.</p>
-<hr>
-<p><em>Sources: U.S. Census Bureau, 2020–2024 ACS, tables B25064, B25070 and B25119; 2024 county boundaries. <a href="README.md">Data and methods</a> · <a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-05">GitHub: code and data</a> · <a href="results/replication.zip">Download replication files</a>.</em></p>
+</section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
+<p>U.S. Census Bureau. <em>2020–2024 American Community Survey 5-Year Estimates</em>, Tables B25064 (Median Gross Rent), B25070 (Gross Rent as a Percentage of Household Income in the Past 12 Months) and B25119 (Median Household Income in the Past 12 Months by Tenure). Table-Based Summary File. <a href="https://www.census.gov/programs-surveys/acs/data/summary-file.2024.html">https://www.census.gov/programs-surveys/acs/data/summary-file.2024.html</a>. Accessed October 19, 2026.</p>
+<p>U.S. Census Bureau. <em>2024 Cartographic Boundary Files: Counties, 1:500,000</em> (cb_2024_us_county_500k). <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html">https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html</a>. Accessed October 19, 2026.</p>
 
 
 </section>
@@ -454,33 +465,22 @@ Figure&nbsp;4: Annual median rent divided by median renter income, compared with
 <section id="what-this-benchmark-leaves-out" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-benchmark-leaves-out">What this benchmark leaves out</h2>
 <p>This national comparison does not represent every buyer. <code>MSPUS</code> covers newly built homes, which can differ from existing homes in size, location, and quality. The median home and median household also come from separate datasets, so this is not the payment made by one observed household. Annual averages conceal changes within a year and large differences across local markets. Finally, many buyers put down less than 20%, and the calculation excludes mortgage insurance, property taxes, homeowners insurance, maintenance, fees, and closing costs. These omissions generally make the displayed payment smaller than the full monthly cost of ownership.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>What this means for households and policymakers
-</div>
-</div>
-<div class="callout-body-container callout-body">
+</section>
+<section id="what-this-means-for-households-and-policymakers" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-means-for-households-and-policymakers">What this means for households and policymakers</h2>
 <p>For a prospective buyer, the useful comparison is the complete monthly cost relative to income, rather than the listing price alone. In 2025, principal and interest on the typical new home consumed about 29.1% of median gross household income before taxes, insurance, or maintenance. Buyers should calculate the payment at the rate they can actually obtain and leave room for those additional costs.</p>
 <p>For policymakers, the results separate two problems. Lower rates would reduce payments quickly, but rates move with broader financial conditions. Expanding housing supply addresses the price side more directly and can improve affordability without depending on a return to unusually low mortgage rates.</p>
-</div>
-</div>
 </section>
 <section id="takeaway" class="level2">
 <h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
 <p>New-home prices remain high, but the recent affordability squeeze cannot be understood from prices alone. <strong>The transition from a 3.0% mortgage rate in 2021 to 6.6% in 2025 added roughly $728 to the illustrative monthly payment on a 2025 median-priced new home.</strong> Households should evaluate homes using payment-to-income calculations, while durable policy improvements require attention to both financing conditions and the supply of homes.</p>
 </section>
-<section id="sources" class="level2">
-<h2 class="anchored" data-anchor-id="sources">Sources</h2>
-<ul>
-<li><a href="https://fred.stlouisfed.org/series/MSPUS">Median Sales Price of New Houses Sold, MSPUS</a>, U.S. Census Bureau and U.S. Department of Housing and Urban Development.</li>
-<li><a href="https://fred.stlouisfed.org/series/MORTGAGE30US">30-Year Fixed Rate Mortgage Average, MORTGAGE30US</a>, Freddie Mac.</li>
-<li><a href="https://fred.stlouisfed.org/series/CPIAUCSL">Consumer Price Index, CPIAUCSL</a>, U.S. Bureau of Labor Statistics.</li>
-<li><a href="https://fred.stlouisfed.org/series/MEHOINUSA646N">Median Household Income, MEHOINUSA646N</a>, U.S. Census Bureau.</li>
-</ul>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
+<p>U.S. Census Bureau and U.S. Department of Housing and Urban Development. <em>Median Sales Price of Houses Sold for the United States</em> [MSPUS]. Retrieved from FRED, Federal Reserve Bank of St.&nbsp;Louis; <a href="https://fred.stlouisfed.org/series/MSPUS">https://fred.stlouisfed.org/series/MSPUS</a>, October 6, 2026.</p>
+<p>Freddie Mac. <em>30-Year Fixed Rate Mortgage Average in the United States</em> [MORTGAGE30US]. Retrieved from FRED, Federal Reserve Bank of St.&nbsp;Louis; <a href="https://fred.stlouisfed.org/series/MORTGAGE30US">https://fred.stlouisfed.org/series/MORTGAGE30US</a>, October 6, 2026.</p>
+<p>U.S. Bureau of Labor Statistics. <em>Consumer Price Index for All Urban Consumers: All Items in U.S. City Average</em> [CPIAUCSL]. Retrieved from FRED, Federal Reserve Bank of St.&nbsp;Louis; <a href="https://fred.stlouisfed.org/series/CPIAUCSL">https://fred.stlouisfed.org/series/CPIAUCSL</a>, October 6, 2026.</p>
+<p>U.S. Census Bureau. <em>Median Household Income in the United States</em> [MEHOINUSA646N]. Retrieved from FRED, Federal Reserve Bank of St.&nbsp;Louis; <a href="https://fred.stlouisfed.org/series/MEHOINUSA646N">https://fred.stlouisfed.org/series/MEHOINUSA646N</a>, October 6, 2026.</p>
 
 
 </section>
