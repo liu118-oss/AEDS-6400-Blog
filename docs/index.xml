@@ -10,7 +10,83 @@
 <atom:link href="https://liu118-oss.github.io/AEDS-6400-Blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Wed, 21 Oct 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 02 Nov 2026 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Is the Average Delivery Time Really 30 Minutes?</title>
+  <dc:creator>Jin Liu</dc:creator>
+  <link>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-08/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="can-one-batch-of-orders-settle-the-question" class="level2">
+<h2 class="anchored" data-anchor-id="can-one-batch-of-orders-settle-the-question">Can one batch of orders settle the question?</h2>
+<p>A delivery service says its average wait is 30 minutes. My orders take a little longer. <strong>Is the claim wrong, or did I happen to observe a slow batch?</strong> Before treating a sample average as an answer, I need to know how much it could vary.</p>
+<p>The same problem shows up whenever a firm advertises an average: a delivery guarantee, a hospital’s waiting time, a call center’s response time. Customers, competitors and regulators usually see only a sample. Accusing a company of overstating its speed after one slow week is as risky as trusting the claim blindly. Statistical inference gives a rule for deciding when a gap between a sample and a claim is too large to be luck.</p>
+<p>I use a hypothetical delivery service to explore that uncertainty. The data are simulated, not real orders. That lets me know the true average and check whether my statistical methods recover it. Three figures connect resampling, confidence intervals and hypothesis testing to the same question.</p>
+</section>
+<section id="a-population-i-can-check" class="level2">
+<h2 class="anchored" data-anchor-id="a-population-i-can-check">A population I can check</h2>
+<p>I generate positive, right-skewed delivery times: most orders arrive sooner, but some take much longer. The model is lognormal, with a mean of 30 minutes and a standard deviation of 15. These are teaching assumptions, not estimates about a company. Orders are independent in this model.</p>
+<p>I first draw 200 orders. Their average is 31.05 minutes, even though the population mean is 30. Sampling alone creates a difference. The <a href="https://github.com/liu118-oss/AEDS-6400-Blog/tree/main/posts/week-08">code and saved data</a> use fixed random seeds; the <a href="README.md">README</a> gives the reproduction steps.</p>
+</section>
+<section id="resampling-the-orders-i-observed" class="level2">
+<h2 class="anchored" data-anchor-id="resampling-the-orders-i-observed">Resampling the orders I observed</h2>
+<p>A <strong>bootstrap</strong> asks how the estimate varies when I resample the observed orders. I draw 200 values with replacement, so an order can appear more than once, and calculate their average. Repeating this 2,000 times produces the distribution below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-08/results/01_bootstrap.png" class="img-fluid figure-img"></p>
+<figcaption>Bootstrap means from one fixed sample of 200 orders. Dashed boundaries mark the 95% percentile interval. Source: author’s simulation.</figcaption>
+</figure>
+</div>
+<p>The middle 95% of these means runs from 28.88 to 33.63 minutes. Those endpoints form a <strong>percentile bootstrap confidence interval</strong>. The spread gives a sense of uncertainty around my estimate; it does not describe where 95% of individual delivery times fall.</p>
+<p>Resampling adds no new orders. It uses the sample as a stand-in for the population, so an unrepresentative sample can still produce a misleading interval.</p>
+</section>
+<section id="what-does-95-actually-mean" class="level2">
+<h2 class="anchored" data-anchor-id="what-does-95-actually-mean">What does “95%” actually mean?</h2>
+<p>To check coverage, I now draw entirely new samples from the known population. For each one, I repeat the bootstrap procedure and record whether its interval contains 30. I do this 1,000 times for each sample size.</p>
+<iframe src="results/02_coverage.html" title="Interactive confidence interval coverage by sample size and confidence level" style="width:100%;height:890px;border:0;" loading="lazy"></iframe>
+<p><em>Each line is an interval; each dot is its sample mean. Blue intervals contain 30, orange intervals miss it. The display shows the first 100 experiments; summaries use all 1,000. Source: author’s simulation.</em></p>
+<p>With 200 orders, the nominal 95% intervals cover the truth in 93.4% of experiments; with 500, coverage is 94.7%. These are close to, but not exactly, 95%. At 200 orders, simulation uncertainty alone is about 0.8 percentage points as a standard error. Percentile intervals can also under-cover in finite, skewed samples.</p>
+<p>Try raising confidence from 95% to 99% while keeping sample size fixed: the intervals widen. Then hold confidence at 95% and increase the sample size. Average width falls from 8.10 minutes at 50 orders to 2.62 at 500. More data improve precision; they do not turn a 95% procedure into a 99% procedure.</p>
+<p>The 95% label describes repeated use of the method. It does not mean that, after an interval is calculated, there is a 95% probability that the fixed population mean lies inside that particular interval.</p>
+</section>
+<section id="what-if-the-30-minute-claim-were-true" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-the-30-minute-claim-were-true">What if the 30-minute claim were true?</h2>
+<p>My first batch, averaging 31.05 minutes, could not rule out 30: its interval runs from 28.88 to 33.63. That is the right answer, because that batch really came from a 30-minute service. Now suppose the service has quietly slowed down. I generate a second, separate batch of 200 orders from a population with mean 33, keeping the same distributional shape. This alternative is specified before seeing the result. Its observed mean is 32.85 minutes. Can a test detect the slowdown?</p>
+<p>The <strong>null hypothesis</strong> says the mean is 30. Under that claim and the assumed lognormal shape, I simulate 10,000 samples of 200 orders. Their means form the null distribution. The test is two-sided: unusually low or high means count against the claim.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-08/results/03_null_test.png" class="img-fluid figure-img"></p>
+<figcaption>Both panels show the same 10,000 sample means simulated under the 30-minute claim; the dark line is the observed mean. Left: orange tails are the 5% rejection region. Right: the dark blue tail holds simulations at least as extreme as the observed mean; the light tail on the left is an equally large opposite tail, so together they make up the two-sided p-value. The inset zooms in on the upper tail. Source: author’s simulation.</figcaption>
+</figure>
+</div>
+<p>The rejection boundaries are approximately 27.96 and 32.16 minutes, leaving about 2.5% in each tail. The observed mean lies beyond the upper boundary, inside the orange region. The right panel asks a different question: how often does a 30-minute service produce a batch this slow? Only 53 of 10,000 simulated batches reach 32.85 minutes. Doubling that tail for a two-sided test, with a small finite-simulation correction, gives a p-value of 0.011. Because it is below 0.05, I reject the specified null model at the 5% level. The two panels always agree: an observed mean lands in the rejection region exactly when its p-value is below 5%.</p>
+<p>What does the 5% actually buy? I rerun the whole test on 5,000 fresh batches. When the 30-minute claim is true, it wrongly rejects in 4.8% of batches, close to the 5% the rejection region was built for. When the true mean is 33, it correctly rejects in 76.0%; this is the test’s <strong>power</strong>. So roughly one in four batches from the slower service would <em>not</em> trigger a rejection. A slowdown can be real yet go undetected in a single batch of 200 orders.</p>
+<p>This p-value measures how unusual the result is under the null model, not the probability that the claim is true. Failing to reject would not prove the claim either. Here the test also assumes the distribution’s shape; real delivery data could violate that assumption or contain related delays across orders.</p>
+</section>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p><strong>One batch gives an estimate, not certainty.</strong> Resampling shows uncertainty around that estimate; repeated experiments reveal how often intervals capture the truth; a null simulation tests a particular claim, and repeating that test shows it is wrong about 5% of the time when the claim holds and can still miss a real slowdown. Before acting on an average, I would ask how many observations support it, how wide its interval is, and which assumptions make the comparison credible.</p>
+</section>
+<section id="data-and-references" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-references">Data and references</h2>
+<p>Data: author’s simulated delivery times, generated November 2, 2026. No real company or customer records are used. Assumptions and seed are in <a href="data/parameters.json">parameters.json</a>.</p>
+<p>Method references: <a href="https://stat135.berkeley.edu/fall-2026/Modules/12-Bootstrap.html">UC Berkeley, Bootstrap percentile intervals</a>; NIST/SEMATECH e-Handbook, <a href="https://itl.nist.gov/div898/handbook/eda/section3/eda352.htm">Confidence limits for the mean</a> and <a href="https://itl.nist.gov/div898/handbook/prc/section1/prc131.htm">Critical values and p-values</a>.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <category>simulation</category>
+  <category>bootstrap</category>
+  <category>inference</category>
+  <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-08/</guid>
+  <pubDate>Mon, 02 Nov 2026 05:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Finding Work After College: How Do Majors Compare?</title>
   <dc:creator>Jin Liu</dc:creator>
@@ -71,7 +147,7 @@
   <category>education</category>
   <category>labor-market</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-07/</guid>
-  <pubDate>Wed, 21 Oct 2026 07:00:00 GMT</pubDate>
+  <pubDate>Wed, 21 Oct 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Does One Year of Income Tell the Whole Story?</title>
@@ -288,7 +364,7 @@ font-style: inherit;">0</span>]</span></code></pre></div></div>
   <category>income</category>
   <category>mobility</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-06/</guid>
-  <pubDate>Tue, 20 Oct 2026 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 Oct 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Why Lower Rent Does Not Always Mean Less Housing Pressure</title>
@@ -398,7 +474,7 @@ Figure&nbsp;4: Annual median rent divided by median renter income, compared with
   <category>GIS</category>
   <category>Pennsylvania</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-05/</guid>
-  <pubDate>Mon, 19 Oct 2026 07:00:00 GMT</pubDate>
+  <pubDate>Mon, 19 Oct 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Why Lower New-Home Prices Have Not Restored Affordability</title>
@@ -492,7 +568,7 @@ Figure&nbsp;4: Annual median rent divided by median renter income, compared with
   <category>affordability</category>
   <category>fred</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-04/</guid>
-  <pubDate>Tue, 06 Oct 2026 07:00:00 GMT</pubDate>
+  <pubDate>Tue, 06 Oct 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Does Education Protect Workers from Unemployment?</title>
@@ -554,7 +630,7 @@ Figure&nbsp;4: Annual median rent divided by median renter income, compared with
   <category>education</category>
   <category>data-visualization</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-03/</guid>
-  <pubDate>Mon, 28 Sep 2026 07:00:00 GMT</pubDate>
+  <pubDate>Mon, 28 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</title>
@@ -767,7 +843,7 @@ Table&nbsp;2: Top two skill mentions within each role group. Percentages use the
   <category>R</category>
   <category>labor-market</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-02/</guid>
-  <pubDate>Mon, 21 Sep 2026 07:00:00 GMT</pubDate>
+  <pubDate>Mon, 21 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Eigenvalues and Eigenvectors: The Directions That Stay on Track</title>
@@ -1194,7 +1270,7 @@ Figure&nbsp;1: One transformation, three starting arrows. The horizontal arrow c
   <category>linear-algebra</category>
   <category>economics</category>
   <guid>https://liu118-oss.github.io/AEDS-6400-Blog/posts/week-01/</guid>
-  <pubDate>Mon, 14 Sep 2026 07:00:00 GMT</pubDate>
+  <pubDate>Mon, 14 Sep 2026 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

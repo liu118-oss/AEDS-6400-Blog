@@ -1,0 +1,22 @@
+{
+  "seed": 20261102,
+  "population_mean": 30.0,
+  "population_sd": 15.0,
+  "example_n": 200,
+  "alternative_mean": 33.0,
+  "sample_sizes": [
+    50,
+    200,
+    500
+  ],
+  "confidence_levels": [
+    0.9,
+    0.95,
+    0.99
+  ],
+  "bootstrap_reps": 2000,
+  "coverage_reps": 1000,
+  "null_reps": 10000,
+  "rejection_reps": 5000,
+  "display_intervals": 100
+}

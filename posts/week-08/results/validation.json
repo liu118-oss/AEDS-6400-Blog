@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "coverage_intervals_checked": 9000,
+  "scenarios_checked": 9,
+  "checks": [
+    "sample sizes and positive times",
+    "sample means and bootstrap quantiles",
+    "coverage and widths",
+    "Monte Carlo errors",
+    "nested confidence intervals",
+    "corrected p-value and rejection rule",
+    "repeated-test rejection rates"
+  ]
+}
