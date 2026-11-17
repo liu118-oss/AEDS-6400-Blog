@@ -1,0 +1,8 @@
+{
+  "note": "Python reimplementation of R bookkeeping using reimplemented unpurged model; not an exact R rerun.",
+  "min_sum_weights": 1.1944062443772716,
+  "max_sum_weights": 3.5905385104926077,
+  "literal_reported_sharpe_wrong_252": 10.809180324568565,
+  "literal_pseudo_terminal_wealth": 3.446605414750114,
+  "warning": "Invalid as investment evidence: implicit leverage, unmatched holding windows and wrong annualization."
+}

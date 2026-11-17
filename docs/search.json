@@ -298,7 +298,7 @@
     "href": "index.html",
     "title": "AEDS 6400 Blog",
     "section": "",
-    "text": "Is the Average Delivery Time Really 30 Minutes?\n\n\n\nPython\n\nsimulation\n\nbootstrap\n\ninference\n\n\n\nA simulated delivery service makes bootstrap intervals, coverage and p-values easier to see.\n\n\n\n\n\nNov 2, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nFinding Work After College: How Do Majors Compare?\n\n\n\nPython\n\nPlotly\n\neducation\n\nlabor-market\n\n\n\nAn interactive look at graduate unemployment and the tradeoffs between pay and employment across college majors.\n\n\n\n\n\nOct 21, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes One Year of Income Tell the Whole Story?\n\n\n\nPython\n\nSQL\n\nincome\n\nmobility\n\n\n\nA Python and SQL tutorial linking mothers and children to see how income measurement changes an intergenerational earnings estimate.\n\n\n\n\n\nOct 20, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower Rent Does Not Always Mean Less Housing Pressure\n\n\n\nhousing\n\naffordability\n\nGIS\n\nPennsylvania\n\n\n\nA comparison of Pennsylvania counties shows why rent alone is not enough to judge housing affordability.\n\n\n\n\n\nOct 19, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower New-Home Prices Have Not Restored Affordability\n\n\n\nhousing\n\ninterest-rates\n\naffordability\n\nfred\n\n\n\nFRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.\n\n\n\n\n\nOct 6, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Education Protect Workers from Unemployment?\n\n\n\nlabor-market\n\nunemployment\n\neducation\n\ndata-visualization\n\n\n\nA weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.\n\n\n\n\n\nSep 28, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
+    "text": "Better Forecasts, Better Investments?\n\n\nBlog Post 9 · Predicting Stock Returns with Gradient Boosting\n\n\n\nPython\n\nfinance\n\nmachine learning\n\ngradient boosting\n\n\n\nCan cleaner features and more conservative boosting improve stock forecasts and investment returns?\n\n\n\n\n\nNov 16, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nIs the Average Delivery Time Really 30 Minutes?\n\n\n\n\n\n\nPython\n\nsimulation\n\nbootstrap\n\ninference\n\n\n\nA simulated delivery service makes bootstrap intervals, coverage and p-values easier to see.\n\n\n\n\n\nNov 2, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nFinding Work After College: How Do Majors Compare?\n\n\n\n\n\n\nPython\n\nPlotly\n\neducation\n\nlabor-market\n\n\n\nAn interactive look at graduate unemployment and the tradeoffs between pay and employment across college majors.\n\n\n\n\n\nOct 21, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes One Year of Income Tell the Whole Story?\n\n\n\n\n\n\nPython\n\nSQL\n\nincome\n\nmobility\n\n\n\nA Python and SQL tutorial linking mothers and children to see how income measurement changes an intergenerational earnings estimate.\n\n\n\n\n\nOct 20, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower Rent Does Not Always Mean Less Housing Pressure\n\n\n\n\n\n\nhousing\n\naffordability\n\nGIS\n\nPennsylvania\n\n\n\nA comparison of Pennsylvania counties shows why rent alone is not enough to judge housing affordability.\n\n\n\n\n\nOct 19, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Lower New-Home Prices Have Not Restored Affordability\n\n\n\n\n\n\nhousing\n\ninterest-rates\n\naffordability\n\nfred\n\n\n\nFRED data show how home prices, mortgage rates, and household income jointly changed the cost of buying a typical new U.S. home.\n\n\n\n\n\nOct 6, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nDoes Education Protect Workers from Unemployment?\n\n\n\n\n\n\nlabor-market\n\nunemployment\n\neducation\n\ndata-visualization\n\n\n\nA weighted IPUMS CPS analysis of unemployment differences across education groups and over the business cycle.\n\n\n\n\n\nSep 28, 2026\n\n\nJin Liu\n\n\n\n\n\n\n\n\n\n\n\n\nWhich Tech Skills Should I Learn? Evidence from Arbeitnow Jobs\n\n\n\n\n\n\nweb-scraping\n\nR\n\nlabor-market\n\n\n\nA reproducible R scrape turns German-focused job postings into role-specific study priorities.\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues and Eigenvectors: The Directions That Stay on Track\n\n\n\n\n\n\nmathematics\n\nlinear-algebra\n\neconomics\n\n\n\nA matrix can move most arrows off course. Eigenvectors reveal the directions where its behavior becomes simple.\n\n\n\n\n\nSep 14, 2026\n\n\nJin Liu\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/week-06/index.html",
@@ -502,5 +502,61 @@
     "title": "Is the Average Delivery Time Really 30 Minutes?",
     "section": "Data and references",
     "text": "Data and references\nData: author’s simulated delivery times, generated November 2, 2026. No real company or customer records are used. Assumptions and seed are in parameters.json.\nMethod references: UC Berkeley, Bootstrap percentile intervals; NIST/SEMATECH e-Handbook, Confidence limits for the mean and Critical values and p-values."
+  },
+  {
+    "objectID": "posts/week-09/index.html",
+    "href": "posts/week-09/index.html",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "",
+    "text": "Can past stock prices help a machine-learning model make profitable investments? I revisited our class gradient boosting experiment, corrected its evaluation, and tested a more conservative model. The central finding: better forecasts did not produce a better portfolio."
+  },
+  {
+    "objectID": "posts/week-09/index.html#the-class-experiment",
+    "href": "posts/week-09/index.html#the-class-experiment",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "The class experiment",
+    "text": "The class experiment\nThe supplied R script uses XGBoost, which builds decision trees sequentially to reduce prediction errors. Trees capture nonlinear relationships, such as momentum behaving differently when volatility is high. The original model uses 300 trees, depth 5, and a learning rate of 0.05.\nIts inputs include momentum, volatility, reversal, market-relative returns, and raw price and volume columns. It trains on observations before 2024 and ranks stocks by predicted future returns. The intended strategy buys the ten highest-ranked stocks, allocating more to larger positive forecasts.\nAlthough described as a 20-day forecast, its target runs from day one to day twenty: 19 trading-day returns. I retained this target. My Python reimplementation uses the script’s 95 stocks plus SPY, with Yahoo Finance prices from January 2022 through December 2025. The frozen snapshot was downloaded on 2026-11-17. This reproduces the model’s design, not the instructor’s exact software environment or classroom results."
+  },
+  {
+    "objectID": "posts/week-09/index.html#making-the-comparison-fair",
+    "href": "posts/week-09/index.html#making-the-comparison-fair",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "Making the comparison fair",
+    "text": "Making the comparison fair\nSome December training labels include January outcomes, leaking test information. I excluded these observations from both models. I also corrected the original portfolio accounting: its R weighting expression can repeat one weight across every stock, while its benchmark dates and annualization factors are inconsistent.\nIn the corrected comparison, both strategies have weights totaling 100%, trade at the next close, and rebalance every 19 trading sessions. This matches the forecast horizon. SPY and an equal-weight portfolio of the same stocks provide investment benchmarks over identical dates.\n\n\n\nTraining and validation precede the untouched test. Source: analysis design.\n\n\nThese corrections establish a fair experiment; they are separate from my model improvements.\nThese benchmarks answer different questions. The historical mean tests whether stock-specific information improves forecasts. SPY tests whether active trading beats a broad market investment. Equal weighting tests whether selecting ten stocks adds value relative to holding the entire class universe. Using all three prevents a strong market rally, or an unusually successful set of companies, from being mistaken for evidence of superior forecasting."
+  },
+  {
+    "objectID": "posts/week-09/index.html#improving-the-model",
+    "href": "posts/week-09/index.html#improving-the-model",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "Improving the model",
+    "text": "Improving the model\nI replaced raw price and volume levels with seven comparable signals: lagged momentum over four horizons, volatility, market-relative momentum, and the previous day’s excess return. I also corrected the direction of the original momentum formulas.\nTo reduce overfitting, I compared eight combinations of tree depth, tree count, and minimum child weight, using stronger regularization. Three chronological validation folds in 2023 selected the settings; labels crossing fold boundaries were excluded. The winning model uses 100 depth-one trees and a 0.03 learning rate. Both models were then frozen before testing on 2024–2025."
+  },
+  {
+    "objectID": "posts/week-09/index.html#did-prediction-improve",
+    "href": "posts/week-09/index.html#did-prediction-improve",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "Did prediction improve?",
+    "text": "Did prediction improve?\nThe main test includes 2,470 forecasts across 26 non-overlapping signal dates. A simple benchmark always predicts the training-period average return. Root mean squared error (RMSE) measures forecast error; lower values are better.\n\n\n\nTest RMSE in percentage points. Source: saved data and generated predictions.\n\n\nThe revised model reduces RMSE from 8.88 to 8.56 percentage points, but the constant forecast achieves 8.59. Its advantage over that simple benchmark is tiny. A block bootstrap that keeps stocks together by date produces an uncertainty interval including zero for the difference in squared error. The constant forecast also has lower mean absolute error.\nThe lesson is that improving a complex model does not necessarily make it better than a simple alternative. Stocks share market shocks, so thousands of forecasts provide less independent evidence than their count suggests."
+  },
+  {
+    "objectID": "posts/week-09/index.html#would-the-predictions-make-money",
+    "href": "posts/week-09/index.html#would-the-predictions-make-money",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "Would the predictions make money?",
+    "text": "Would the predictions make money?\nBoth model portfolios outperformed passive benchmarks in this test. After charging 0.10% per dollar bought or sold, including entry and liquidation, the results were:\n\n\n\nStrategy\nFinal $1\nAnnualized return\n\n\n\n\nOriginal\n$2.001\n42.2%\n\n\nImproved\n$1.818\n35.5%\n\n\nEqual weight\n$1.455\n21.0%\n\n\nSPY\n$1.494\n22.6%\n\n\n\nJanuary 3, 2024–December 22, 2025. Source: backtest.\n\n\n\nGrowth of $1 after trading costs. Source: generated backtest.\n\n\nThe revised model forecasts more accurately but earns less than the original strategy. Forecast error measures performance across every stock; portfolio returns depend on the selected ten and their weights.\nRisk also matters. The revised portfolio’s annual volatility was 23.2%, versus 16.4% for SPY. Its net return was only 7.0% in the available 2024 window, followed by 70.0% through the final 2025 exit. Success depended heavily on the second year. Raising costs to 0.25% reduced its annualized return to 32.1%. Taxes and additional market impact remain excluded."
+  },
+  {
+    "objectID": "posts/week-09/index.html#why-prediction-remains-difficult",
+    "href": "posts/week-09/index.html#why-prediction-remains-difficult",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "Why prediction remains difficult",
+    "text": "Why prediction remains difficult\nReturns respond to unexpected news, and relationships change across market conditions. Investors also compete to exploit public signals, potentially eroding predictable profits—the intuition behind market efficiency. Flexible models can fit noise, while repeated strategy searches increase backtest-overfitting risk.\nThis study also uses a retrospectively selected stock universe and later-vintage adjusted prices. These can introduce selection and survivorship biases. Two test years cannot establish a durable investment advantage."
+  },
+  {
+    "objectID": "posts/week-09/index.html#takeaway-and-replication",
+    "href": "posts/week-09/index.html#takeaway-and-replication",
+    "title": "Better Forecasts, Better Investments?",
+    "section": "Takeaway and replication",
+    "text": "Takeaway and replication\nThe revised model improved on the class specification but did not convincingly beat a historical-average forecast or outperform the original portfolio. Forecast accuracy, valid evaluation, and investment usefulness are separate achievements.\nThe accompanying README explains replication. Organized code, frozen data, predictions, and generated figures support reproducibility; methods document assumptions and checks. Data come from Yahoo Finance through yfinance, matching the class script’s documented data provider."
   }
 ]

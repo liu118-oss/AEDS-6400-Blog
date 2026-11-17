@@ -1,0 +1,169 @@
+Validated candidate 0
+Validated candidate 1
+Validated candidate 2
+Validated candidate 3
+Validated candidate 4
+Validated candidate 5
+Validated candidate 6
+Validated candidate 7
+                       model                 sample  observations  dates  rmse_pp   mae_pp  r2_vs_mean  direction_accuracy  mean_rank_ic
+                    Original nonoverlapping signals          2470     26 8.881169 6.635400   -0.069017            0.511336      0.027356
+                    Improved nonoverlapping signals          2470     26 8.563884 6.287971    0.006001            0.529150      0.030655
+             Historical mean nonoverlapping signals          2470     26 8.589696 6.261480    0.000000            0.567206           NaN
+Original unpurged diagnostic nonoverlapping signals          2470     26 8.891076 6.646602   -0.071403            0.527935      0.036515
+       model  cost_bps  final_wealth  total_return     cagr  annual_vol  sharpe_zero_rf  max_drawdown  annual_traded_notional      start        end
+    Original       0.0      2.077764      1.077764 0.449900    0.222146        1.787542     -0.188300               19.190807 2024-01-03 2025-12-22
+    Original      10.0      2.000739      1.000739 0.422341    0.222234        1.700265     -0.191217               19.176118 2024-01-03 2025-12-22
+    Original      25.0      1.890531      0.890531 0.381987    0.222588        1.568152     -0.195572               19.154130 2024-01-03 2025-12-22
+    Improved       0.0      1.879193      0.879193 0.377770    0.231700        1.501213     -0.165419               16.688138 2024-01-03 2025-12-22
+    Improved      10.0      1.818462      0.818462 0.354968    0.231955        1.427629     -0.165419               16.677549 2024-01-03 2025-12-22
+    Improved      25.0      1.731023      0.731023 0.321470    0.232500        1.316797     -0.165419               16.661697 2024-01-03 2025-12-22
+Equal weight       0.0      1.459916      0.459916 0.211931    0.141868        1.428945     -0.164740                1.732297 2024-01-03 2025-12-22
+Equal weight      10.0      1.454946      0.454946 0.209834    0.141847        1.416889     -0.164838                1.731755 2024-01-03 2025-12-22
+Equal weight      25.0      1.447523      0.447523 0.206694    0.141829        1.398675     -0.164986                1.730945 2024-01-03 2025-12-22
+         SPY       0.0      1.496960      0.496960 0.227457    0.164467        1.330782     -0.187553                1.015994 2024-01-03 2025-12-22
+         SPY      10.0      1.493969      0.493969 0.226210    0.164456        1.324663     -0.187553                1.015487 2024-01-03 2025-12-22
+         SPY      25.0      1.489494      0.489494 0.224343    0.164451        1.315402     -0.187553                1.014728 2024-01-03 2025-12-22
+{
+  "data": {
+    "provider": "Yahoo Finance via yfinance",
+    "requested_start": "2022-01-01",
+    "requested_end_exclusive": "2026-01-01",
+    "retrieved_utc": "2026-11-17T02:45:55.058883+00:00",
+    "symbols": [
+      "AAPL",
+      "MSFT",
+      "NVDA",
+      "GOOG",
+      "META",
+      "AMZN",
+      "AVGO",
+      "ORCL",
+      "ADBE",
+      "CRM",
+      "CSCO",
+      "AMD",
+      "INTC",
+      "QCOM",
+      "TXN",
+      "IBM",
+      "NOW",
+      "INTU",
+      "AMAT",
+      "MU",
+      "JPM",
+      "BAC",
+      "WFC",
+      "GS",
+      "MS",
+      "BLK",
+      "C",
+      "SCHW",
+      "SPGI",
+      "AXP",
+      "USB",
+      "PNC",
+      "TFC",
+      "COF",
+      "UNH",
+      "JNJ",
+      "LLY",
+      "PFE",
+      "MRK",
+      "ABBV",
+      "TMO",
+      "DHR",
+      "ABT",
+      "BMY",
+      "AMGN",
+      "GILD",
+      "CVS",
+      "ISRG",
+      "MDT",
+      "TSLA",
+      "HD",
+      "MCD",
+      "NKE",
+      "SBUX",
+      "LOW",
+      "TJX",
+      "BKNG",
+      "CMG",
+      "ORLY",
+      "WMT",
+      "COST",
+      "PG",
+      "KO",
+      "PEP",
+      "PM",
+      "MO",
+      "CL",
+      "EL",
+      "CAT",
+      "GE",
+      "HON",
+      "UPS",
+      "BA",
+      "RTX",
+      "DE",
+      "LMT",
+      "MMM",
+      "ETN",
+      "XOM",
+      "CVX",
+      "COP",
+      "SLB",
+      "EOG",
+      "NFLX",
+      "DIS",
+      "CMCSA",
+      "TMUS",
+      "VZ",
+      "AMT",
+      "PLD",
+      "NEE",
+      "DUK",
+      "SO",
+      "LIN",
+      "APD"
+    ],
+    "stock_count": 95,
+    "rows": 96288,
+    "first_date": "2022-01-03 00:00:00",
+    "last_date": "2025-12-31 00:00:00",
+    "sha256": "9e5082fbb6e0f63796130b822b8fcff8e5a153b1c343bf92e49f00aa9a5a4987"
+  },
+  "chosen_candidate": 2,
+  "chosen_parameters": {
+    "max_depth": 1,
+    "min_child_weight": 100,
+    "n_estimators": 100,
+    "learning_rate": 0.03,
+    "subsample": 0.8,
+    "reg_lambda": 10
+  },
+  "training_rows": 33630,
+  "test_rows": 45790,
+  "scheduled_rows": 2470,
+  "signal_count": 26,
+  "first_train_signal": "2022-07-07",
+  "last_train_signal": "2023-11-30",
+  "purged_rows": 1900,
+  "training_mean": 0.013240258857515001,
+  "uncertainty": {
+    "Original": {
+      "mean_mse_difference": -0.0005535057157192764,
+      "95pct_block_bootstrap_interval": [
+        -0.0009049343016611035,
+        -0.0002261028988419998
+      ]
+    },
+    "Historical mean": {
+      "mean_mse_difference": -4.427745097630954e-05,
+      "95pct_block_bootstrap_interval": [
+        -0.000346207848106855,
+        0.0001752561312504384
+      ]
+    }
+  }
+}

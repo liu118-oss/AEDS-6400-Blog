@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.DS_Store
+.quarto/
+data/.yfinance_cache/
+results/.mplconfig/
+*.zip

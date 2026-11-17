@@ -1,0 +1,3 @@
+PASS: snapshot hash; unique dates/symbols; positive prices; full common calendar;
+purged training and validation label boundaries; equal test universe; target/holding return identity;
+long-only weights sum to one; consecutive holdings share execution dates.

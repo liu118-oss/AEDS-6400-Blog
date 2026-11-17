@@ -85,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -193,7 +193,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="YWZmb3JkYWJpbGl0eQ==">affordability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Ym9vdHN0cmFw">bootstrap <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YS12aXN1YWxpemF0aW9u">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWR1Y2F0aW9u">education <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZnJlZA==">fred <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R0lT">GIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aG91c2luZw==">housing <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aW5jb21l">income <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW5mZXJlbmNl">inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZXJlc3QtcmF0ZXM=">interest-rates <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGFib3ItbWFya2V0">labor-market <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bGluZWFyLWFsZ2VicmE=">linear-algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWF0aGVtYXRpY3M=">mathematics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW9iaWxpdHk=">mobility <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGVubnN5bHZhbmlh">Pennsylvania <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxvdGx5">Plotly <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U1FM">SQL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dW5lbXBsb3ltZW50">unemployment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2ViLXNjcmFwaW5n">web-scraping <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="YWZmb3JkYWJpbGl0eQ==">affordability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Ym9vdHN0cmFw">bootstrap <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YS12aXN1YWxpemF0aW9u">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWNvbm9taWNz">economics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWR1Y2F0aW9u">education <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZmluYW5jZQ==">finance <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnJlZA==">fred <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R0lT">GIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z3JhZGllbnQlMjBib29zdGluZw==">gradient boosting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aG91c2luZw==">housing <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aW5jb21l">income <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW5mZXJlbmNl">inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZXJlc3QtcmF0ZXM=">interest-rates <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGFib3ItbWFya2V0">labor-market <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bGluZWFyLWFsZ2VicmE=">linear-algebra <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFjaGluZSUyMGxlYXJuaW5n">machine learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWF0aGVtYXRpY3M=">mathematics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW9iaWxpdHk=">mobility <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGVubnN5bHZhbmlh">Pennsylvania <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGxvdGx5">Plotly <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U1FM">SQL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dW5lbXBsb3ltZW50">unemployment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2ViLXNjcmFwaW5n">web-scraping <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -207,7 +207,46 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDc2ltdWxhdGlvbiUyQ2Jvb3RzdHJhcCUyQ2luZmVyZW5jZQ==" data-listing-date-sort="1793595600000" data-listing-file-modified-sort="1793658696210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1190">
+<div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDZmluYW5jZSUyQ21hY2hpbmUlMjBsZWFybmluZyUyQ2dyYWRpZW50JTIwYm9vc3Rpbmc=" data-listing-date-sort="1794805200000" data-listing-file-modified-sort="1794885040245" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="874">
+<div class="thumbnail"><a href="./posts/week-09/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/week-09/results/figures/wealth.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/week-09/index.html" class="no-external">Better Forecasts, Better Investments?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/week-09/index.html" class="no-external">Blog Post 9 · Predicting Stock Returns with Gradient Boosting</a>
+</div>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZmluYW5jZQ=='); return false;">finance</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWFjaGluZSUyMGxlYXJuaW5n'); return false;">machine learning</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZGllbnQlMjBib29zdGluZw=='); return false;">gradient boosting</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/week-09/index.html" class="no-external">
+<p>Can cleaner features and more conservative boosting improve stock forecasts and investment returns?</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/week-09/index.html" class="no-external">
+<div class="listing-date">
+Nov 16, 2026
+</div>
+<div class="listing-author">
+Jin Liu
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDc2ltdWxhdGlvbiUyQ2Jvb3RzdHJhcCUyQ2luZmVyZW5jZQ==" data-listing-date-sort="1793595600000" data-listing-file-modified-sort="1793658696210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1190">
 <div class="thumbnail"><a href="./posts/week-08/index.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="posts/week-08/results/01_bootstrap.png"  class="thumbnail-image card-img"/></p>
@@ -217,6 +256,9 @@ window.Quarto = {
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-08/index.html" class="no-external">Is the Average Delivery Time Really 30 Minutes?</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-08/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
@@ -243,7 +285,7 @@ Jin Liu
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="UHl0aG9uJTJDUGxvdGx5JTJDZWR1Y2F0aW9uJTJDbGFib3ItbWFya2V0" data-listing-date-sort="1792555200000" data-listing-file-modified-sort="1792607364050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="951">
+<div class="quarto-post image-right" data-index="2" data-categories="UHl0aG9uJTJDUGxvdGx5JTJDZWR1Y2F0aW9uJTJDbGFib3ItbWFya2V0" data-listing-date-sort="1792555200000" data-listing-file-modified-sort="1792607364050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="951">
 <div class="thumbnail"><a href="./posts/week-07/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -253,6 +295,9 @@ Jin Liu
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-07/index.html" class="no-external">Finding Work After College: How Do Majors Compare?</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-07/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
@@ -279,7 +324,7 @@ Jin Liu
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="UHl0aG9uJTJDU1FMJTJDaW5jb21lJTJDbW9iaWxpdHk=" data-listing-date-sort="1792468800000" data-listing-file-modified-sort="1792607364050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
+<div class="quarto-post image-right" data-index="3" data-categories="UHl0aG9uJTJDU1FMJTJDaW5jb21lJTJDbW9iaWxpdHk=" data-listing-date-sort="1792468800000" data-listing-file-modified-sort="1792607364050" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1232">
 <div class="thumbnail"><a href="./posts/week-06/index.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="posts/week-06/results/01_averaging.png"  class="thumbnail-image card-img"/></p>
@@ -289,6 +334,9 @@ Jin Liu
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-06/index.html" class="no-external">Does One Year of Income Tell the Whole Story?</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-06/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
@@ -315,7 +363,7 @@ Jin Liu
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="aG91c2luZyUyQ2FmZm9yZGFiaWxpdHklMkNHSVMlMkNQZW5uc3lsdmFuaWE=" data-listing-date-sort="1792382400000" data-listing-file-modified-sort="1792571747683" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1263">
+<div class="quarto-post image-right" data-index="4" data-categories="aG91c2luZyUyQ2FmZm9yZGFiaWxpdHklMkNHSVMlMkNQZW5uc3lsdmFuaWE=" data-listing-date-sort="1792382400000" data-listing-file-modified-sort="1792571747683" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1263">
 <div class="thumbnail"><a href="./posts/week-05/index.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="posts/week-05/results/01_median_rent_map.png"  class="thumbnail-image card-img"/></p>
@@ -325,6 +373,9 @@ Jin Liu
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-05/index.html" class="no-external">Why Lower Rent Does Not Always Mean Less Housing Pressure</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-05/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('aG91c2luZw=='); return false;">housing</div>
@@ -351,7 +402,7 @@ Jin Liu
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="aG91c2luZyUyQ2ludGVyZXN0LXJhdGVzJTJDYWZmb3JkYWJpbGl0eSUyQ2ZyZWQ=" data-listing-date-sort="1791259200000" data-listing-file-modified-sort="1792571974180" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1118">
+<div class="quarto-post image-right" data-index="5" data-categories="aG91c2luZyUyQ2ludGVyZXN0LXJhdGVzJTJDYWZmb3JkYWJpbGl0eSUyQ2ZyZWQ=" data-listing-date-sort="1791259200000" data-listing-file-modified-sort="1792571974180" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1118">
 <div class="thumbnail"><a href="./posts/week-04/index.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="posts/week-04/results/01_real_home_prices.png"  class="thumbnail-image card-img"/></p>
@@ -361,6 +412,9 @@ Jin Liu
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-04/index.html" class="no-external">Why Lower New-Home Prices Have Not Restored Affordability</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-04/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('aG91c2luZw=='); return false;">housing</div>
@@ -387,7 +441,7 @@ Jin Liu
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="bGFib3ItbWFya2V0JTJDdW5lbXBsb3ltZW50JTJDZWR1Y2F0aW9uJTJDZGF0YS12aXN1YWxpemF0aW9u" data-listing-date-sort="1790568000000" data-listing-file-modified-sort="1792610194326" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1067">
+<div class="quarto-post image-right" data-index="6" data-categories="bGFib3ItbWFya2V0JTJDdW5lbXBsb3ltZW50JTJDZWR1Y2F0aW9uJTJDZGF0YS12aXN1YWxpemF0aW9u" data-listing-date-sort="1790568000000" data-listing-file-modified-sort="1792610194326" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1067">
 <div class="thumbnail"><a href="./posts/week-03/index.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="posts/week-03/results/01_unemployment_trends.png"  class="thumbnail-image card-img"/></p>
@@ -397,6 +451,9 @@ Jin Liu
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-03/index.html" class="no-external">Does Education Protect Workers from Unemployment?</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-03/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bGFib3ItbWFya2V0'); return false;">labor-market</div>
@@ -423,7 +480,7 @@ Jin Liu
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="d2ViLXNjcmFwaW5nJTJDUiUyQ2xhYm9yLW1hcmtldA==" data-listing-date-sort="1789963200000" data-listing-file-modified-sort="1792610095031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1062">
+<div class="quarto-post image-right" data-index="7" data-categories="d2ViLXNjcmFwaW5nJTJDUiUyQ2xhYm9yLW1hcmtldA==" data-listing-date-sort="1789963200000" data-listing-file-modified-sort="1792610095031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1062">
 <div class="thumbnail"><a href="./posts/week-02/index.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="posts/week-02/results/skill_frequencies.png"  class="thumbnail-image card-img"/></p>
@@ -433,6 +490,9 @@ Jin Liu
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-02/index.html" class="no-external">Which Tech Skills Should I Learn? Evidence from Arbeitnow Jobs</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-02/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('d2ViLXNjcmFwaW5n'); return false;">web-scraping</div>
@@ -454,7 +514,7 @@ Sep 21, 2026
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="bWF0aGVtYXRpY3MlMkNsaW5lYXItYWxnZWJyYSUyQ2Vjb25vbWljcw==" data-listing-date-sort="1789358400000" data-listing-file-modified-sort="1792610095029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
+<div class="quarto-post image-right" data-index="8" data-categories="bWF0aGVtYXRpY3MlMkNsaW5lYXItYWxnZWJyYSUyQ2Vjb25vbWljcw==" data-listing-date-sort="1789358400000" data-listing-file-modified-sort="1792610095029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1221">
 <div class="thumbnail"><a href="./posts/week-01/index.html" class="no-external">
 
 <p class="card-img-top"><img loading='lazy' src="posts/week-01/index_files/figure-html/fig-eigenvectors-output-1.png" alt="Three panels compare a vector with its transformed version: (1,0) becomes (2,1), (1,1) becomes (3,3), and (1,-1) remains (1,-1)."  class="thumbnail-image card-img"/></p>
@@ -464,6 +524,9 @@ Sep 21, 2026
 <h3 class="no-anchor listing-title">
 <a href="./posts/week-01/index.html" class="no-external">Eigenvalues and Eigenvectors: The Directions That Stay on Track</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/week-01/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bWF0aGVtYXRpY3M='); return false;">mathematics</div>

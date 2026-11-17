@@ -1,0 +1,4 @@
+PASS: All gross holding returns equal independently calculated weighted adjusted-price returns.
+PASS: Increasing costs weakly reduces ending wealth for every strategy.
+PASS: Gross SPY wealth equals direct adjusted-price buy-and-hold ratio.
+PASS: Every portfolio is fully invested without leverage.

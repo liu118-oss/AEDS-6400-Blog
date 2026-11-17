@@ -1,0 +1,68 @@
+Can past stock prices help a machine-learning model make profitable investments? I revisited our class gradient boosting experiment, corrected its evaluation, and tested a more conservative model. The central finding: **better forecasts did not produce a better portfolio.**
+
+## The class experiment
+
+The supplied R script uses XGBoost, which builds decision trees sequentially to reduce prediction errors. Trees capture nonlinear relationships, such as momentum behaving differently when volatility is high. The original model uses 300 trees, depth 5, and a learning rate of 0.05.
+
+Its inputs include momentum, volatility, reversal, market-relative returns, and raw price and volume columns. It trains on observations before 2024 and ranks stocks by predicted future returns. The intended strategy buys the ten highest-ranked stocks, allocating more to larger positive forecasts.
+
+Although described as a 20-day forecast, its target runs from day one to day twenty: **19 trading-day returns**. I retained this target. My Python reimplementation uses the script’s 95 stocks plus SPY, with Yahoo Finance prices from January 2022 through December 2025. The frozen snapshot was downloaded on 2026-11-17. This reproduces the model’s design, not the instructor’s exact software environment or classroom results.
+
+## Making the comparison fair
+
+Some December training labels include January outcomes, leaking test information. I excluded these observations from both models. I also corrected the original portfolio accounting: its R weighting expression can repeat one weight across every stock, while its benchmark dates and annualization factors are inconsistent.
+
+In the corrected comparison, both strategies have weights totaling 100%, trade at the next close, and rebalance every 19 trading sessions. This matches the forecast horizon. SPY and an equal-weight portfolio of the same stocks provide investment benchmarks over identical dates.
+
+![Training and validation precede the untouched test. Source: analysis design.](results/figures/timeline.png)
+
+These corrections establish a fair experiment; they are separate from my model improvements.
+
+These benchmarks answer different questions. The historical mean tests whether stock-specific information improves forecasts. SPY tests whether active trading beats a broad market investment. Equal weighting tests whether selecting ten stocks adds value relative to holding the entire class universe. Using all three prevents a strong market rally, or an unusually successful set of companies, from being mistaken for evidence of superior forecasting.
+
+## Improving the model
+
+I replaced raw price and volume levels with seven comparable signals: lagged momentum over four horizons, volatility, market-relative momentum, and the previous day’s excess return. I also corrected the direction of the original momentum formulas.
+
+To reduce overfitting, I compared eight combinations of tree depth, tree count, and minimum child weight, using stronger regularization. Three chronological validation folds in 2023 selected the settings; labels crossing fold boundaries were excluded. The winning model uses 100 depth-one trees and a 0.03 learning rate. Both models were then frozen before testing on 2024–2025.
+
+## Did prediction improve?
+
+The main test includes 2,470 forecasts across 26 non-overlapping signal dates. A simple benchmark always predicts the training-period average return. Root mean squared error (RMSE) measures forecast error; lower values are better.
+
+![Test RMSE in percentage points. Source: saved data and generated predictions.](results/figures/forecast_error.png)
+
+The revised model reduces RMSE from 8.88 to 8.56 percentage points, but the constant forecast achieves 8.59. Its advantage over that simple benchmark is tiny. A block bootstrap that keeps stocks together by date produces an uncertainty interval including zero for the difference in squared error. The constant forecast also has lower mean absolute error.
+
+The lesson is that improving a complex model does not necessarily make it better than a simple alternative. Stocks share market shocks, so thousands of forecasts provide less independent evidence than their count suggests.
+
+## Would the predictions make money?
+
+Both model portfolios outperformed passive benchmarks in this test. After charging 0.10% per dollar bought or sold, including entry and liquidation, the results were:
+
+| Strategy | Final $1 | Annualized return |
+| --- | --- | --- |
+| Original | $2.001 | 42.2% |
+| Improved | $1.818 | 35.5% |
+| Equal weight | $1.455 | 21.0% |
+| SPY | $1.494 | 22.6% |
+
+*January 3, 2024–December 22, 2025. Source: backtest.*
+
+![Growth of $1 after trading costs. Source: generated backtest.](results/figures/wealth.png)
+
+The revised model forecasts more accurately but earns less than the original strategy. Forecast error measures performance across every stock; portfolio returns depend on the selected ten and their weights.
+
+Risk also matters. The revised portfolio’s annual volatility was 23.2%, versus 16.4% for SPY. Its net return was only 7.0% in the available 2024 window, followed by 70.0% through the final 2025 exit. Success depended heavily on the second year. Raising costs to 0.25% reduced its annualized return to 32.1%. Taxes and additional market impact remain excluded.
+
+## Why prediction remains difficult
+
+Returns respond to unexpected news, and relationships change across market conditions. Investors also compete to exploit public signals, potentially eroding predictable profits—the intuition behind [market efficiency](https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1970.tb00518.x). Flexible models can fit noise, while repeated strategy searches increase [backtest-overfitting risk](https://escholarship.org/uc/item/4w1110bb).
+
+This study also uses a retrospectively selected stock universe and later-vintage adjusted prices. These can introduce selection and survivorship biases. Two test years cannot establish a durable investment advantage.
+
+## Takeaway and replication
+
+The revised model improved on the class specification but did not convincingly beat a historical-average forecast or outperform the original portfolio. **Forecast accuracy, valid evaluation, and investment usefulness are separate achievements.**
+
+The accompanying [README](README.md) explains replication. Organized code, frozen data, predictions, and generated figures support reproducibility; [methods](METHODS.md) document assumptions and checks. Data come from Yahoo Finance through `yfinance`, matching the class script’s [documented data provider](https://business-science.github.io/tidyquant/reference/tq_get.html).

@@ -13,6 +13,7 @@ Blog posts for AEDS 6400 (Computational Methods for Economists), University of P
 | 3 | Does Education Protect Workers from Unemployment? | [`posts/week-03`](posts/week-03) | R | IPUMS CPS |
 | 4 | Why Lower New-Home Prices Have Not Restored Affordability | [`posts/week-04`](posts/week-04) | R | FRED |
 | 5 | Why Lower Rent Does Not Always Mean Less Housing Pressure | [`posts/week-05`](posts/week-05) | R (`sf`) | Census ACS and county boundaries |
+| 9 | Better Forecasts, Better Investments? | [`posts/week-09`](posts/week-09) | Python (XGBoost) | Yahoo Finance |
 
 Each post folder (from Post 2 on) follows the same layout and has its own `README.md` with replication instructions:
 

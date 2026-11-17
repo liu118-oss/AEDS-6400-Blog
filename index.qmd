@@ -1,7 +1,7 @@
 ---
 title: "AEDS 6400 Blog"
 listing:
-  contents: posts
+  contents: "posts/*/index.qmd"
   feed: true
   sort: "date desc"
   type: default

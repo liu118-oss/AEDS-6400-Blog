@@ -1,0 +1,11 @@
+:root { --ink: #24384c; --teal: #007f82; }
+body { color: var(--ink); font-size: 17px; line-height: 1.7; }
+#title-block-header { border-bottom: 3px solid var(--teal); padding-bottom: 1.6rem; margin-bottom: 2.2rem; }
+h1.title { font-weight: 750; letter-spacing: -.035em; }
+.subtitle { color: #64748b; }
+h2 { margin-top: 2.5rem; color: var(--ink); }
+a { color: #006c72; }
+table { font-size: .85rem; }
+thead { background: #eef5f5; }
+figcaption { color: #526374; font-size: .87rem; }
+figure { margin: 1.8rem 0; }
