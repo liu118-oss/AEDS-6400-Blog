@@ -82,19 +82,6 @@ The supplied R script is the source of the universe, original predictors and ori
 
 The separate `Full_Results` classroom spreadsheet is not stock-price training data and is not used here. We do not invent what the original in-class run earned.
 
-## Rubric coverage
-
-1. Question and motivation: opening paragraphs.
-2. Clear explanation: class experiment and model-improvement sections.
-3. Interpretation and takeaway: accuracy/investment distinction and concluding section.
-4. Data and presentation: source documentation, three figures and a compact investment table; detailed tables remain in the results folder.
-5. Repository organization: folders above and these replication instructions.
-6. Reproducibility: fixed snapshot, checksum, seed, package lock, generated outputs and checks.
-7. Original experiment and prediction difficulty: class-model explanation, code audit, and discussion.
-8. Substantive improvement: redesigned predictors and pre-test selection of regularized XGBoost.
-9. Out-of-sample evaluation: common 2024–2025 test, original model and historical-mean forecast.
-10. Economic performance: aligned trading portfolios, SPY/equal-weight benchmarks, risk and cost sensitivity.
-
 ## Sources
 
 - User-supplied class script: `reference/original_class_model.R`.
